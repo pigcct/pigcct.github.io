@@ -393,7 +393,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    940
+                    946
                 </div>
                 
 
@@ -469,7 +469,8 @@
 <li>对左序列（ L — mid）和右序列 （ mid + 1— R ）递归将序列划分成若干个子序列。</li>
 <li>然后从下往上逐层合并，首先对第一层序列的数字进行排序合并，然后再依次排序合并各层。</li>
 </ul>
-<h2 id="快速排序代码模板：-1"><a href="#快速排序代码模板：-1" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre class="line-numbers language-`cpp" data-language="`cpp"><code class="language-`cpp">void merge_sort(int q[], int l, int r)    
+<h2 id="快速排序代码模板：-1"><a href="#快速排序代码模板：-1" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre class="line-numbers language-`cpp" data-language="`cpp"><code class="language-`cpp">&#x2F;&#x2F; 归并排序
+void merge_sort(int q[], int l, int r)    
 &#123;
 	if (l &gt;&#x3D; r) return;
 	&#x2F;&#x2F;将一整个数列拆分成若干个数
@@ -486,7 +487,7 @@
 	while (j &lt;&#x3D; r) tmp[k ++ ] &#x3D; q[j ++ ];
 	&#x2F;&#x2F;将tmp[]数组中的值搬回q[]数组中
 	for (i &#x3D; l, j &#x3D; 0; i &lt;&#x3D; r; i ++, j ++ ) q[i] &#x3D; tmp[j];
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
