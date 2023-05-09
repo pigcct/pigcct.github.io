@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="spicypig的博客">
-    <meta name="description" content="1.快速排序(Quick sort)
-💡 时间复杂度：$N*log N$
+    <meta name="keywords" content="hhh, spicypig的博客">
+    <meta name="description" content="归并排序(Merge sort)
+💡 时间复杂度：$N*logN$
 
 (a)快速排序算法实现方式:
-快速排序的核心思想是分治法，分而治之。它的实现方式是每次从序列中选出一个基准值，其他数依次和基准值做比较，比基准值大的放右边，比基准">
+归并排序(Merge sort)是建立在归并操作上的一种有效的排序算法，归并排序对序列的元素进行逐层折半分组，然后从最小分组开始比较排序，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>spicypig的博客</title>
+    <title>hhh | spicypig的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -343,7 +343,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">hhh</h1>
                 </div>
             </div>
         </div>
@@ -379,28 +379,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-08
+                    2023-05-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-03
+                    2023-05-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    916
+                    385
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -423,55 +423,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-快速排序-Quick-sort"><a href="#1-快速排序-Quick-sort" class="headerlink" title="1.快速排序(Quick sort)"></a>1.快速排序(Quick sort)</h1><blockquote>
-<p>💡 时间复杂度：$N*log N$</p>
+                <h1 id="归并排序-Merge-sort"><a href="#归并排序-Merge-sort" class="headerlink" title="归并排序(Merge sort)"></a>归并排序(Merge sort)</h1><blockquote>
+<p>💡 时间复杂度：$N*logN$</p>
 </blockquote>
 <h2 id="a-快速排序算法实现方式"><a href="#a-快速排序算法实现方式" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h2><blockquote>
-<p>快速排序的核心思想是分治法，分而治之。它的实现方式是每次从序列中选出一个基准值，其他数依次和基准值做比较，比基准值大的放右边，比基准值小的放左边，然后再对左边和右边的两组数分别选出一个基准值，进行同样的比较移动，重复步骤，直到最后都变成单个元素，整个数组就成了有序的序列。</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/f2becfb90bb34429a1263661164cb2bc.gif#pic_center" alt="快速排序算法图解"></p>
-<h2 id="b-算法描述"><a href="#b-算法描述" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h2><p>&#x3D;&#x3D;快速排序是使用分治的方法将一个串分为两个子串，然后递归的方法继续划分，具体算法描述如下：&#x3D;&#x3D;</p>
-<ul>
-<li>定义两个指针L和R分别指向序列的两端。</li>
-<li>从序列中挑选一个指针元素P，称为 “基准”（pivot）</li>
-<li>一般选 P &#x3D; ( L + R ) &#x2F; 2</li>
-<li>分区操作：重新排序序列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。<br>&#x3D;&#x3D;[ 比基准值小的数] 基准值P [ 比基准值大的数]&#x3D;&#x3D;</li>
-<li>接着，对两个“[ ]”中的数据进行排序之后，整体的排序便完成了。对“[ ]”里面的数据进行排序时（递归排序左右两边“[ ]”中的子序列）同样也会使用快速排序。</li>
-</ul>
-<h2 id="快速排序代码模板："><a href="#快速排序代码模板：" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序模板</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;<span class="comment">//如果l &gt;= r则数列只有一个数或数列为空</span></span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[(l + r) &gt;&gt; <span class="number">1</span>];<span class="comment">//定义双指针，i指向左端，j指向右端，x为数列的基准值</span></span><br><span class="line">	<span class="keyword">while</span>(i &lt; j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//将小于x的数放在x的左边，大于x的数放在x的右边</span></span><br><span class="line">		<span class="keyword">do</span> i++ ;<span class="keyword">while</span>(q[i] &lt; x);</span><br><span class="line">		<span class="keyword">do</span> j-- ;<span class="keyword">while</span>(q[j] &gt; x);</span><br><span class="line">		<span class="keyword">if</span>(i &lt; j) <span class="built_in">swap</span>(q[i], q[j]);	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">quick_sort</span>(q, l, j);<span class="comment">//递归左边</span></span><br><span class="line">	<span class="built_in">quick_sort</span>(q, j + <span class="number">1</span>, r);<span class="comment">//递归右边</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="归并排序-Merge-sort"><a href="#归并排序-Merge-sort" class="headerlink" title="归并排序(Merge sort)"></a>归并排序(Merge sort)</h1><blockquote>
-<p>💡 时间复杂度：$N* log N$</p>
-</blockquote>
-<h2 id="a-快速排序算法实现方式-1"><a href="#a-快速排序算法实现方式-1" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h2><blockquote>
 <p>归并排序(Merge sort)是建立在归并操作上的一种有效的排序算法，归并排序对序列的元素进行逐层折半分组，然后从最小分组开始比较排序，合并成一个大的分组，逐层进行，最终所有的元素都是有序的</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/0c3da41302a94763844dad811981d1fb.gif#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="b-算法描述-1"><a href="#b-算法描述-1" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h2><ul>
-<li>定义三个指针 L， R， mid， 分别指向序列的左右两端和中间。</li>
-<li>首先找到序列的中间值mid &#x3D;（ L + R） &#x2F; 2，将序列分为两个子序列。</li>
-<li>对左序列（ L — mid）和右序列 （ mid + 1— R ）递归将序列划分成若干个子序列。</li>
-<li>然后从下往上逐层合并，首先对第一层序列的数字进行排序合并，然后再依次排序合并各层。</li>
-</ul>
-<h2 id="快速排序代码模板：-1"><a href="#快速排序代码模板：-1" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre><code class="cpp">void merge_sort(int q[], int l, int r)    
-&#123;
-    if (l &gt;= r) return;
-    //将一整个数列拆分成若干个数
-    int mid = l + r &gt;&gt; 1;
-    merge_sort(q, l, mid);
-    merge_sort(q, mid + 1, r);
-    //合并
-    int k = 0, i = l, j = mid + 1;//***
-    while (i &lt;= mid &amp;&amp; j &lt;= r)//比较两个数，将较小的数存入tmp[]数组中
-        if (q[i] &lt;= q[j]) tmp[k ++ ] = q[i ++ ];
-        else tmp[k ++ ] = q[j ++ ];
-    //将比较厚剩余的数加到数组的后面
-    while (i &lt;= mid) tmp[k ++ ] = q[i ++ ];
-    while (j &lt;= r) tmp[k ++ ] = q[j ++ ];
-    //将tmp[]数组中的值搬回q[]数组中
-    for (i = l, j = 0; i &lt;= r; i ++, j ++ ) q[i] = tmp[j];
-&#125;
-</code></pre>
-
+<p><img src="https://video.acwing.com/image/default/AEEEFA07F0164988B7A9B9CD0D960880-6-2.jpg?auth_key=1684368000-ac2785wing-0-494a7c563d20f05308b9da734dd4ce4c" alt="在这里插入图片描述"></p>
+<h2 id="b-算法描述"><a href="#b-算法描述" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h2><p>  定义三个指针 L， R， mid， 分别指向序列的左右两端和中间。<br>  首先找到序列的中间值mid &#x3D;（ L + R） &#x2F; 2，将序列分为两个子序列。<br>  对左序列（ L — mid）和右序列 （ mid + 1— R ）递归将序列划分成若干个子序列。<br>  然后从下往上逐层合并，首先对第一层序列的数字进行排序合并，然后再依次排序合并各层。</p>
+<h2 id="快速排序代码模板："><a href="#快速排序代码模板：" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 归并排序</span>
+<span class="token keyword">void</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>    
+<span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token comment">//将一整个数列拆分成若干个数</span>
+	<span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//合并</span>
+	<span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">=</span> l<span class="token punctuation">,</span> j <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//***</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span><span class="token comment">//比较两个数，将较小的数存入tmp[]数组中</span>
+	    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> q<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	    <span class="token keyword">else</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//将比较厚剩余的数加到数组的后面</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//将tmp[]数组中的值搬回q[]数组中</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> l<span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> r<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">,</span> j <span class="token operator">++</span> <span class="token punctuation">)</span> q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -497,7 +475,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://spicypig.top/2023/05/08/Sort/">https://spicypig.top/2023/05/08/Sort/</a>
+                    <a href="https://spicypig.top/2023/05/10/111/">https://spicypig.top/2023/05/10/111/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,9 +589,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/05/10/111/">
                     <div class="card-image">
@@ -631,9 +610,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -642,6 +621,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -652,13 +632,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/08/hello-world/">
+                <a href="/2023/05/08/Sort/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
