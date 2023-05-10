@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="排序算法, spicypig的博客">
+    <meta name="keywords" content="排序算法, Spicy-pig">
     <meta name="description" content="1.快速排序(Quick sort)
 💡 时间复杂度：$N*log N$
 
@@ -21,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>排序算法 | spicypig的博客</title>
+    <title>排序算法 | Spicy-pig</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -68,7 +68,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">spicypig的博客</span>
+                    <span class="logo-span">Spicy-pig</span>
                 </a>
             </div>
             
@@ -172,7 +172,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">spicypig的博客</div>
+        <div class="logo-name">Spicy-pig</div>
         <div class="logo-desc">
             
             在小小的花园里面挖呀挖呀挖...
@@ -393,7 +393,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    946
+                    911
                 </div>
                 
 
@@ -469,25 +469,25 @@
 <li>对左序列（ L — mid）和右序列 （ mid + 1— R ）递归将序列划分成若干个子序列。</li>
 <li>然后从下往上逐层合并，首先对第一层序列的数字进行排序合并，然后再依次排序合并各层。</li>
 </ul>
-<h2 id="快速排序代码模板：-1"><a href="#快速排序代码模板：-1" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre class="line-numbers language-`cpp" data-language="`cpp"><code class="language-`cpp">&#x2F;&#x2F; 归并排序
-void merge_sort(int q[], int l, int r)    
-&#123;
-	if (l &gt;&#x3D; r) return;
-	&#x2F;&#x2F;将一整个数列拆分成若干个数
-	int mid &#x3D; l + r &gt;&gt; 1;
-	merge_sort(q, l, mid);
-	merge_sort(q, mid + 1, r);
-	&#x2F;&#x2F;合并
-	int k &#x3D; 0, i &#x3D; l, j &#x3D; mid + 1;&#x2F;&#x2F;***
-	while (i &lt;&#x3D; mid &amp;&amp; j &lt;&#x3D; r)&#x2F;&#x2F;比较两个数，将较小的数存入tmp[]数组中
-	    if (q[i] &lt;&#x3D; q[j]) tmp[k ++ ] &#x3D; q[i ++ ];
-	    else tmp[k ++ ] &#x3D; q[j ++ ];
-	&#x2F;&#x2F;将比较厚剩余的数加到数组的后面
-	while (i &lt;&#x3D; mid) tmp[k ++ ] &#x3D; q[i ++ ];
-	while (j &lt;&#x3D; r) tmp[k ++ ] &#x3D; q[j ++ ];
-	&#x2F;&#x2F;将tmp[]数组中的值搬回q[]数组中
-	for (i &#x3D; l, j &#x3D; 0; i &lt;&#x3D; r; i ++, j ++ ) q[i] &#x3D; tmp[j];
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="快速排序代码模板：-1"><a href="#快速排序代码模板：-1" class="headerlink" title="快速排序代码模板："></a>快速排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 归并排序</span>
+<span class="token keyword">void</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>    
+<span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token comment">//将一整个数列拆分成若干个数</span>
+	<span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//合并</span>
+	<span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">=</span> l<span class="token punctuation">,</span> j <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//***</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span><span class="token comment">//比较两个数，将较小的数存入tmp[]数组中</span>
+	    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> q<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	    <span class="token keyword">else</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//将比较厚剩余的数加到数组的后面</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k <span class="token operator">++</span> <span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token comment">//将tmp[]数组中的值搬回q[]数组中</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> l<span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> r<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">,</span> j <span class="token operator">++</span> <span class="token punctuation">)</span> q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -631,13 +631,13 @@ void merge_sort(int q[], int l, int r)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/10/111/">
+                <a href="/2023/05/09/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="归并排序">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">归并排序</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -648,7 +648,7 @@ void merge_sort(int q[], int l, int r)
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-09
                         </span>
                         <span class="publish-author">
                             
@@ -665,16 +665,16 @@ void merge_sort(int q[], int l, int r)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/08/hello-world/">
+                <a href="/2023/05/09/Sort/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="排序算法">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -685,7 +685,7 @@ void merge_sort(int q[], int l, int r)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-09
                             </span>
                         <span class="publish-author">
                             
@@ -695,6 +695,7 @@ void merge_sort(int q[], int l, int r)
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
