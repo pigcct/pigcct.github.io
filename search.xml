@@ -4,32 +4,13 @@
   
     
     <entry>
-      <title>杨艳</title>
+      <title>life</title>
       <link href="/2023/05/10/yy/"/>
       <url>/2023/05/10/yy/</url>
       
         <content type="html"><![CDATA[<h1 id="你是谁"><a href="#你是谁" class="headerlink" title="你是谁"></a>你是谁</h1><h2 id="你在干嘛呢"><a href="#你在干嘛呢" class="headerlink" title="你在干嘛呢"></a>你在干嘛呢</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;isotream></span></span>usinga <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span class="token keyword">const</span> <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">100010</span><span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">int</span> n<span class="token punctuation">;</span>    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>好好听话</li><li>好好吃饭</li><li>好好睡觉</li></ul>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Class</title>
-      <link href="/2023/05/10/class%20/"/>
-      <url>/2023/05/10/class%20/</url>
-      
-        <content type="html"><![CDATA[<h1 id="class"><a href="#class" class="headerlink" title="class"></a>class</h1><h2 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h2><ul><li>将事物的发展划分为若干个块，以函数实现，最后将这些块进行调用和连接。</li><li>缺点：当客户需求不断增加，软件规模越来越大，开发周期长，难以维护。</li></ul><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>20世纪80年底后期，人们提出了面向对象(Object Oriented Programming，OOP)的设计思路。面向对象的程序是由对象组成的，每个对象含有对用户公开的部分和私有的隐藏部分，将数据和处理数据的方法结合起来，形成类；再将类实例化，形成对象。面向对象不需要程序员考虑数据结构和函数功能，只关注对象。</p><h2 id="面向对象的基本特征"><a href="#面向对象的基本特征" class="headerlink" title="面向对象的基本特征"></a>面向对象的基本特征</h2><p>•封装性</p><p>把对象的全部属性和方法结合在一起，形成不可分割的整体，当与外部发生作用时，依靠接口实现</p><p>•继承性</p><p>特殊类可以拥有一般类的属性和方法，称为继承。被继承的类称为父类，继承的类称为子类</p><p>•多态性</p><p>父类的属性和方法被继承后，可以有不同的表现形式</p><h2 id="java如何定义类"><a href="#java如何定义类" class="headerlink" title="java如何定义类"></a>java如何定义类</h2><ul><li>类包含属性和方法（使用class关键字定义）</li></ul><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">class className &#123;    属性；    方法；  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ul><li>类可以分为类名和类体</li></ul><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 定义了一个Person的类public class Person &#123;  int age; &#x2F;&#x2F; 全局变量  &#x2F;&#x2F; 定义了一个say的方法  public void say() &#123;    System.out.println(&quot;定义方法&quot;);  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="java中变量的分类"><a href="#java中变量的分类" class="headerlink" title="java中变量的分类"></a>java中变量的分类</h2><ul><li>局部变量</li><li>成员变量（全局变量）</li><li>类变量</li><li>示例变量</li></ul><blockquote><p>类变量：用关键字static定义，调用时使用 <strong>类名.变量名</strong> 访问</p></blockquote><h2 id="eg"><a href="#eg" class="headerlink" title="eg :"></a>eg :</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class one &#123;    static int age &#x3D; 18;    public static void main(String[] args) &#123;        System.out.println(one.age);    &#125;&#125;&#x2F;&#x2F; 输出结果为： 18<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>实例变量：与类的实例对应。当实例被创建时，分配内存空间；当实例销毁时，内存空间回收。</p></blockquote><h2 id="eg-1"><a href="#eg-1" class="headerlink" title="eg:"></a>eg:</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">  public class Student &#123;    public static int amount &#x3D; 10;&#x2F;&#x2F;静态        public int age &#x3D; 24;&#x2F;&#x2F;实例&#125;public class Student &#123;    public static int a &#x3D; 20; &#x2F;&#x2F; 静态变量    &#x2F;&#x2F;public int age &#x3D; 22； &#x2F;&#x2F; 实例变量  &#x2F;&#x2F; 定义的一个方法    public void get_stu() &#123;        int a &#x3D; 18;        System.out.println(&quot;我现在的年龄为&quot; + a);    &#125; &#x2F;&#x2F; 主方法    public static void main(String[] args) &#123;        Student gn &#x3D; new Student();  &#x2F;&#x2F; 这里要new一个对象gn来接受值        gn.get_stu();    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
       
     </entry>
     
