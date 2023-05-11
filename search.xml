@@ -3,15 +3,13 @@
   <entry>
     <title>排序算法</title>
     <url>/2023/05/12/sort/</url>
-    <content><![CDATA[<p><img src="https://img-blog.csdnimg.cn/f2becfb90bb34429a1263661164cb2bc.gif#pic_center" alt="Untitled"></p>
-<h2 id="1-快速排序-Quick-sort"><a href="#1-快速排序-Quick-sort" class="headerlink" title="1.快速排序(Quick sort)"></a>1.快速排序(Quick sort)</h2><blockquote>
+    <content><![CDATA[<h2 id="1-快速排序-Quick-sort"><a href="#1-快速排序-Quick-sort" class="headerlink" title="1.快速排序(Quick sort)"></a>1.快速排序(Quick sort)</h2><blockquote>
 <p>💡 时间复杂度：$N*log N$</p>
 </blockquote>
 <h3 id="a-快速排序算法实现方式"><a href="#a-快速排序算法实现方式" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h3><blockquote>
 <p>快速排序的核心思想是分治法，分而治之。它的实现方式是每次从序列中选出一个基准值，其他数依次和基准值做比较，比基准值大的放右边，比基准值小的放左边，然后再对左边和右边的两组数分别选出一个基准值，进行同样的比较移动，重复步骤，直到最后都变成单个元素，整个数组就成了有序的序列。</p>
 </blockquote>
-<p><img src="/./sort/1.gif" alt="快速排序算法图解"></p>
-<img src="/2023/05/12/sort/1.png" class title="This is an test image">
+<img src="/2023/05/12/sort/1.gif" class title="This is an quick_sort image">
 
 
 <h3 id="b-算法描述"><a href="#b-算法描述" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h3><p>&#x3D;&#x3D;快速排序是使用分治的方法将一个串分为两个子串，然后递归的方法继续划分，具体算法描述如下：&#x3D;&#x3D;</p>
@@ -52,7 +50,7 @@
 <h3 id="a-快速排序算法实现方式-1"><a href="#a-快速排序算法实现方式-1" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h3><blockquote>
 <p>归并排序(Merge sort)是建立在归并操作上的一种有效的排序算法，归并排序对序列的元素进行逐层折半分组，然后从最小分组开始比较排序，合并成一个大的分组，逐层进行，最终所有的元素都是有序的</p>
 </blockquote>
-<img src="/2023/05/12/sort/2.gif" class title="This is an test image">
+<img src="/2023/05/12/sort/2.gif" class title="This is an merge_sort image">
 
 
 
