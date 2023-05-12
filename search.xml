@@ -171,7 +171,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>java编码规范</title>
     <url>/2023/05/12/java%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h1 id="Java编码规范"><a href="#Java编码规范" class="headerlink" title="Java编码规范"></a>Java编码规范</h1><blockquote>
 <p>💡 俗话说： “没有规矩不成方圆”。 编程工作往往都是一个团队协同进行， 因而一致的编码规范非常有必要， 这样写成的代码便于团队中的其他人员阅读， 也便于编写者自己以后阅读。</p>
@@ -287,5 +287,22 @@
 <li>XXX： 说明此处代码虽然实现了功能， 但是实现的方法有待商榷， 希望将来能改进。</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础语法</title>
+    <url>/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java语法</tag>
+      </tags>
   </entry>
 </search>
