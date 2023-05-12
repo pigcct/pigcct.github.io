@@ -449,19 +449,18 @@
             <div id="articleContent">
                 <h1 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h1><h2 id="1-标识符，关键字和保留字"><a href="#1-标识符，关键字和保留字" class="headerlink" title="1.标识符，关键字和保留字"></a>1.标识符，关键字和保留字</h2><h3 id="a-标识符"><a href="#a-标识符" class="headerlink" title="(a)标识符"></a>(a)标识符</h3><p>标识符就是变量、常量、方法、枚举、类、接口等由程序员指定的名字。构成标识符的字母均有一定的规范，Java语言中标识符的命名规则如下：</p>
 <ul>
-<li><p>区分大小写：Myname与myname是两个不同的标识符。</p>
-</li>
-<li><p>首字符，可以是下划线（_）或美元符或字母，但不能是数字。</p>
-</li>
-<li><p>除首字符外其他字符，可以是下划线（_）、美元符、字母和数字。</p>
-</li>
-<li><p>关键字不能作为标识符。</p>
-</li>
+<li>区分大小写：Myname与myname是两个不同的标识符。</li>
+<li>首字符，可以是下划线（_）或美元符或字母，但不能是数字。</li>
+<li>除首字符外其他字符，可以是下划线（_）、美元符、字母和数字。</li>
+<li>关键字不能作为标识符。</li>
+<li></li>
 </ul>
 <h3 id="b-java关键字"><a href="#b-java关键字" class="headerlink" title="(b)java关键字"></a>(b)java关键字</h3><blockquote>
 <p>Java中的关键字全部是小写字母</p>
 </blockquote>
 <img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/1.jpg" class>
+
+
 
 <h3 id="c-保留字"><a href="#c-保留字" class="headerlink" title="(c)保留字"></a>(c)保留字</h3><p>Java中有一些字符序列既不能当作标识符使用，也不是关键字，也不能在程序中使用，这些字符序列称为保留字。Java语言中的保留字只有两个goto和const：</p>
 <ul>
@@ -524,12 +523,18 @@
 <li>整数类型： byte、 short、 int和long</li>
 <li>浮点类型： float和double</li>
 <li>字符类型： char</li>
-<li>布尔类型： boolean<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/2.png" class title="数据类型之间的转换关系"></li>
+<li>布尔类型： boolean</li>
 </ul>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/2.png" class title="数据类型之间的转换关系">
+
+
+
 <h4 id="a-整形类型"><a href="#a-整形类型" class="headerlink" title="(a)整形类型"></a>(a)整形类型</h4><blockquote>
 <p>💡如图可见Java中整数类型包括： byte、 short、 int和long ， 它们之间的区别仅仅是宽度和范围的不同。 Java中整数都是有符号， 与C不同没有无符号的整数类型。</p>
 </blockquote>
 <img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/3.png" class>
+
+
 
 <blockquote>
 <p>💡 long类型需要在数值后面加L, double类型加D, float类型加F</p>
@@ -571,11 +576,10 @@
 <td>double</td>
 <td align="center">8字节（64位）</td>
 </tr>
-<tr>
-<td><em><strong>Java语言的浮点类型默认是double类型， 例如0.0表示double类型常量， 而不是float类型。 如果想要表示float类型， 则需要在数值后面加f或F。</strong></em></td>
-<td align="center"></td>
-</tr>
 </tbody></table>
+<ul>
+<li>Java语言浮点类型默认是double类型， 例如0.0表示double类型常量， 而不是float类型。 如果想要表示float类型， 则需要在数值后面加f或F</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 		<span class="token comment">// 声明浮点数</span>
