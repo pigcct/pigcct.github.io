@@ -170,4 +170,122 @@
         <tag>二分</tag>
       </tags>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2023/05/12/java%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="Java编码规范"><a href="#Java编码规范" class="headerlink" title="Java编码规范"></a>Java编码规范</h1><blockquote>
+<p>💡 俗话说： “没有规矩不成方圆”。 编程工作往往都是一个团队协同进行， 因而一致的编码规范非常有必要， 这样写成的代码便于团队中的其他人员阅读， 也便于编写者自己以后阅读。</p>
+</blockquote>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><ol>
+<li>主要的命名方法有一下两种</li>
+</ol>
+<ul>
+<li>匈牙利命名， 一般只是命名变量， 原则是： 变量名 &#x3D; 类型前缀 + 描述， 如bFoo表示布尔类型变量， pFoo表示指针类型变量。 匈牙利命名还是有一定争议的， 在Java编码规范中基本不被采用。</li>
+<li>驼峰命名（Camel-Case） ， 又称“骆驼命名法”， 是指混合使用大小写字母来命名。 驼峰命名又分为小驼峰法和大驼峰法。 小驼峰法就是第一个单词是全部小写， 后面的单词首字母大写， 如myRoomCount； 大驼峰法是第一个单词的首字母也大写， 如ClassRoom。</li>
+</ul>
+<blockquote>
+<p>💡 除了包和常量外， Java编码规范命名方法采用驼峰法， 下面分类说明一下。</p>
+</blockquote>
+<ul>
+<li>包名： 包名是全小写字母， 中间可以由点分隔开。 作为命名空间， 包名应该具有唯一性， 推荐采用公司或组织域名的倒置， 如com.apple.quicktime.v2。 但Java核心库包名不采用域名的倒置命名， 如java.awt.event。</li>
+<li>类和接口名： 采用大驼峰法， 如SplitViewController。</li>
+<li>文件名： 采用大驼峰法， 如BlockOperation.java。</li>
+<li>变量： 采用小驼峰法， 如studentNumber。</li>
+<li>常量名： 全大写， 如果是由多个单词构成， 可以用下划线隔开， 如YEAR和WEEK_OF_MONTH。</li>
+<li>方法名： 采用小驼峰法， 如balanceAccount、 isButtonPressed等。</li>
+</ul>
+<h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
+<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span> 
+
+<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h2><blockquote>
+<p>💡 Java中注释的语法有三种： 单行注释（&#x2F;&#x2F;） 、 多行注释（&#x2F;<em>…</em>&#x2F;） 和文档注释（&#x2F;**…*&#x2F;） </p>
+</blockquote>
+<blockquote>
+<p>💡 代码注释一般是采用单行注释（&#x2F;&#x2F;） 和多行注释（&#x2F;<em>…</em>&#x2F;）</p>
+</blockquote>
+<p><strong>文件注释</strong></p>
+<p>文件注释就是在每一个文件开头添加注释。文件注释通常包括如下信息:版权信息、文件名、所在模块、作者信息、历史版本信息、文件内容和作用等。</p>
+<p>下面看一个文件注释的示例:</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">/*
+*许可信息查看LICENSE.txt文件
+*描述:
+*实现日期基本功能
+*历史版本:
+*2015-7-22:创建文档
+*2015-8-20:添加socket库
+*2015-8-22:添加math库
+*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上述注释只是提供了版权信息、文件内容和历史版本信息等，文件注释要根据本身的实际情况包括内容。</p>
+<h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><blockquote>
+<p>💡 文档注释就是指这种注释内容能够生成API帮助文档， JDK中javadoc命令能够提取这些注释信息并生成HTML文件。 文档注释主要对类（或接口） 、 实例变量、 静态变量、 实例方法和静态方法等进行注释。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+* 自定义的日期类， 具有日期基本功能， 继承java.util.Date
+* &lt;p>实现日期对象和字符串之间的转换&lt;/p>
+* @author 关东升
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+* 容量
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token comment">/**
+* 将字符串转换为Date日期对象
+* @param s 要转换的字符串
+* @return Date日期对象*/</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
+<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span> <span class="token operator">/</span>
+<span class="token operator">*</span><span class="token operator">*</span>
+<span class="token operator">*</span> 将日期转换为yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
+<span class="token operator">*</span> <span class="token annotation punctuation">@return</span> yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
+<span class="token operator">*</span><span class="token operator">/</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文档注释标签"><a href="#文档注释标签" class="headerlink" title="文档注释标签"></a>文档注释标签</h3><blockquote>
+<p>💡 如果你想生成API帮助文档， 可以使用javadoc指令， 如图5-1所示， 在命令行中输入javadoc -d apidocData.java指令， -d参数指明要生成文档的目录， apidoc是当前目录下面的apidoc目录， 如果不存在javadoc会创建一个apidoc目录； Data.java是当前目录下的Java源文件。</p>
+</blockquote>
+<h3 id="地标注释"><a href="#地标注释" class="headerlink" title="地标注释"></a>地标注释</h3><blockquote>
+<p>💡 Eclipse等IDE工具都为Java源代码提供了一些特殊的注释， 就是在代码中加一些标识， 便于IDE工具快速定位代码， 称为“地标注释”。 这种注释虽然不是Java官方所提供的， 但是主流语言和主流的IDE工具也都支持“地标注释”。</p>
+</blockquote>
+<h3 id="Eclipse工具支持如下三种地标注释："><a href="#Eclipse工具支持如下三种地标注释：" class="headerlink" title="Eclipse工具支持如下三种地标注释："></a>Eclipse工具支持如下三种地标注释：</h3><ul>
+<li>TODO： 说明此处有待处理的任务， 或代码没有编写完成。</li>
+<li>FIXME： 说明此处代码是错误的， 需要修正。</li>
+<li>XXX： 说明此处代码虽然实现了功能， 但是实现的方法有待商榷， 希望将来能改进。</li>
+</ul>
+]]></content>
+  </entry>
 </search>
