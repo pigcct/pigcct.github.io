@@ -417,14 +417,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    14 分
                 </div>
                 
 
@@ -518,7 +518,9 @@
 <h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h2><blockquote>
 <p>💡 Java语言的数据类型分为： 基本类型和引用类型。在声明变量或常量时会用到数据类型， 在前面已经用到一些数据类型， 例如int、 double和String等。</p>
 </blockquote>
-<h3 id="3-1-基本数据类型"><a href="#3-1-基本数据类型" class="headerlink" title="3.1 基本数据类型"></a>3.1 基本数据类型</h3><p><em><strong>基本类型表示简单的数据， 基本类型分为4大类， 共8种数据类型。</strong></em></p>
+<h3 id="3-1-基本数据类型"><a href="#3-1-基本数据类型" class="headerlink" title="3.1 基本数据类型"></a>3.1 基本数据类型</h3><img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/10.png" class>
+
+<p><em><strong>基本类型表示简单的数据， 基本类型分为4大类， 共8种数据类型。</strong></em></p>
 <ul>
 <li>整数类型： byte、 short、 int和long</li>
 <li>浮点类型： float和double</li>
@@ -691,15 +693,130 @@ str2 <span class="token operator">=</span> <span class="token string">"World"</s
 <p>当程序执行完第③行时，字符串“Hello”对象被创建，保持到内存地址0x12345678中，str1是引用类型变量，它保存的是内存地址Ox12345678，这个地址指向”Hello”对象。</p>
 <p>当程序执行完第④行时，str1变量内容（Ox12345678）被赋值给str2是引用类型变量，这样一来str1和str2保存了相同的内存地址，都指向”Hello”对象。见图6-4所示，此时str1和str2本质上是引用一个对象，通过任何一个引用都可以修改对象本身。</p>
 <p>当程序执行完第⑤行时，字符串“World”对象被创建，保持到内存地址0x23455678中，地址保存到str2变量中，此时，str1和str2不再指向相同内存地址，见图6-5所示。</p>
-<h2 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h2><h3 id="4-1-算数运算符"><a href="#4-1-算数运算符" class="headerlink" title="4.1 算数运算符"></a>4.1 算数运算符</h3><h3 id="4-2-关系运算符"><a href="#4-2-关系运算符" class="headerlink" title="4.2 关系运算符"></a>4.2 关系运算符</h3><h3 id="4-3-逻辑运算符"><a href="#4-3-逻辑运算符" class="headerlink" title="4.3 逻辑运算符"></a>4.3 逻辑运算符</h3><h3 id="4-4-三元运算符"><a href="#4-4-三元运算符" class="headerlink" title="4.4 三元运算符"></a>4.4 三元运算符</h3><h3 id="4-5-运算符优先级"><a href="#4-5-运算符优先级" class="headerlink" title="4.5 运算符优先级"></a>4.5 运算符优先级</h3><blockquote>
+<h2 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h2><h3 id="4-1-算数运算符"><a href="#4-1-算数运算符" class="headerlink" title="4.1 算数运算符"></a>4.1 算数运算符</h3><blockquote>
+<p>Java中的算术运算符主要用来组织数值类型数据的算术运算， 按照参加运算的操作数的不同可以分为一元运算符和二元运算符。</p>
+</blockquote>
+<p><strong>一元运算符</strong></p>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/11.png" class>
+
+
+
+<p><em><strong>i ++ 和 ++ i的区别：</strong></em></p>
+<ul>
+<li>i ++ 是先赋值再自加</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">//  i = 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>++ i 是先自加再赋值</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token operator">++</span> i<span class="token punctuation">)</span> <span class="token comment">//  i = 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>二级运算符</strong></p>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/12.png" class>
+
+
+
+
+
+<h3 id="4-2-关系运算符"><a href="#4-2-关系运算符" class="headerlink" title="4.2 关系运算符"></a>4.2 关系运算符</h3><blockquote>
+<p>关系运算是比较两个表达式大小关系的运算， 它的结果是布尔类型数据， 即true或false。 关系运算符有6种： &#x3D;&#x3D;、 !&#x3D;、 &gt;、 &lt;、 &gt;&#x3D;和&lt;&#x3D;</p>
+</blockquote>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/13.png" class>
+
+
+
+
+
+
+
+<h3 id="4-3-逻辑运算符"><a href="#4-3-逻辑运算符" class="headerlink" title="4.3 逻辑运算符"></a>4.3 逻辑运算符</h3><blockquote>
+<p>💡 逻辑运算符是对布尔型变量进行运算， 其结果也是布尔型</p>
+</blockquote>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/14.png" class>
+
+<h3 id="4-4-位运算符"><a href="#4-4-位运算符" class="headerlink" title="4.4 位运算符"></a>4.4 位运算符</h3><blockquote>
+<p>位运算是以二进位（bit） 为单位进行运算的， 操作数和结果都是整型数据。 位运算符有如下几个运算符： &amp;、 |、 ^、 ~、 &gt;&gt;、 &lt;&lt;和&gt;&gt;&gt;， 以及相应的赋值运算符</p>
+</blockquote>
+<img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/15.png" class>
+
+
+
+<p><em><strong>注意 无符号右移&gt;&gt;&gt;运算符仅被允许用在int和long整数类型, 如果用于short或byte数据, 则数据在位移之前， 转换为int类型后再进行位移计算。</strong></em></p>
+<p><strong>代码演示：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">byte</span> a <span class="token operator">=</span> <span class="token number">0B00110010</span><span class="token punctuation">;</span> <span class="token comment">//十进制50 ①</span>
+<span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token number">0B01011110</span><span class="token punctuation">;</span> <span class="token comment">//十进制94 ②</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a | b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">|</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01111110 ③</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &amp; b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&amp;</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00010010 ④</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a ^ b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">^</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01101100 ⑤</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"~b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">~</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B10100001 ⑥</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00001100 ⑦</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >> 1 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00011001 ⑧</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >>> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00001100 ⑨</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &lt;&lt; 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B11001000 ⑩</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &lt;&lt; 1 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01100100 ⑪</span>
+<span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">;</span> ⑫
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"c >>> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>c <span class="token operator">>>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ⑬
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"c >> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>c <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ⑭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>输出结果：</strong></p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">a | b = 126
+a &amp; b = 18
+a ^ b = 108
+~b = -95
+a >> 2 = 12
+a >> 1 = 25
+a >>> 2 = 12
+a &lt;&lt; 2 = 200
+a &lt;&lt; 1 = 100
+c >>> 2 = 1073741821
+c >> 2 = -3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>上述代码第①行和第②行分别定义了byte变量a和b， 为了便于查看代码采用二进制整数表示。</li>
+<li>代码第③行中表达式(a | b)进行位或运算， 结果是二进制的0B01111110。 a和b按位进行或计算， 只要有</li>
+<li>一个为1， 这一位就为1， 否则为0。代码第④行(a &amp; b)是进行位与运算， 结果是二进制的0B00010010。 a和b按位进行与计算， 只有两位全</li>
+<li>部为1， 这一位才为1， 否则为0。代码第⑤行(a ^ b)是进行位异或运算， 结果是二进制的0B01101100。 a和b按位进行异或计算， 只有两</li>
+<li>位相反时这一位才为1， 否则为0。代码第⑦行(a &gt;&gt; 2)是进行有符号右位移2位运算， 结果是二进制的0B00001100。 a的低位被移除掉， 由</li>
+<li>于是正数符号位是0， 高位空位用0补。 类似代码第⑧行(a &gt;&gt; 1)是进行右位移1位运算， 结果是二进制的0B00011001。</li>
+<li>代码第⑨行(a &gt;&gt;&gt; 2)是进行无符号右位移2位运算， 与代码第⑦行不同的是， 无论是否有数符号位， 高位空位用0补， 所以在正数情况下&gt;&gt;和&gt;&gt;&gt;运算结果是一样的。</li>
+<li>代码第⑩行(a &lt;&lt; 2)是进行左位移2位运算， 结果是二进制的0B11001000。 a的高位被移除掉， 低位用0补位。 类似代码第⑪行(a &lt;&lt; 1)是进行左位移1位运算， 结果是二进制的0B01100100。</li>
+<li>代码第⑫声明int类型负数。 右位移（&gt;&gt;&gt;和&gt;&gt;） 在负数情况下差别比较大。 代码第⑬行的(c &gt;&gt;&gt; 2)表达式输出结果是1073741821， 这是一个如此大的正数， 从一个负数变成一个正数， 这说明无符号右位移对于负数计算会导致精度的丢失。 而有符号右位移对于负数的计算是正确的， 见代码第⑭行。</li>
+</ul>
+<blockquote>
+<p>提示 有符号右移n位， 相当于操作数除以2n， 例如代码第⑦行(a &gt;&gt; 2)表达式相当于(a &#x2F; 22)， a &#x3D;50所以结果等于12， 类似的还有代码第⑧行和第⑭行。 另外， 左位移n位， 相当于操作数乘以2n，例如代码第⑩行(a &lt;&lt; 2)表达式相当于(a * 22)， a &#x3D; 50所以结果等于200， 类似的还有代码第⑪行。</p>
+</blockquote>
+<h3 id="4-5-三元运算符"><a href="#4-5-三元运算符" class="headerlink" title="4.5 三元运算符"></a>4.5 三元运算符</h3><blockquote>
+<p>三元运算符（ a ?  b : c ) –&gt; 表示 a表达式是否成立，成立的话执行b语句，否则执行c语句</p>
+</blockquote>
+<p><strong>示例代码：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Date</span></span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">int</span> score <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> result <span class="token operator">=</span> score <span class="token operator">></span> <span class="token number">60</span> <span class="token operator">?</span> <span class="token string">"及格"</span> <span class="token operator">:</span> <span class="token string">"不及格"</span><span class="token punctuation">;</span> <span class="token comment">// 三元运算符（? : ）</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new运算符可以创建Date对象</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//通过.运算符调用方法</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="4-6-运算符优先级"><a href="#4-6-运算符优先级" class="headerlink" title="4.6 运算符优先级"></a>4.6 运算符优先级</h3><blockquote>
 <p>运算符优先级</p>
 </blockquote>
 <img src="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/3.jpg" class>
 
-
-
-
-
+<blockquote>
+<p>总结 运算符优先级大体顺序， 从高到低是： 算术运算符→位运算符→关系运算符→逻辑运算符→赋值运算符。</p>
+</blockquote>
 <h2 id="5-控制语句"><a href="#5-控制语句" class="headerlink" title="5. 控制语句"></a>5. 控制语句</h2><h3 id="5-1-while循环"><a href="#5-1-while循环" class="headerlink" title="5.1 while循环"></a>5.1 while循环</h3><h3 id="5-2-for循环"><a href="#5-2-for循环" class="headerlink" title="5.2 for循环"></a>5.2 for循环</h3><h3 id="5-3-循环的嵌套"><a href="#5-3-循环的嵌套" class="headerlink" title="5.3 循环的嵌套"></a>5.3 循环的嵌套</h3><h3 id="5-4-跳出循环"><a href="#5-4-跳出循环" class="headerlink" title="5.4 跳出循环"></a>5.4 跳出循环</h3><h2 id="6-数组"><a href="#6-数组" class="headerlink" title="6.数组"></a>6.数组</h2>
                 
             </div>
@@ -1343,7 +1460,7 @@ str2 <span class="token operator">=</span> <span class="token string">"World"</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.2k</span>
+                        class="white-color">6.4k</span>
             
             
             
