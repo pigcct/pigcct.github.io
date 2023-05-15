@@ -5,10 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="最短路, Spicy-pig">
-    <meta name="description" content="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)1. Dijsttra1.1 素版Dijkstra算法（稠密图——邻接矩阵）
+    <meta name="description" content="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)
+
+1. Dijsttra1.1 素版Dijkstra算法（稠密图——邻接矩阵）
 💡时间复杂度：O(N^2)
 
-1.1.1 朴素版Dijkstra算法思想：迪杰斯">
+1.1.1 朴素版Dijkstra算法思想：迪">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -448,13 +450,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="最短路-Dijkstra-Bellman-ford-SPFA-Floyd"><a href="#最短路-Dijkstra-Bellman-ford-SPFA-Floyd" class="headerlink" title="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)"></a>最短路(Dijkstra, Bellman-ford, SPFA, Floyd)</h1><h2 id="1-Dijsttra"><a href="#1-Dijsttra" class="headerlink" title="1. Dijsttra"></a>1. Dijsttra</h2><h3 id="1-1-素版Dijkstra算法（稠密图——邻接矩阵）"><a href="#1-1-素版Dijkstra算法（稠密图——邻接矩阵）" class="headerlink" title="1.1 素版Dijkstra算法（稠密图——邻接矩阵）"></a>1.1 素版Dijkstra算法（稠密图——邻接矩阵）</h3><blockquote>
+                <h1 id="最短路-Dijkstra-Bellman-ford-SPFA-Floyd"><a href="#最短路-Dijkstra-Bellman-ford-SPFA-Floyd" class="headerlink" title="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)"></a>最短路(Dijkstra, Bellman-ford, SPFA, Floyd)</h1><img src="/2023/05/15/Shortest-path/1.png" class>
+
+<h2 id="1-Dijsttra"><a href="#1-Dijsttra" class="headerlink" title="1. Dijsttra"></a>1. Dijsttra</h2><h3 id="1-1-素版Dijkstra算法（稠密图——邻接矩阵）"><a href="#1-1-素版Dijkstra算法（稠密图——邻接矩阵）" class="headerlink" title="1.1 素版Dijkstra算法（稠密图——邻接矩阵）"></a>1.1 素版Dijkstra算法（稠密图——邻接矩阵）</h3><blockquote>
 <p>💡时间复杂度：O(N^2)</p>
 </blockquote>
 <h4 id="1-1-1-朴素版Dijkstra算法思想："><a href="#1-1-1-朴素版Dijkstra算法思想：" class="headerlink" title="1.1.1 朴素版Dijkstra算法思想："></a>1.1.1 朴素版Dijkstra算法思想：</h4><p>迪杰斯特拉（dijkstra）算法是一种求单源最短路的算法，假若从一个点a出发，终点是s，dijkstra算法可以求出从a到达s的最短路径（所有边权都是正数）。</p>
+<img src="/2023/05/15/Shortest-path/1.gif" class>
 
-
-<p><img src="https://img-blog.csdnimg.cn/20210322130709747.gif#pic_center" alt="https://img-blog.csdnimg.cn/20210322130709747.gif#pic_center"></p>
 <h4 id="1-1-2-朴素版Dijkstra算法实现方式："><a href="#1-1-2-朴素版Dijkstra算法实现方式：" class="headerlink" title="1.1.2 朴素版Dijkstra算法实现方式："></a>1.1.2 朴素版Dijkstra算法实现方式：</h4><ul>
 <li>初始化距离<strong>dist[1] &#x3D; 0 , dist[i] &#x3D; 无穷</strong> （表示起点到i点的距离）</li>
 <li>循环n次<ul>
@@ -587,7 +590,7 @@
 
 
 
-<h1 id="2-Bellman-Ford"><a href="#2-Bellman-Ford" class="headerlink" title="2. Bellman-Ford"></a>2. Bellman-Ford</h1><blockquote>
+<h2 id="2-Bellman-Ford"><a href="#2-Bellman-Ford" class="headerlink" title="2. Bellman-Ford"></a>2. Bellman-Ford</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N*M)$</p>
 </blockquote>
 <h3 id="2-1-Bellman-Ford算法思想："><a href="#2-1-Bellman-Ford算法思想：" class="headerlink" title="2.1 Bellman-Ford算法思想："></a>2.1 Bellman-Ford算法思想：</h3><p>Bellman_Ford算法的原理是对n条边进行n - 1次松弛操作，得到所有可能的最短路径。由于是有<strong>步数限制和负数边</strong>存在，我们不能使用Djkstra算法，但是Bellman_Ford算法的实现和Djkstra算法在思路上还是差不多。Ballman_Ford算法可以解决存在负权边的问题，对于一些有步数限制的问题只能使用Bellman_ford算法，但是其他的负权边问题用SPFA解决会更佳。</p>
@@ -638,7 +641,7 @@
 
 
 
-<h1 id="3-SPFA"><a href="#3-SPFA" class="headerlink" title="3. SPFA"></a>3. SPFA</h1><blockquote>
+<h2 id="3-SPFA"><a href="#3-SPFA" class="headerlink" title="3. SPFA"></a>3. SPFA</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N)或(N * M)$</p>
 </blockquote>
 <h3 id="3-1-SPFA算法思想："><a href="#3-1-SPFA算法思想：" class="headerlink" title="3.1 SPFA算法思想："></a>3.1 SPFA算法思想：</h3><p><em><strong>代码跟堆优化版Dijkstra相似，只用更改一下spfa函数即可</strong></em></p>
@@ -750,7 +753,7 @@
     <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h1 id="4-Floyd"><a href="#4-Floyd" class="headerlink" title="4. Floyd"></a>4. Floyd</h1><blockquote>
+<h2 id="4-Floyd"><a href="#4-Floyd" class="headerlink" title="4. Floyd"></a>4. Floyd</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N^3)$</p>
 </blockquote>
 <h3 id="4-1-Floyd算法思想："><a href="#4-1-Floyd算法思想：" class="headerlink" title="4.1 Floyd算法思想："></a>4.1 Floyd算法思想：</h3><p>Floyd算法又称为插点法，是一种利用动态规划的思想寻找给定的加权图中多源点之间最短路径的算法，算法的主要思想基于动态规划（Dp)。</p>
