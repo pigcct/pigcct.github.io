@@ -4,15 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java编码规范, Spicy-pig">
-    <meta name="description" content="Java编码规范
-💡 俗话说： “没有规矩不成方圆”。 编程工作往往都是一个团队协同进行， 因而一致的编码规范非常有必要， 这样写成的代码便于团队中的其他人员阅读， 也便于编写者自己以后阅读。
+    <meta name="keywords" content="Tree_graph_traversal, Spicy-pig">
+    <meta name="description" content="树与图的遍历1. 树与图的存储**树与图的存储**
+树是一种特殊的图，与图的存储方式相同。
+对于无向图中的边ab，存储两条有向边a-&gt;b, b-&gt;a。
+因此我们可以只考虑有向图的存储。
 
-命名规范
-主要的命名方法有一下两种
+(1) 邻接矩阵：g[a][b] 存储边a-&gt;b
 
-
-匈">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java编码规范 | Spicy-pig</title>
+    <title>Tree_graph_traversal | Spicy-pig</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -359,7 +359,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java编码规范</h1>
+                    <h1 class="description center-align post-title">Tree_graph_traversal</h1>
                 </div>
             </div>
         </div>
@@ -383,8 +383,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">规范</span>
+                            <a href="/tags/%E6%A0%91/">
+                                <span class="chip bg-color">树</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%BE/">
+                                <span class="chip bg-color">图</span>
                             </a>
                         
                     </div>
@@ -395,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -408,28 +412,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2023-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2023-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    704
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -452,119 +456,121 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java编码规范"><a href="#Java编码规范" class="headerlink" title="Java编码规范"></a>Java编码规范</h1><blockquote>
-<p>💡 俗话说： “没有规矩不成方圆”。 编程工作往往都是一个团队协同进行， 因而一致的编码规范非常有必要， 这样写成的代码便于团队中的其他人员阅读， 也便于编写者自己以后阅读。</p>
-</blockquote>
-<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><ol>
-<li>主要的命名方法有一下两种</li>
-</ol>
-<ul>
-<li>匈牙利命名， 一般只是命名变量， 原则是： 变量名 &#x3D; 类型前缀 + 描述， 如bFoo表示布尔类型变量， pFoo表示指针类型变量。 匈牙利命名还是有一定争议的， 在Java编码规范中基本不被采用。</li>
-<li>驼峰命名（Camel-Case） ， 又称“骆驼命名法”， 是指混合使用大小写字母来命名。 驼峰命名又分为小驼峰法和大驼峰法。 小驼峰法就是第一个单词是全部小写， 后面的单词首字母大写， 如myRoomCount； 大驼峰法是第一个单词的首字母也大写， 如ClassRoom。</li>
-</ul>
-<blockquote>
-<p>💡 除了包和常量外， Java编码规范命名方法采用驼峰法， 下面分类说明一下。</p>
-</blockquote>
-<ul>
-<li>包名： 包名是全小写字母， 中间可以由点分隔开。 作为命名空间， 包名应该具有唯一性， 推荐采用公司或组织域名的倒置， 如com.apple.quicktime.v2。 但Java核心库包名不采用域名的倒置命名， 如java.awt.event。</li>
-<li>类和接口名： 采用大驼峰法， 如SplitViewController。</li>
-<li>文件名： 采用大驼峰法， 如BlockOperation.java。</li>
-<li>变量： 采用小驼峰法， 如studentNumber。</li>
-<li>常量名： 全大写， 如果是由多个单词构成， 可以用下划线隔开， 如YEAR和WEEK_OF_MONTH。</li>
-<li>方法名： 采用小驼峰法， 如balanceAccount、 isButtonPressed等。</li>
-</ul>
-<h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
+                <h1 id="树与图的遍历"><a href="#树与图的遍历" class="headerlink" title="树与图的遍历"></a>树与图的遍历</h1><h3 id="1-树与图的存储"><a href="#1-树与图的存储" class="headerlink" title="1. 树与图的存储"></a>1. 树与图的存储</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token operator">*</span><span class="token operator">*</span>树与图的存储<span class="token operator">*</span><span class="token operator">*</span>
+树是一种特殊的图，与图的存储方式相同。
+对于无向图中的边ab，存储两条有向边a<span class="token operator">-></span>b<span class="token punctuation">,</span> b<span class="token operator">-></span>a。
+因此我们可以只考虑有向图的存储。
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 邻接矩阵：g<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">]</span> 存储边a<span class="token operator">-></span><span class="token function">b</span>
 
-<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 邻接表： h<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-></span> a <span class="token operator">-></span> b <span class="token operator">-></span> c <span class="token operator">-></span> d <span class="token operator">-></span> null
+					  h<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-></span> a <span class="token operator">-></span> b <span class="token operator">-></span> null
+						h<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-></span> a <span class="token operator">-></span> null
+						h<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">-></span> null
 
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
-<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span> 
+<span class="token comment">// 对于每个点k，开一个单链表，存储k所有可以走到的点。h[k]存储这个单链表的头结点</span>
+<span class="token keyword">int</span> h<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> ne<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> idx<span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">// 添加一条边a->b</span>
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    e<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">,</span> ne<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> h<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">,</span> h<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">=</span> idx <span class="token operator">++</span> <span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h2><blockquote>
-<p>💡 Java中注释的语法有三种： 单行注释（&#x2F;&#x2F;） 、 多行注释（&#x2F;<em>…</em>&#x2F;） 和文档注释（&#x2F;**…*&#x2F;） </p>
-</blockquote>
-<blockquote>
-<p>💡 代码注释一般是采用单行注释（&#x2F;&#x2F;） 和多行注释（&#x2F;<em>…</em>&#x2F;）</p>
-</blockquote>
-<p><strong>文件注释</strong></p>
-<p>文件注释就是在每一个文件开头添加注释。文件注释通常包括如下信息:版权信息、文件名、所在模块、作者信息、历史版本信息、文件内容和作用等。</p>
-<p>下面看一个文件注释的示例:</p>
-<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">/*
-*许可信息查看LICENSE.txt文件
-*描述:
-*实现日期基本功能
-*历史版本:
-*2015-7-22:创建文档
-*2015-8-20:添加socket库
-*2015-8-22:添加math库
-*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 初始化</span>
+idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token function">memset</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+树与图的遍历
+时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>上述注释只是提供了版权信息、文件内容和历史版本信息等，文件注释要根据本身的实际情况包括内容。</p>
-<h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><blockquote>
-<p>💡 文档注释就是指这种注释内容能够生成API帮助文档， JDK中javadoc命令能够提取这些注释信息并生成HTML文件。 文档注释主要对类（或接口） 、 实例变量、 静态变量、 实例方法和静态方法等进行注释。</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
-<span class="token comment">/**
-* 自定义的日期类， 具有日期基本功能， 继承java.util.Date
-* &lt;p>实现日期对象和字符串之间的转换&lt;/p>
-* @author 关东升
-*/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token comment">/**
-* 容量
-*/</span>
-<span class="token keyword">public</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
-<span class="token comment">/**
-* 将字符串转换为Date日期对象
-* @param s 要转换的字符串
-* @return Date日期对象*/</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
-<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span> <span class="token operator">/</span>
-<span class="token operator">*</span><span class="token operator">*</span>
-<span class="token operator">*</span> 将日期转换为yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
-<span class="token operator">*</span> <span class="token annotation punctuation">@return</span> yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
-<span class="token operator">*</span><span class="token operator">/</span>
-<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<h2 id="2-树的深度优先遍历"><a href="#2-树的深度优先遍历" class="headerlink" title="2. 树的深度优先遍历"></a>2. 树的深度优先遍历</h2><h3 id="2-1-树的深度优先遍历的算法思想："><a href="#2-1-树的深度优先遍历的算法思想：" class="headerlink" title="2.1 树的深度优先遍历的算法思想："></a>2.1 树的深度优先遍历的算法思想：</h3><img src="/2023/05/15/Tree-graph-traversal/1.gif" class>
+
+<p>树的深度优先遍历，（既一条道走到黑），先从第一个点开始往下遍历，依次遍历以下的每一个点，直到遍历到最后的点为止。</p>
+<h3 id="2-2-代码模板："><a href="#2-2-代码模板：" class="headerlink" title="2.2 代码模板："></a>2.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 深度优先遍历 —— 模板题 AcWing <span class="token number">846.</span> 树的重心
+
+<span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    st<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// st[u] 表示点u已经被遍历过</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token function">dfs</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    st<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> s <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            res <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sum <span class="token operator">+=</span> s<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    res <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> n <span class="token operator">-</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    ans <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="文档注释标签"><a href="#文档注释标签" class="headerlink" title="文档注释标签"></a>文档注释标签</h3><blockquote>
-<p>💡 如果你想生成API帮助文档， 可以使用javadoc指令， 如图5-1所示， 在命令行中输入javadoc -d apidocData.java指令， -d参数指明要生成文档的目录， apidoc是当前目录下面的apidoc目录， 如果不存在javadoc会创建一个apidoc目录； Data.java是当前目录下的Java源文件。</p>
-</blockquote>
-<h3 id="地标注释"><a href="#地标注释" class="headerlink" title="地标注释"></a>地标注释</h3><blockquote>
-<p>💡 Eclipse等IDE工具都为Java源代码提供了一些特殊的注释， 就是在代码中加一些标识， 便于IDE工具快速定位代码， 称为“地标注释”。 这种注释虽然不是Java官方所提供的， 但是主流语言和主流的IDE工具也都支持“地标注释”。</p>
-</blockquote>
-<h3 id="Eclipse工具支持如下三种地标注释："><a href="#Eclipse工具支持如下三种地标注释：" class="headerlink" title="Eclipse工具支持如下三种地标注释："></a>Eclipse工具支持如下三种地标注释：</h3><ul>
-<li>TODO： 说明此处有待处理的任务， 或代码没有编写完成。</li>
-<li>FIXME： 说明此处代码是错误的， 需要修正。</li>
-<li>XXX： 说明此处代码虽然实现了功能， 但是实现的方法有待商榷， 希望将来能改进。</li>
-</ul>
+<h2 id="3-树的宽度优先遍历"><a href="#3-树的宽度优先遍历" class="headerlink" title="3. 树的宽度优先遍历"></a>3. 树的宽度优先遍历</h2><h3 id="3-1-树的宽度优先遍历的算法思想："><a href="#3-1-树的宽度优先遍历的算法思想：" class="headerlink" title="3.1 树的宽度优先遍历的算法思想："></a>3.1 树的宽度优先遍历的算法思想：</h3><p>树的宽度优先遍历，既按层级从上层到下层依次遍历，比如说从第一个点开始，1号点可以拓展到它周围的所有邻点，每次只向下拓展一次，每次拓展的数都属于同一层级。</p>
+<h3 id="3-2-代码模板："><a href="#3-2-代码模板：" class="headerlink" title="3.2 代码模板："></a>3.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 宽度优先遍历 —— 模板题 AcWing <span class="token number">847.</span> 图中点的层次
+
+queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
+st<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 表示1号点已经被遍历过</span>
+q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> t <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            st<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 表示点j已经被遍历过</span>
+            q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">bfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> hh <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> tt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//q[0]为1号点，此题强制q[0]为1</span>
+    
+    <span class="token function">memset</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    d<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//表示1号点到1号点的距离为0</span>
+    
+    <span class="token keyword">while</span><span class="token punctuation">(</span>hh <span class="token operator">&lt;=</span> tt<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> t <span class="token operator">=</span> q<span class="token punctuation">[</span>hh <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//去除队头</span>
+        
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//用j记录当前的点</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>d<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment">//如果该点没有被扩展过</span>
+            <span class="token punctuation">&#123;</span>
+                d<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">return</span> d<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -591,7 +597,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://spicypig.top/2023/05/12/java%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">https://spicypig.top/2023/05/12/java%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/</a>
+                    <a href="https://spicypig.top/2023/05/15/Tree-graph-traversal/">https://spicypig.top/2023/05/15/Tree-graph-traversal/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,8 +635,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">规范</span>
+                                <a href="/tags/%E6%A0%91/">
+                                    <span class="chip bg-color">树</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%BE/">
+                                    <span class="chip bg-color">图</span>
                                 </a>
                             
                         </div>
@@ -980,13 +990,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/15/DFS/">
+                <a href="/2023/05/15/Topological-sort/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="DFS">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Topological_sort">
                         
-                        <span class="card-title">DFS</span>
+                        <span class="card-title">Topological_sort</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1003,8 +1013,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E6%8E%92%E5%BA%8F/" class="post-category">
+                                    排序
                                 </a>
                             
                             
@@ -1014,8 +1024,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DFS/">
-                        <span class="chip bg-color">DFS</span>
+                    <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">拓扑排序</span>
                     </a>
                     
                 </div>
@@ -1029,13 +1039,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                <a href="/2023/05/15/BFS/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java基础语法">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="BFS">
                         
-                        <span class="card-title">java基础语法</span>
+                        <span class="card-title">BFS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1046,14 +1056,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -1063,8 +1073,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">语法</span>
+                    <a href="/tags/BFS/">
+                        <span class="chip bg-color">BFS</span>
                     </a>
                     
                 </div>
@@ -1208,7 +1218,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7k</span>
+                        class="white-color">8.9k</span>
             
             
             
