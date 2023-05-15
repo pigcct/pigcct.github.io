@@ -4,12 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="二分, Spicy-pig">
-    <meta name="description" content="二分查找1.整数二分
-💡 时间复杂度：$logN$
-
-(a)快速排序算法实现方式:有单调性一定可以二分，可以二分不一定有单调性
-二分查找是通过将一个有序序列划分为两个区间，通过不断的缩小区间的大小在不同的区间寻找答案的一种方式，相比与顺序">
+    <meta name="keywords" content="DFS, Spicy-pig">
+    <meta name="description" content="DFS(深度优先搜索)
+ 💡 DFS：深度优先搜索算法（Depth-First-Search）是一种用于遍历或搜索树或图的算法.沿着树的深度遍历树的节点，尽可能深的搜索树的分支。当节点v的所在边都己被探寻过，搜索将回溯到发现节点v的那条边">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>二分 | Spicy-pig</title>
+    <title>DFS | Spicy-pig</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -351,12 +348,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">二分</h1>
+                    <h1 class="description center-align post-title">DFS</h1>
                 </div>
             </div>
         </div>
@@ -380,8 +377,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                <span class="chip bg-color">二分</span>
+                            <a href="/tags/DFS/">
+                                <span class="chip bg-color">DFS</span>
                             </a>
                         
                     </div>
@@ -405,21 +402,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2023-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2023-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    677
+                    589
                 </div>
                 
 
@@ -449,78 +446,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><h2 id="1-整数二分"><a href="#1-整数二分" class="headerlink" title="1.整数二分"></a>1.整数二分</h2><blockquote>
-<p>💡 时间复杂度：$logN$</p>
+                <h1 id="DFS-深度优先搜索"><a href="#DFS-深度优先搜索" class="headerlink" title="DFS(深度优先搜索)"></a>DFS(深度优先搜索)</h1><blockquote>
+<p> 💡 DFS：深度优先搜索算法（Depth-First-Search）是一种用于<strong>遍历</strong>或<strong>搜索树</strong>或<strong>图</strong>的算法.沿着树的<strong>深度遍历</strong>树的节点，尽可能深的搜索树的分支。当节点v的所在边都己被探寻过，搜索将<strong>回溯</strong>到发现节点v的那条边的起始节点。这一过程一直进行到已发现从源节点可达的所有节点为止。如果还存在未被发现的节点，则选择其中一个作为源节点并重复以上过程，整个进程反复进行<strong>直到所有节点都被访问为止</strong>。</p>
 </blockquote>
-<h3 id="a-快速排序算法实现方式"><a href="#a-快速排序算法实现方式" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h3><p><strong>有单调性一定可以二分，可以二分不一定有单调性</strong></p>
-<p>二分查找是通过将一个有序序列划分为两个区间，通过不断的缩小区间的大小在不同的区间寻找答案的一种方式，相比与顺序查找效率高了很多，缺点是二分之前要对数据进行排序，耗时。</p>
-<p>二分查找要求：<strong>线性表是有序表</strong>，即表中<strong>结点按关键字有序，并且要用向量作为表的存储结构</strong> 。<em><strong>二分我们需要确定一个区间，使得目标在一定的区间中。</strong></em></p>
-<p><strong>二分满足的性质：</strong></p>
+<h2 id="1-DFS算法思想："><a href="#1-DFS算法思想：" class="headerlink" title="1. DFS算法思想："></a>1. DFS算法思想：</h2><blockquote>
+<p> 💡 <strong>DFS：stack（栈）</strong>   时间复杂度：$O（N）$</p>
+</blockquote>
+<p>DFS既深度优先搜索，通过从上到下每一层依次往深处搜索，（顺序为从上到下，从左到右），搜到最低处输出，然后回溯到相应的位置（回溯要恢复原来的数据），然后依稀按照之前的方式搜索。</p>
+<img src="/2023/05/15/DFS/1.gif" class>
+
+
+
+<h2 id="2-DFS算法的实现方式："><a href="#2-DFS算法的实现方式：" class="headerlink" title="2. DFS算法的实现方式："></a>2. DFS算法的实现方式：</h2><p><strong>树的深度优先搜索（对树上的每一个节点都要进行搜索一遍）</strong></p>
 <ul>
-<li>具有二段性（一段满足，另一段不满足）</li>
-<li>答案是二分的<strong>分界点</strong></li>
+<li>首先以数的头结点为第0层，即 U&#x3D; 0（往下依次增加一层）</li>
+<li>依次对从上到下，从左到右的每一条路径上的每一个节点进行搜索，直到搜到底未知</li>
+<li>若搜索到了底部的叶子节点，开始回溯，直到找到他的父节点有其他子节点的点继续往下搜索</li>
+<li>递归上面的方式，依次搜索每一个节点</li>
 </ul>
-<p><strong>整数二分分为两种情况：</strong></p>
-<img src="/2023/05/12/binary-search/1.png" class>
+<img src="/2023/05/15/DFS/2.png" class>
 
-<img src="/2023/05/12/binary-search/2.png" class>
+<h2 id="3-DFS代码模板："><a href="#3-DFS代码模板：" class="headerlink" title="3. DFS代码模板："></a>3. DFS代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>DFS—— 模板题 AcWing <span class="token number">842.</span> 排列数字
+    
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment">//n为输入的数字的个数</span>
+<span class="token keyword">int</span> path<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//path存储树的值</span>
+<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//判断当前的数是否已经被使用，false为未使用，true为已使用</span>
 
-<h3 id="b-算法描述"><a href="#b-算法描述" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h3><ul>
-<li><p>首先确定该区间的中点位置</p>
-</li>
-<li><p>将待查的X值与q[mid]比较：若相等，则查找成功并返回此位置，否则须确定新的查找区间，继续二分查找</p>
-</li>
-<li><p>① 若q[mid] &gt; X，将查找区间变为[ L ,  mid - 1 ]</p>
-<p>②若q[mid] &lt; X，将查找区间变为[ mid + 1 , R ]</p>
-</li>
-<li><p>假设目标值在 [ L ，R ]中，每次查找区间将缩小一半，当 L &#x3D; R 时，我们就找到了目标。</p>
-</li>
-</ul>
-
-
-<h3 id="c-整数二分查找代码模板："><a href="#c-整数二分查找代码模板：" class="headerlink" title="(c)整数二分查找代码模板："></a>(c)整数二分查找代码模板：</h3><p><strong>版本一：</strong><br>当我们将区间[l, r]划分为[l, mid]和[mid + 1, r]时，其更新操作是r &#x3D; mid 或 l &#x3D; mid + 1,计算mid时不需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
-
-<span class="token comment">// 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：</span>
-<span class="token keyword">int</span> <span class="token function">bsearch_1</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span> r <span class="token operator">=</span> mid<span class="token punctuation">;</span>    <span class="token comment">// check()判断mid是否满足性质</span>
-<span class="token keyword">else</span> l <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>u <span class="token operator">==</span> n<span class="token punctuation">)</span><span class="token comment">//如果当前的路已经走到了最后，输出路径上的所有值</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> cout <span class="token operator">&lt;&lt;</span> path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">//判断当前的数还未使用</span>
+        <span class="token punctuation">&#123;</span>
+            path<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment">//给当前的数赋值</span>
+            st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">//标记当前数已被使用</span>
+            <span class="token function">dfs</span><span class="token punctuation">(</span>u <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//递归下一个数</span>
+            st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment">//回溯，恢复原来的数据</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>版本二：</strong><br>当我们将区间[l, r]划分为[l, mid - 1]和[mid, r]时，其更新操作是l &#x3D; mid - 1或 l &#x3D; mid,计算mid时需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
 
-<span class="token comment">// 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：</span>
-<span class="token keyword">int</span> <span class="token function">bsearch_1</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span> r <span class="token operator">=</span> mid<span class="token punctuation">;</span>    <span class="token comment">// check()判断mid是否满足性质</span>
-<span class="token keyword">else</span> l <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="2-浮点数二分"><a href="#2-浮点数二分" class="headerlink" title="2. 浮点数二分"></a>2. 浮点数二分</h2><h3 id="a-浮点数二分查找代码模板："><a href="#a-浮点数二分查找代码模板：" class="headerlink" title="(a)浮点数二分查找代码模板："></a>(a)浮点数二分查找代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
-
-<span class="token keyword">double</span> <span class="token function">bsearch_3</span><span class="token punctuation">(</span><span class="token keyword">double</span> l<span class="token punctuation">,</span> <span class="token keyword">double</span> r<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-<span class="token keyword">const</span> <span class="token keyword">double</span> eps <span class="token operator">=</span> <span class="token number">1e-6</span><span class="token punctuation">;</span>   <span class="token comment">// eps 表示精度，取决于题目对精度的要求</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l <span class="token operator">></span> eps<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-<span class="token keyword">double</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>l <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span> r <span class="token operator">=</span> mid<span class="token punctuation">;</span>
-<span class="token keyword">else</span> l <span class="token operator">=</span> mid<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -546,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://spicypig.top/2023/05/12/binary-search/">https://spicypig.top/2023/05/12/binary-search/</a>
+                    <a href="https://spicypig.top/2023/05/15/DFS/">https://spicypig.top/2023/05/15/DFS/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -584,8 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%8C%E5%88%86/">
-                                    <span class="chip bg-color">二分</span>
+                                <a href="/tags/DFS/">
+                                    <span class="chip bg-color">DFS</span>
                                 </a>
                             
                         </div>
@@ -931,17 +904,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/12/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                <a href="/2023/05/15/DFS/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java基础语法">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="DFS">
                         
-                        <span class="card-title">java基础语法</span>
+                        <span class="card-title">DFS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -951,26 +925,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">语法</span>
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
                     </a>
                     
                 </div>
@@ -984,13 +959,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/12/sort/">
+                <a href="/2023/05/12/java%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="排序算法">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="java编码规范">
                         
-                        <span class="card-title">排序算法</span>
+                        <span class="card-title">java编码规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1007,8 +982,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1018,8 +993,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                        <span class="chip bg-color">排序</span>
+                    <a href="/tags/%E8%A7%84%E8%8C%83/">
+                        <span class="chip bg-color">规范</span>
                     </a>
                     
                 </div>
