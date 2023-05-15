@@ -579,7 +579,8 @@ header .go-back i {
     display: block;
     left: 0;
     top: 0;
-    content: "";
+    /*将content这一行注释掉就可以取消hexo的matery主题的背景图遮罩颜色*/
+    /* content: "";  */ 
 }
 
 .bg-cover .container {
