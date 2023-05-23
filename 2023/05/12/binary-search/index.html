@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2023-05-23
                 </div>
                 
 
@@ -479,7 +479,7 @@
 
 
 <h3 id="c-整数二分查找代码模板："><a href="#c-整数二分查找代码模板：" class="headerlink" title="(c)整数二分查找代码模板："></a>(c)整数二分查找代码模板：</h3><p><strong>版本一：</strong><br>当我们将区间[l, r]划分为[l, mid]和[mid + 1, r]时，其更新操作是r &#x3D; mid 或 l &#x3D; mid + 1,计算mid时不需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
 
 <span class="token comment">// 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：</span>
 <span class="token keyword">int</span> <span class="token function">bsearch_1</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
@@ -491,10 +491,10 @@
 <span class="token keyword">else</span> l <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span></code></pre>
 
 <p><strong>版本二：</strong><br>当我们将区间[l, r]划分为[l, mid - 1]和[mid, r]时，其更新操作是l &#x3D; mid - 1或 l &#x3D; mid,计算mid时需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
 
 <span class="token comment">// 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：</span>
 <span class="token keyword">int</span> <span class="token function">bsearch_1</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
@@ -506,9 +506,9 @@
 <span class="token keyword">else</span> l <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span></code></pre>
 
-<h2 id="2-浮点数二分"><a href="#2-浮点数二分" class="headerlink" title="2. 浮点数二分"></a>2. 浮点数二分</h2><h3 id="a-浮点数二分查找代码模板："><a href="#a-浮点数二分查找代码模板：" class="headerlink" title="(a)浮点数二分查找代码模板："></a>(a)浮点数二分查找代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
+<h2 id="2-浮点数二分"><a href="#2-浮点数二分" class="headerlink" title="2. 浮点数二分"></a>2. 浮点数二分</h2><h3 id="a-浮点数二分查找代码模板："><a href="#a-浮点数二分查找代码模板：" class="headerlink" title="(a)浮点数二分查找代码模板："></a>(a)浮点数二分查找代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">/* ... */</span><span class="token punctuation">&#125;</span> <span class="token comment">// 检查x是否满足某种性质</span>
 
 <span class="token keyword">double</span> <span class="token function">bsearch_3</span><span class="token punctuation">(</span><span class="token keyword">double</span> l<span class="token punctuation">,</span> <span class="token keyword">double</span> r<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
@@ -520,7 +520,7 @@
 <span class="token keyword">else</span> l <span class="token operator">=</span> mid<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">return</span> l<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span></code></pre>
                 
             </div>
             <hr/>
@@ -1144,6 +1144,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -1163,7 +1170,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.4k</span>
+                        class="white-color">15.7k</span>
             
             
             
