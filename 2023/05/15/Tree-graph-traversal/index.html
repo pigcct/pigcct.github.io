@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-15
+                    2023-05-23
                 </div>
                 
 
@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="树与图的遍历"><a href="#树与图的遍历" class="headerlink" title="树与图的遍历"></a>树与图的遍历</h1><h3 id="1-树与图的存储"><a href="#1-树与图的存储" class="headerlink" title="1. 树与图的存储"></a>1. 树与图的存储</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token operator">*</span><span class="token operator">*</span>树与图的存储<span class="token operator">*</span><span class="token operator">*</span>
+                <h1 id="树与图的遍历"><a href="#树与图的遍历" class="headerlink" title="树与图的遍历"></a>树与图的遍历</h1><h3 id="1-树与图的存储"><a href="#1-树与图的存储" class="headerlink" title="1. 树与图的存储"></a>1. 树与图的存储</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token operator">*</span><span class="token operator">*</span>树与图的存储<span class="token operator">*</span><span class="token operator">*</span>
 树是一种特殊的图，与图的存储方式相同。
 对于无向图中的边ab，存储两条有向边a<span class="token operator">-></span>b<span class="token punctuation">,</span> b<span class="token operator">-></span>a。
 因此我们可以只考虑有向图的存储。
@@ -481,12 +481,12 @@
 idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token function">memset</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> h<span class="token punctuation">)</span><span class="token punctuation">;</span>
 树与图的遍历
-时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数</code></pre>
 
 <h2 id="2-树的深度优先遍历"><a href="#2-树的深度优先遍历" class="headerlink" title="2. 树的深度优先遍历"></a>2. 树的深度优先遍历</h2><h3 id="2-1-树的深度优先遍历的算法思想："><a href="#2-1-树的深度优先遍历的算法思想：" class="headerlink" title="2.1 树的深度优先遍历的算法思想："></a>2.1 树的深度优先遍历的算法思想：</h3><img src="/2023/05/15/Tree-graph-traversal/1.gif" class>
 
 <p>树的深度优先遍历，（既一条道走到黑），先从第一个点开始往下遍历，依次遍历以下的每一个点，直到遍历到最后的点为止。</p>
-<h3 id="2-2-代码模板："><a href="#2-2-代码模板：" class="headerlink" title="2.2 代码模板："></a>2.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">深度优先遍历 —— 模板题 AcWing <span class="token number">846.</span> 树的重心
+<h3 id="2-2-代码模板："><a href="#2-2-代码模板：" class="headerlink" title="2.2 代码模板："></a>2.2 代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp">深度优先遍历 —— 模板题 AcWing <span class="token number">846.</span> 树的重心
 
 <span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
@@ -519,10 +519,10 @@ idx <span class="token operator">=</span> <span class="token number">0</span><sp
     ans <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
     
     <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span></code></pre>
 
 <h2 id="3-树的宽度优先遍历"><a href="#3-树的宽度优先遍历" class="headerlink" title="3. 树的宽度优先遍历"></a>3. 树的宽度优先遍历</h2><h3 id="3-1-树的宽度优先遍历的算法思想："><a href="#3-1-树的宽度优先遍历的算法思想：" class="headerlink" title="3.1 树的宽度优先遍历的算法思想："></a>3.1 树的宽度优先遍历的算法思想：</h3><p>树的宽度优先遍历，既按层级从上层到下层依次遍历，比如说从第一个点开始，1号点可以拓展到它周围的所有邻点，每次只向下拓展一次，每次拓展的数都属于同一层级。</p>
-<h3 id="3-2-代码模板："><a href="#3-2-代码模板：" class="headerlink" title="3.2 代码模板："></a>3.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">宽度优先遍历 —— 模板题 AcWing <span class="token number">847.</span> 图中点的层次
+<h3 id="3-2-代码模板："><a href="#3-2-代码模板：" class="headerlink" title="3.2 代码模板："></a>3.2 代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp">宽度优先遍历 —— 模板题 AcWing <span class="token number">847.</span> 图中点的层次
 
 queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
 st<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 表示1号点已经被遍历过</span>
@@ -569,7 +569,7 @@ q<span class="token punctuation">.</span><span class="token function">push</span
     <span class="token punctuation">&#125;</span>
     
     <span class="token keyword">return</span> d<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span></code></pre>
 
 
                 
@@ -1198,6 +1198,13 @@ q<span class="token punctuation">.</span><span class="token function">push</span
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
