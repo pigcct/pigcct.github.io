@@ -5,36 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="位运算, Spicy-pig">
-    <meta name="description" content="位运算1. 算法思想
-:sunflower:在C++中，8位二进制对应的char类型，范围为-128~127
-
-位运算符：
-
-
-
-
-与
-或
-非
-异或
-
-
-
-语句
-and
-or
-not
-xor
-
-
-符号
-&amp;amp;
-|
-~
-^
-
-
-在 m位二">
+    <meta name="description" content="位运算（二进制运算）1. 基础知识1.1 原码，反码，补码1.1.1 原码将一个整数转换成二进制形式，就是其原码。例如a &amp;#x3D; 6; a 的原码就是0000 0000 0000 0110；更改 a 的值a &amp;#x3D; -18; 此">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -437,21 +408,21 @@ xor
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    588
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -474,10 +445,19 @@ xor
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1. 算法思想"></a>1. 算法思想</h2><blockquote>
-<p>:sunflower:在C++中，8位二进制对应的char类型，范围为-128~127</p>
+                <h1 id="位运算（二进制运算）"><a href="#位运算（二进制运算）" class="headerlink" title="位运算（二进制运算）"></a>位运算（二进制运算）</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1. 基础知识"></a>1. 基础知识</h2><h3 id="1-1-原码，反码，补码"><a href="#1-1-原码，反码，补码" class="headerlink" title="1.1 原码，反码，补码"></a>1.1 原码，反码，补码</h3><h4 id="1-1-1-原码"><a href="#1-1-1-原码" class="headerlink" title="1.1.1 原码"></a>1.1.1 原码</h4><p>将一个整数转换成二进制形式，就是其原码。例如a &#x3D; 6; a 的原码就是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的原码就是<code>1000 0000 0001 0010</code>。<strong>注意</strong><code>二进制最高位中1代表负数，0代表正数。</code></p>
+<h4 id="1-1-2-反码"><a href="#1-1-2-反码" class="headerlink" title="1.1.2 反码"></a>1.1.2 反码</h4><p>对于正数，它的反码就是其原码（原码和反码相同）；<strong>正数的反码是它本身，负数的反码是将原码中除<code>符号位</code>以外的所有位（数值位）取反</strong>，也就是 0 变成 1，1 变成 0。例如a &#x3D; 6; a 的原码和反码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的反码是<code>1111 1111 1110 1101</code>。</p>
+<h4 id="1-1-3-补码"><a href="#1-1-3-补码" class="headerlink" title="1.1.3 补码"></a>1.1.3 补码</h4><p>对于正数，它的补码就是其原码（<em><strong>正数的原码、反码、补码都相同</strong></em>）；<strong>负数的补码是其反码加 1</strong>。例如a &#x3D; 6; a 的原码、反码、补码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; a 的反码是<code>1111 1111 1110 1101</code>，此时 a 的补码是<code>1111 1111 1110 1110</code>。</p>
+<img src="/2023/05/23/Bit/1.png" class>
+
+
+
+
+
+<h3 id="2-逻辑符号"><a href="#2-逻辑符号" class="headerlink" title="2. 逻辑符号"></a>2. 逻辑符号</h3><blockquote>
+<p>在C++中，8位二进制对应的char类型，范围为-128~127</p>
 </blockquote>
-<p><strong>位运算符：</strong></p>
+<p>在 m位二进制数中，为方便起见，通常称<strong>最低位为第0位，从右到左依此类推，最高位为第m-1位。</strong>本书默认使用这种表示方法来指明二进制数以及整数在二进制表示下的位数。</p>
 <table>
 <thead>
 <tr>
@@ -503,37 +483,48 @@ xor
 <td>^</td>
 </tr>
 </tbody></table>
-<p>在 m位二进制数中，为方便起见，通常称<strong>最低位为第0位，从右到左依此类推，最高位为第m-1位。</strong>本书默认使用这种表示方法来指明二进制数以及整数在二进制表示下的位数。</p>
+<p>位运算是指直接对整数在二进制形式下进行操作的运算。它包括了按位与运算、按位或运算、按位异或运算、左移运算和右移运算等。以下是位运算的一些知识点总结：</p>
 <ol>
-<li>原码</li>
+<li><p>按位与运算（&amp;）：对两个数的每一位进行与操作，只有两个数的对应位都为 1 的时候，结果的对应位才为 1。例如，3 &amp; 5 的结果为 1。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 &amp; 5 &#x3D; 1 即<code>0011 &amp; 0101 = 0001</code>）</p>
+</li>
+<li><p>按位或运算（|）：对两个数的每一位进行或操作，只有两个数的对应位其中一个为 1 的时候，结果的对应位就为 1。例如，3 | 5 的结果为 7。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 | 5 &#x3D; 7 即<code>0011 | 0101 = 0111</code>）</p>
+</li>
+<li><p>按位异或运算（^）：对两个数的每一位进行异或操作，两个数的对应位相同为0，不同为1。例如，3 ^ 5 的结果为 6。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 ^ 5 &#x3D; 6 即<code>0011 ^ 0101 = 0110</code>）</p>
+</li>
+<li><p>左移运算（&lt;&lt;）：把一个数的二进制码向左移动指定的位数，左移时低位补 0。例如，3 &lt;&lt; 2 的结果是 12，即 1100。（3的二进制为<code>0011</code>,  3 &lt;&lt; 2 &#x3D; 12 即<code>0011 &lt;&lt; 2 = 1100</code>）</p>
+</li>
+<li><p>右移运算（&gt;&gt;）：把一个数的二进制码向右移动指定的位数，右移时高位补 0 或 1（取决于该数原来的符号位），右移一位相当于除以 2。例如，3 &gt;&gt; 1 的结果是 1，即 01。（3的二进制为<code>0011</code> ，3 &gt;&gt; 1 &#x3D; 1 即<code>0011 &gt;&gt; 1 = 0001</code>）</p>
+</li>
+<li><p>位取反运算（<del>）：对一个数的每一位按位取反（0 变为 1，1 变为 0）。例如，</del>3 的结果是 -4。（3的二进制为<code>0011</code>, 4的二进制为<code>0100</code> <del>3 &#x3D; -4 即</del><code>0011 = 1100</code>）</p>
+</li>
+<li><p>lowbit 函数：lowbit(n) 表示 n 在二进制下的最后一个 1 所代表的数值。lowbit(6) 的结果为 2，即<code>lowbit(0110) = 10 =&gt; 2</code>。</p>
+</li>
 </ol>
-<p>将一个整数转换成二进制形式，就是其原码。例如int a &#x3D; 6; a 的原码就是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的原码就是<code>1000 0000 0001 0010</code>。通俗的理解，原码就是一个整数本来的二进制形式。</p>
-<ol start="2">
-<li>反码</li>
-</ol>
-<p>对于正数，它的反码就是其原码（原码和反码相同）；<strong>正数的反码是它本身，负数的反码是将原码中除<code>符号位</code>以外的所有位（数值位）取反</strong>，也就是 0 变成 1，1 变成 0。例如int a &#x3D; 6; a 的原码和反码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的反码是<code>1111 1111 1110 1101</code>。</p>
-<ol start="3">
-<li>补码</li>
-</ol>
-<p>对于正数，它的补码就是其原码（<em><strong>原码、反码、补码都相同</strong></em>）；<strong>负数的补码是其反码加 1</strong>。例如int a &#x3D; 6; a 的原码、反码、补码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的补码是<code>1111 1111 1110 1110</code>。</p>
-<img src="/2023/05/23/Bit/1.png" class>
-
-
-
-<h2 id="2-算法描述"><a href="#2-算法描述" class="headerlink" title="2. 算法描述:"></a>2. 算法描述:</h2><ul>
-<li>例如求<strong>a &#x3D; 10</strong>的<strong>二进制为 1 0 1 0</strong></li>
-<li><strong>a &gt;&gt; 3  &amp; 1</strong></li>
-<li>输出为 <strong>1</strong></li>
+<h2 id="3-Lowbit算法"><a href="#3-Lowbit算法" class="headerlink" title="3. Lowbit算法"></a>3. Lowbit算法</h2><h3 id="3-1-Lowbit算法思想："><a href="#3-1-Lowbit算法思想：" class="headerlink" title="3.1 Lowbit算法思想："></a>3.1 Lowbit算法思想：</h3><p>{ %asset_img 2.png% }</p>
+<h3 id="3-2-算法描述"><a href="#3-2-算法描述" class="headerlink" title="3.2 算法描述:"></a>3.2 算法描述:</h3><ul>
+<li><p>例如，求<strong>a &#x3D; 6</strong>的 <strong>二进制为 0 1 1 0</strong></p>
+</li>
+<li><p>lowbit(6) &#x3D; <code>0 1 1 0</code>中最后一位1的值</p>
+</li>
+<li><p>即：输出为 0 1 <code>1</code> 0中最后一位1的值为<code>2</code></p>
+</li>
 </ul>
-<h2 id="3-代码模板："><a href="#3-代码模板：" class="headerlink" title="3. 代码模板："></a>3. 代码模板：</h2><pre class="language-cpp" data-language="cpp"><code class="language-cpp">位运算 —— 模板题 AcWing <span class="token number">801.</span> 二进制中<span class="token number">1</span>的个数
-求n的第k位数字<span class="token operator">:</span> n <span class="token operator">>></span> k <span class="token operator">&amp;</span> <span class="token number">1</span>
-返回n的最后一位<span class="token number">1</span>：<span class="token function">lowbit</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token operator">-</span>n</code></pre>
+<h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 返回n的最后一位1的值</span>
+<span class="token keyword">int</span> <span class="token function">lowbit</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token operator">-</span>n<span class="token punctuation">;</span>
+    <span class="token comment">//return n &amp; (~n + 1);</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
 
 
 
 
-<h2 id="4-移位运算"><a href="#4-移位运算" class="headerlink" title="4. 移位运算"></a>4. 移位运算</h2><h3 id="4-1-左移"><a href="#4-1-左移" class="headerlink" title="4.1 左移"></a>4.1 左移</h3><p>在二进制表示下把数字同时向左移动，低位以0填充，高位越界后舍弃。</p>
+<h2 id="4-移位运算"><a href="#4-移位运算" class="headerlink" title="4. 移位运算"></a>4. 移位运算</h2><blockquote>
+<p><strong>求n的第k位数字: n &gt;&gt; k &amp; 1</strong></p>
+</blockquote>
+<h3 id="4-1-左移"><a href="#4-1-左移" class="headerlink" title="4.1 左移"></a>4.1 左移</h3><p>在二进制表示下把数字同时向左移动，低位以0填充，高位越界后舍弃。</p>
 <p><strong>既	1 &lt;&lt; n &#x3D; $2^n$, 	n &lt;&lt; 1 &#x3D; 2n</strong></p>
 <h3 id="4-2-算数右移"><a href="#4-2-算数右移" class="headerlink" title="4.2 算数右移"></a>4.2 算数右移</h3><p>在二进制补码表示下把数字同时向右移动，高位以符号位填充，低位越界后舍弃。</p>
 <p><strong>既	n &gt;&gt; 1 &#x3D; $\lfloor n&#x2F;2.0 \rfloor$</strong></p>
@@ -1190,7 +1181,7 @@ xor
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.3k</span>
+                        class="white-color">16.8k</span>
             
             
             
