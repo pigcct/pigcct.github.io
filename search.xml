@@ -2143,12 +2143,15 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 </li>
 <li><p>右移运算（&gt;&gt;）：把一个数的二进制码向右移动指定的位数，右移时高位补 0 或 1（取决于该数原来的符号位），右移一位相当于除以 2。例如，3 &gt;&gt; 1 的结果是 1，即 01。（3的二进制为<code>0011</code> ，3 &gt;&gt; 1 &#x3D; 1 即<code>0011 &gt;&gt; 1 = 0001</code>）</p>
 </li>
-<li><p>位取反运算（<del>）：对一个数的每一位按位取反（0 变为 1，1 变为 0）。例如，</del>3 的结果是 -4。（3的二进制为<code>0011</code>, 4的二进制为<code>0100</code> <del>3 &#x3D; -4 即</del><code>0011 = 1100</code>）</p>
+<li><p>位取反运算（~）：对一个数的每一位按位取反（0 变为 1，1 变为 0）。例如，3取反的结果是 -4。（3的二进制为<code>0011</code>, 4的二进制为<code>0100</code> ~3 &#x3D; -4 即<code>0011 = 1100</code>）</p>
 </li>
 <li><p>lowbit 函数：lowbit(n) 表示 n 在二进制下的最后一个 1 所代表的数值。lowbit(6) 的结果为 2，即<code>lowbit(0110) = 10 =&gt; 2</code>。</p>
 </li>
 </ol>
-<h2 id="3-Lowbit算法"><a href="#3-Lowbit算法" class="headerlink" title="3. Lowbit算法"></a>3. Lowbit算法</h2><h3 id="3-1-Lowbit算法思想："><a href="#3-1-Lowbit算法思想：" class="headerlink" title="3.1 Lowbit算法思想："></a>3.1 Lowbit算法思想：</h3><p>{ %asset_img 2.png% }</p>
+<h2 id="3-Lowbit算法"><a href="#3-Lowbit算法" class="headerlink" title="3. Lowbit算法"></a>3. Lowbit算法</h2><h3 id="3-1-Lowbit算法思想："><a href="#3-1-Lowbit算法思想：" class="headerlink" title="3.1 Lowbit算法思想："></a>3.1 Lowbit算法思想：</h3><img src="/2023/05/23/Bit/2.png" class>
+
+
+
 <h3 id="3-2-算法描述"><a href="#3-2-算法描述" class="headerlink" title="3.2 算法描述:"></a>3.2 算法描述:</h3><ul>
 <li><p>例如，求<strong>a &#x3D; 6</strong>的 <strong>二进制为 0 1 1 0</strong></p>
 </li>
@@ -2160,7 +2163,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 <h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 返回n的最后一位1的值</span>
 <span class="token keyword">int</span> <span class="token function">lowbit</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
-
+	<span class="token comment">// n &amp; -n 等价于 n &amp; (~n + 1)</span>
     <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token operator">-</span>n<span class="token punctuation">;</span>
     <span class="token comment">//return n &amp; (~n + 1);</span>
 <span class="token punctuation">&#125;</span></code></pre>
