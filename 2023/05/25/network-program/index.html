@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="位运算, Spicy-pig">
-    <meta name="description" content="位运算（二进制运算）1. 基础知识1.1 原码，反码，补码1.1.1 原码将一个整数转换成二进制形式，就是其原码。例如a &amp;#x3D; 6; a 的原码就是0000 0000 0000 0110；更改 a 的值a &amp;#x3D; -18; 此">
+    <meta name="keywords" content="网络编程, Spicy-pig">
+    <meta name="description" content="网络编程1.常见的网络架构1.1 客户端&amp;#x2F;服务器（Client&amp;#x2F;Server）用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…
+特征：
+
+画面精美，用户体验好
+
+需要开发客户端和">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>位运算 | Spicy-pig</title>
+    <title>网络编程 | Spicy-pig</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -347,12 +352,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">位运算</h1>
+                    <h1 class="description center-align post-title">网络编程</h1>
                 </div>
             </div>
         </div>
@@ -376,8 +381,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                                <span class="chip bg-color">位运算</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">网络编程</span>
                             </a>
                         
                     </div>
@@ -388,8 +393,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -401,28 +406,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-24
+                    2023-05-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -445,93 +450,309 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="位运算（二进制运算）"><a href="#位运算（二进制运算）" class="headerlink" title="位运算（二进制运算）"></a>位运算（二进制运算）</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1. 基础知识"></a>1. 基础知识</h2><h3 id="1-1-原码，反码，补码"><a href="#1-1-原码，反码，补码" class="headerlink" title="1.1 原码，反码，补码"></a>1.1 原码，反码，补码</h3><h4 id="1-1-1-原码"><a href="#1-1-1-原码" class="headerlink" title="1.1.1 原码"></a>1.1.1 原码</h4><p>将一个整数转换成二进制形式，就是其原码。例如a &#x3D; 6; a 的原码就是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的原码就是<code>1000 0000 0001 0010</code>。<strong>注意</strong><code>二进制最高位中1代表负数，0代表正数。</code></p>
-<h4 id="1-1-2-反码"><a href="#1-1-2-反码" class="headerlink" title="1.1.2 反码"></a>1.1.2 反码</h4><p>对于正数，它的反码就是其原码（原码和反码相同）；<strong>正数的反码是它本身，负数的反码是将原码中除<code>符号位</code>以外的所有位（数值位）取反</strong>，也就是 0 变成 1，1 变成 0。例如a &#x3D; 6; a 的原码和反码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; 此时 a 的反码是<code>1111 1111 1110 1101</code>。</p>
-<h4 id="1-1-3-补码"><a href="#1-1-3-补码" class="headerlink" title="1.1.3 补码"></a>1.1.3 补码</h4><p>对于正数，它的补码就是其原码（<em><strong>正数的原码、反码、补码都相同</strong></em>）；<strong>负数的补码是其反码加 1</strong>。例如a &#x3D; 6; a 的原码、反码、补码都是<code>0000 0000 0000 0110</code>；更改 a 的值a &#x3D; -18; a 的反码是<code>1111 1111 1110 1101</code>，此时 a 的补码是<code>1111 1111 1110 1110</code>。</p>
-<img src="/2023/05/23/Bit/1.png" class>
-
-
-
-
-
-<h3 id="2-逻辑符号"><a href="#2-逻辑符号" class="headerlink" title="2. 逻辑符号"></a>2. 逻辑符号</h3><blockquote>
-<p>在C++中，8位二进制对应的char类型，范围为-128~127</p>
-</blockquote>
-<p>在 m位二进制数中，为方便起见，通常称<strong>最低位为第0位，从右到左依此类推，最高位为第m-1位。</strong>本书默认使用这种表示方法来指明二进制数以及整数在二进制表示下的位数。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>与</th>
-<th>或</th>
-<th>非</th>
-<th>异或</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>语句</td>
-<td>and</td>
-<td>or</td>
-<td>not</td>
-<td>xor</td>
-</tr>
-<tr>
-<td>符号</td>
-<td>&amp;</td>
-<td>|</td>
-<td>~</td>
-<td>^</td>
-</tr>
-</tbody></table>
-<p>位运算是指直接对整数在二进制形式下进行操作的运算。它包括了按位与运算、按位或运算、按位异或运算、左移运算和右移运算等。以下是位运算的一些知识点总结：</p>
-<ol>
-<li><p>按位与运算（&amp;）：对两个数的每一位进行与操作，只有两个数的对应位都为 1 的时候，结果的对应位才为 1。例如，3 &amp; 5 的结果为 1。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 &amp; 5 &#x3D; 1 即<code>0011 &amp; 0101 = 0001</code>）</p>
+                <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="1-常见的网络架构"><a href="#1-常见的网络架构" class="headerlink" title="1.常见的网络架构"></a>1.常见的网络架构</h2><h3 id="1-1-客户端-x2F-服务器（Client-x2F-Server）"><a href="#1-1-客户端-x2F-服务器（Client-x2F-Server）" class="headerlink" title="1.1 客户端&#x2F;服务器（Client&#x2F;Server）"></a>1.1 客户端&#x2F;服务器（Client&#x2F;Server）</h3><p>用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…</p>
+<p><strong>特征：</strong></p>
+<ul>
+<li><p>画面精美，用户体验好</p>
 </li>
-<li><p>按位或运算（|）：对两个数的每一位进行或操作，只有两个数的对应位其中一个为 1 的时候，结果的对应位就为 1。例如，3 | 5 的结果为 7。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 | 5 &#x3D; 7 即<code>0011 | 0101 = 0111</code>）</p>
+<li><p>需要开发客户端和服务端</p>
 </li>
-<li><p>按位异或运算（^）：对两个数的每一位进行异或操作，两个数的对应位相同为0，不同为1。例如，3 ^ 5 的结果为 6。（3的二进制为<code>0011</code>, 5的二进制为<code>0101</code> 3 ^ 5 &#x3D; 6 即<code>0011 ^ 0101 = 0110</code>）</p>
+<li><p>用户需要下载和更新客户端</p>
 </li>
-<li><p>左移运算（&lt;&lt;）：把一个数的二进制码向左移动指定的位数，左移时低位补 0。例如，3 &lt;&lt; 2 的结果是 12，即 1100。（3的二进制为<code>0011</code>,  3 &lt;&lt; 2 &#x3D; 12 即<code>0011 &lt;&lt; 2 = 1100</code>）</p>
-</li>
-<li><p>右移运算（&gt;&gt;）：把一个数的二进制码向右移动指定的位数，右移时高位补 0 或 1（取决于该数原来的符号位），右移一位相当于除以 2。例如，3 &gt;&gt; 1 的结果是 1，即 01。（3的二进制为<code>0011</code> ，3 &gt;&gt; 1 &#x3D; 1 即<code>0011 &gt;&gt; 1 = 0001</code>）</p>
-</li>
-<li><p>位取反运算（~）：对一个数的每一位按位取反（0 变为 1，1 变为 0）。例如，3取反的结果是 -4。（3的二进制为<code>0011</code>, 4的二进制为<code>0100</code> ~3 &#x3D; -4 即<code>0011 = 1100</code>）</p>
-</li>
-<li><p>lowbit 函数：lowbit(n) 表示 n 在二进制下的最后一个 1 所代表的数值。lowbit(6) 的结果为 2，即<code>lowbit(0110) = 10 =&gt; 2</code>。</p>
-</li>
-</ol>
-<h2 id="3-Lowbit算法"><a href="#3-Lowbit算法" class="headerlink" title="3. Lowbit算法"></a>3. Lowbit算法</h2><h3 id="3-1-Lowbit算法思想："><a href="#3-1-Lowbit算法思想：" class="headerlink" title="3.1 Lowbit算法思想："></a>3.1 Lowbit算法思想：</h3><img src="/2023/05/23/Bit/2.png" class>
-
-
-
-<h3 id="3-2-算法描述"><a href="#3-2-算法描述" class="headerlink" title="3.2 算法描述:"></a>3.2 算法描述:</h3><ul>
-<li><p>例如，求<strong>a &#x3D; 6</strong>的 <strong>二进制为 0 1 1 0</strong></p>
-</li>
-<li><p>lowbit(6) &#x3D; <code>0 1 1 0</code>中最后一位1的值</p>
-</li>
-<li><p>即：输出为 0 1 <code>1</code> 0中最后一位1的值为<code>2</code></p>
+<li><p>适合开发互联网应用，可以随时随地访问</p>
 </li>
 </ul>
-<h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 返回n的最后一位1的值</span>
-<span class="token keyword">int</span> <span class="token function">lowbit</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token comment">// n &amp; -n 等价于 n &amp; (~n + 1)</span>
-    <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token operator">-</span>n<span class="token punctuation">;</span>
-    <span class="token comment">//return n &amp; (~n + 1);</span>
-<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="1-2-浏览器-x2F-服务器（Browser-x2F-Server）"><a href="#1-2-浏览器-x2F-服务器（Browser-x2F-Server）" class="headerlink" title="1.2 浏览器&#x2F;服务器（Browser&#x2F;Server）"></a>1.2 浏览器&#x2F;服务器（Browser&#x2F;Server）</h3><p>只需要有一个浏览器，用户通过不同的网址，客户访问不同的服务器。例如：淘宝，百度</p>
+<p><strong>特征：</strong></p>
+<ul>
+<li><p>不需要开发客户端，只需要开发服务端</p>
+</li>
+<li><p>用户不需要下载，打开浏览器就能用</p>
+</li>
+<li><p>如果应用过大，数据过多的话，用户体验会受影响</p>
+</li>
+<li><p>适合开发办公类及其大型游戏，稳定，体验好</p>
+</li>
+</ul>
+<img src="/2023/05/25/network-program/1.png" class>
+
+
+
+<h2 id="2-网络编程三要素"><a href="#2-网络编程三要素" class="headerlink" title="2. 网络编程三要素"></a>2. 网络编程三要素</h2><h3 id="2-1-IP地址"><a href="#2-1-IP地址" class="headerlink" title="2.1 IP地址"></a>2.1 IP地址</h3><p>设备在网络中的地址，识别该设备的唯一标识</p>
+<h4 id="2-1-1-IPV4"><a href="#2-1-1-IPV4" class="headerlink" title="2.1.1 IPV4"></a>2.1.1 IPV4</h4><p>采用32位地址长度，分成4组，共有个IP地址，IPV4共有2^32个IP地址（约有43亿）。</p>
+<img src="/2023/05/25/network-program/2.png" class>
+
+<p><strong>IPV4的地址分类形式</strong></p>
+<ul>
+<li>公网地址(万维网使用)和私有地址(局域网使用)。</li>
+<li>192.168.开头的就是私有址址，范围即为192.168.0.0–192.168.255.255，专门为组织机构内部使用，以此节省IP</li>
+</ul>
+<h4 id="2-1-2-IPV6"><a href="#2-1-2-IPV6" class="headerlink" title="2.1.2 IPV6"></a>2.1.2 IPV6</h4><p>采用128位地址长度，分成8组，可以给地球上的每一粒沙子分配一个IP地址。</p>
+<img src="/2023/05/25/network-program/3.png" class>
 
 
 
 
 
-<h2 id="4-移位运算"><a href="#4-移位运算" class="headerlink" title="4. 移位运算"></a>4. 移位运算</h2><blockquote>
-<p><strong>求n的第k位数字: n &gt;&gt; k &amp; 1</strong></p>
+<h4 id="2-2-常用的CMD命令"><a href="#2-2-常用的CMD命令" class="headerlink" title="2.2 常用的CMD命令"></a>2.2 常用的CMD命令</h4><ul>
+<li><p>ipconfig：查看本机IP地址</p>
+</li>
+<li><p>ping：检查网络是否连通</p>
+</li>
+</ul>
+<img src="/2023/05/25/network-program/4.png" class>
+
+
+
+<blockquote>
+<p>特殊IP地址：127.0.0.1 &lt;&#x3D;&#x3D;&gt; localhost (本机IP地址)</p>
 </blockquote>
-<h3 id="4-1-左移"><a href="#4-1-左移" class="headerlink" title="4.1 左移"></a>4.1 左移</h3><p>在二进制表示下把数字同时向左移动，低位以0填充，高位越界后舍弃。</p>
-<p><strong>既	1 &lt;&lt; n &#x3D; $2^n$, 	n &lt;&lt; 1 &#x3D; 2n</strong></p>
-<h3 id="4-2-算数右移"><a href="#4-2-算数右移" class="headerlink" title="4.2 算数右移"></a>4.2 算数右移</h3><p>在二进制补码表示下把数字同时向右移动，高位以符号位填充，低位越界后舍弃。</p>
-<p><strong>既	n &gt;&gt; 1 &#x3D; $\lfloor n&#x2F;2.0 \rfloor$</strong></p>
-<h3 id="4-3-逻辑右移"><a href="#4-3-逻辑右移" class="headerlink" title="4.3 逻辑右移"></a>4.3 逻辑右移</h3><p>在二进制补码表示下把数字同时向右移动，高位以0填充，低位越界后舍弃。</p>
+<h3 id="2-2-端口号"><a href="#2-2-端口号" class="headerlink" title="2.2 端口号"></a>2.2 端口号</h3><p>应用程序在设备中的唯一标识。</p>
+<p>端口号:由两个字节表示的整数，取值范围:0—65535。其中0—1023之间的端口号用于一些知名的网络服务或者应用。我们自己使用1024以上的端口号就可以了。</p>
+<img src="/2023/05/25/network-program/5.png" class>
+
+
+
+<h3 id="2-3-协议"><a href="#2-3-协议" class="headerlink" title="2.3 协议"></a>2.3 协议</h3><p>数据在网络中传输的规则，常见的协议有UDP，TCP，HTTP，HTTPS，FTP。</p>
+<img src="/2023/05/25/network-program/6.png" class>
+
+
+
+<h4 id="2-3-1-UDP协议"><a href="#2-3-1-UDP协议" class="headerlink" title="2.3.1 UDP协议"></a>2.3.1 UDP协议</h4><ul>
+<li>用户数据报协议(User Datagram Protocol)</li>
+<li>UDP是面向无连接通信协议。</li>
+<li>速度快，有大小限制一次最多发送64K，数据不安全，易丢失数据。</li>
+</ul>
+
+
+
+
+
+
+<h4 id="2-3-2-TCP协议"><a href="#2-3-2-TCP协议" class="headerlink" title="2.3.2 TCP协议"></a>2.3.2 TCP协议</h4><ul>
+<li>传输控制协议TCP(Transmission Control Protocol)</li>
+<li>TCP协议是面向连接的通信协议。</li>
+<li>速度慢，没有大小限制，数据安全。</li>
+</ul>
+
+
+
+
+<h2 id="3-UDP通信程序"><a href="#3-UDP通信程序" class="headerlink" title="3. UDP通信程序"></a>3. UDP通信程序</h2><h3 id="3-1-UDP发送数据"><a href="#3-1-UDP发送数据" class="headerlink" title="3.1 UDP发送数据"></a>3.1 UDP发送数据</h3><ul>
+<li>找到快递公司（创建发送端的DatagramSocket对象）</li>
+<li>打包快递（数据打包DatagramPacket）</li>
+<li>快递公司发送包裹（发送数据）</li>
+<li>付钱走人（释放资源）</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a03udp</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Send</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+         <span class="token comment">/*
+            按照下面的要求实现程序
+                UDP发送数据：数据来自于键盘录入，直到输入的数据是886，发送数据结束
+                UDP接收数据：因为接收端不知道发送端什么时候停止发送，故采用死循环接收
+        */</span>
+
+        <span class="token comment">//1.创建对象DatagramSocket的对象</span>
+        <span class="token class-name">DatagramSocket</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//2.打包数据</span>
+        <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入您要说的话："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> str <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"886"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">InetAddress</span> address <span class="token operator">=</span> <span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">10086</span><span class="token punctuation">;</span>
+            <span class="token class-name">DatagramPacket</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span>bytes<span class="token punctuation">.</span>length<span class="token punctuation">,</span>address<span class="token punctuation">,</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">//3.发送数据</span>
+            ds<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">//4.释放资源</span>
+        ds<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+</code></pre>
+
+
+
+<h3 id="3-2-UDP接收数据"><a href="#3-2-UDP接收数据" class="headerlink" title="3.2 UDP接收数据"></a>3.2 UDP接收数据</h3><ul>
+<li>找快递公司（创建接收端的DatagramSocket对象）</li>
+<li>取快递（接收打包好的数据）</li>
+<li>拆分快递（解析数据包）</li>
+<li>签收走人（释放资源）</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a03udp</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">DatagramPacket</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">DatagramSocket</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Receive</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 接收数据</span>
+        <span class="token comment">/*
+         * 需求：
+         *      UDP发送数据：数据来源于键盘录入，直到数据为886是结束聊天
+         *      UDP接收数据：因为接收端不知道发送端是什么时候停止发送，故采用死循环接受
+         * */</span>
+        <span class="token comment">// 1.创建DatagramSocket的对象（快递公司）</span>
+        <span class="token class-name">DatagramSocket</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token number">10086</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2.接收数据包</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">DatagramPacket</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span> bytes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            ds<span class="token punctuation">.</span><span class="token function">receive</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 3.解析数据包</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> dp<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> len <span class="token operator">=</span> dp<span class="token punctuation">.</span><span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> ip <span class="token operator">=</span> dp<span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getHostAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> name <span class="token operator">=</span> dp<span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getHostName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 4.打印数据包</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ip为"</span> <span class="token operator">+</span> ip <span class="token operator">+</span> <span class="token string">", 主机名为"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"的电脑，发送了数据："</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+
+
+
+
+<h2 id="4-TCP通信程序"><a href="#4-TCP通信程序" class="headerlink" title="4. TCP通信程序"></a>4. TCP通信程序</h2><img src="/2023/05/25/network-program/9.png" class>
+
+<h3 id="4-1-TCP发送数据"><a href="#4-1-TCP发送数据" class="headerlink" title="4.1 TCP发送数据"></a>4.1 TCP发送数据</h3><ul>
+<li>创建客户端的Socket对象与指定服务器连接<ul>
+<li>Socket ( String host, int port )</li>
+</ul>
+</li>
+<li>获取输出流，写数据 <ul>
+<li>OutputStream getOutputStream( )</li>
+</ul>
+</li>
+<li>释放资源<ul>
+<li>close( ) (无返回值)</li>
+</ul>
+</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a04tcp</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">OutputStream</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// TCP协议，发送数据</span>
+
+        <span class="token comment">// 1.创建Socket对象</span>
+        <span class="token comment">// 细节:在创建对象的同时会连接服务端</span>
+        <span class="token comment">//      如果连接不上，代码会报错</span>
+        <span class="token class-name">Socket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">// 2.可以从连接通道中获取输出流</span>
+        <span class="token class-name">OutputStream</span> os <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 写出数据</span>
+        os<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"泰裤辣"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.释放资源</span>
+        os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+
+
+
+
+<h3 id="4-2-TCP接收数据"><a href="#4-2-TCP接收数据" class="headerlink" title="4.2 TCP接收数据"></a>4.2 TCP接收数据</h3><ul>
+<li>创建服务端的Socket对象ServerSocket<ul>
+<li>ServerSocket  ( int port )</li>
+</ul>
+</li>
+<li>监听客户端连接，返回一个Socket对象<ul>
+<li>Socket accept ( )</li>
+</ul>
+</li>
+<li>获取输入流，读数据，并把数据显示在控制台<ul>
+<li>InputStream( ) getInputStream( )</li>
+</ul>
+</li>
+<li>释放资源<ul>
+<li>close( ) (无返回值)</li>
+</ul>
+</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a04tcp</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">BufferedReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">InputStreamReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">ServerSocket</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Server</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// TCP协议，接收数据</span>
+
+        <span class="token comment">// 1.创建对象SocketServer</span>
+        <span class="token class-name">ServerSocket</span> ss <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2.监听客户端的连接</span>
+        <span class="token class-name">Socket</span> socket <span class="token operator">=</span> ss<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.从连接通道中获取输出流读取数据</span>
+<span class="token comment">/*      InputStream is = socket.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+        */</span>
+
+        <span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>b <span class="token operator">=</span> br<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 4.释放资源</span>
+        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ss<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+
+
 
                 
             </div>
@@ -558,7 +779,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://spicypig.top/2023/05/23/Bit/">https://spicypig.top/2023/05/23/Bit/</a>
+                    <a href="https://spicypig.top/2023/05/25/network-program/">https://spicypig.top/2023/05/25/network-program/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -596,8 +817,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                                    <span class="chip bg-color">位运算</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">网络编程</span>
                                 </a>
                             
                         </div>
@@ -943,9 +1164,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/05/25/network-program/">
                     <div class="card-image">
@@ -963,9 +1185,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -978,6 +1200,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -996,13 +1219,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/23/High-precision/">
+                <a href="/2023/05/23/Bit/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="高精度">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="位运算">
                         
-                        <span class="card-title">高精度</span>
+                        <span class="card-title">位运算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1030,8 +1253,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/">
-                        <span class="chip bg-color">高精度</span>
+                    <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
+                        <span class="chip bg-color">位运算</span>
                     </a>
                     
                 </div>
