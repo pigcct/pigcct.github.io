@@ -2317,47 +2317,13 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 
 
 
-<h4 id="2-3-3-数据的发送和接收"><a href="#2-3-3-数据的发送和接收" class="headerlink" title="2.3.3 数据的发送和接收"></a>2.3.3 数据的发送和接收</h4><p><strong>发送数据</strong></p>
-<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a02</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Send</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 发送数据</span>
-
-        <span class="token comment">// 1.创建DatagramSocket对象(快递公司)</span>
-        <span class="token comment">//   细节:</span>
-        <span class="token comment">// 绑定端口，以后我们就是通过这个端口往外发送</span>
-        <span class="token comment">// 空参:所有可用的端口中随机一个进行使用</span>
-        <span class="token comment">// 有参:指定端口号进行绑定</span>
-        <span class="token class-name">DatagramSocket</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-        <span class="token comment">// 2.打包数据</span>
-        <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"Hello， 你好啊！"</span><span class="token punctuation">;</span>
-        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">InetAddress</span> address <span class="token operator">=</span> <span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">10086</span><span class="token punctuation">;</span>
-
-        <span class="token class-name">DatagramPacket</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span> bytes<span class="token punctuation">.</span>length<span class="token punctuation">,</span> address<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// 3.发送数据</span>
-        ds<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// 4.释放资源</span>
-        ds<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-    <span class="token punctuation">&#125;</span>
-
-<span class="token punctuation">&#125;</span>
-</code></pre>
-
-
-
-<p><strong>接收数据</strong></p>
+<h4 id="2-3-3-数据的收发步骤"><a href="#2-3-3-数据的收发步骤" class="headerlink" title="2.3.3 数据的收发步骤"></a>2.3.3 数据的收发步骤</h4><p><strong>接收数据的一般步骤：</strong></p>
+<ul>
+<li>创建发送端DatagramSocket的对象</li>
+<li>打包数据</li>
+<li>发送数据</li>
+<li>释放资源</li>
+</ul>
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a02</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
@@ -2401,13 +2367,57 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 
 
 
+<p><strong>发送数据的一般步骤：</strong></p>
+<ul>
+<li>创建接收端DatagramSocket的对象</li>
+<li>接收打包好的数据</li>
+<li>解析数据包</li>
+<li>释放资源</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>study<span class="token punctuation">.</span>a02</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Send</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 发送数据</span>
+
+        <span class="token comment">// 1.创建DatagramSocket对象(快递公司)</span>
+        <span class="token comment">//   细节:</span>
+        <span class="token comment">// 绑定端口，以后我们就是通过这个端口往外发送</span>
+        <span class="token comment">// 空参:所有可用的端口中随机一个进行使用</span>
+        <span class="token comment">// 有参:指定端口号进行绑定</span>
+        <span class="token class-name">DatagramSocket</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">// 2.打包数据</span>
+        <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"Hello， 你好啊！"</span><span class="token punctuation">;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">InetAddress</span> address <span class="token operator">=</span> <span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">10086</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">DatagramPacket</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span> bytes<span class="token punctuation">.</span>length<span class="token punctuation">,</span> address<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3.发送数据</span>
+        ds<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4.释放资源</span>
+        ds<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
 
 
 
 
 <h2 id="3-UDP通信程序"><a href="#3-UDP通信程序" class="headerlink" title="3. UDP通信程序"></a>3. UDP通信程序</h2><h3 id="3-1-UDP发送数据"><a href="#3-1-UDP发送数据" class="headerlink" title="3.1 UDP发送数据"></a>3.1 UDP发送数据</h3><ul>
 <li>找到快递公司（创建发送端的DatagramSocket对象）</li>
-<li>打包快递（数据打包DatagramPacket）</li>
+<li>打包快递（打包数据DatagramPacket）</li>
 <li>快递公司发送包裹（发送数据）</li>
 <li>付钱走人（释放资源）</li>
 </ul>
