@@ -3897,7 +3897,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
 </li>
 </ol>
 <h2 id="4-练习"><a href="#4-练习" class="headerlink" title="4.练习"></a>4.练习</h2><h3 id="4-1-练习一"><a href="#4-1-练习一" class="headerlink" title="4.1 练习一"></a>4.1 练习一</h3><p><strong>对于任意一个对象，都可以把对象所有的字段名和值，保存到文件中去</strong></p>
-<img src="/2023/06/04/reflect/1.png" class>
+<img src="/2023/06/04/reflect/4.png" class>
 
 
 
