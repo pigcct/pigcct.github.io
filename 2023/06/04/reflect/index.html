@@ -446,15 +446,28 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h1><h2 id="1-什么是反射？"><a href="#1-什么是反射？" class="headerlink" title="1. 什么是反射？"></a>1. 什么是反射？</h2><p>在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操作可能会影响程序的性能和安全性。</p>
-<p>{ %asset_img 1.png % }</p>
+<img src="/2023/06/04/reflect/1.png" class>
+
+
+
 <p><strong>通过反射可以获取class(字节码文件)，构造方法，成员变量和成员方法</strong></p>
-<p>{ %asset_img 2.png % }</p>
+<img src="/2023/06/04/reflect/2.png" class>
+
+
+
+
+
+
+
 <h2 id="2-获取"><a href="#2-获取" class="headerlink" title="2. 获取"></a>2. 获取</h2><h3 id="2-1-获取Class对象"><a href="#2-1-获取Class对象" class="headerlink" title="2.1 获取Class对象"></a>2.1 获取Class对象</h3><ol>
 <li>通过全类名 Class.forName(“全类名”)获取</li>
 <li>通过类名.class获取</li>
 <li>通过对象.getClass() 获取</li>
 </ol>
-<p>{ %asset_img 3.png % }</p>
+<img src="/2023/06/04/reflect/3.png" class>
+
+
+
 <pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>sty</span><span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyReflect01</span> <span class="token punctuation">&#123;</span>
@@ -950,7 +963,10 @@ public class Student &#123;
 </li>
 </ol>
 <h2 id="4-练习"><a href="#4-练习" class="headerlink" title="4.练习"></a>4.练习</h2><h3 id="4-1-练习一"><a href="#4-1-练习一" class="headerlink" title="4.1 练习一"></a>4.1 练习一</h3><p><strong>对于任意一个对象，都可以把对象所有的字段名和值，保存到文件中去</strong></p>
-<p>{ %asset_img 4.png % }</p>
+<img src="/2023/06/04/reflect/1.png" class>
+
+
+
 <h4 id="MyReflect"><a href="#MyReflect" class="headerlink" title="MyReflect"></a>MyReflect</h4><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>sty<span class="token punctuation">.</span>zlx01</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">BufferedWriter</span></span><span class="token punctuation">;</span>
