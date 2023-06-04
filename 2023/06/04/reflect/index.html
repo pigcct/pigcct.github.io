@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="反射, Spicy-pig">
-    <meta name="description" content="反射机制1. 什么是反射？在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操">
+    <meta name="description" content="反射机制1. 什么是反射在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    15 分
                 </div>
                 
 
@@ -445,7 +445,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h1><h2 id="1-什么是反射？"><a href="#1-什么是反射？" class="headerlink" title="1. 什么是反射？"></a>1. 什么是反射？</h2><p>在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操作可能会影响程序的性能和安全性。</p>
+                <h1 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h1><h2 id="1-什么是反射"><a href="#1-什么是反射" class="headerlink" title="1. 什么是反射"></a>1. 什么是反射</h2><p>在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操作可能会影响程序的性能和安全性。</p>
 <img src="/2023/06/04/reflect/1.png" class>
 
 
@@ -586,64 +586,64 @@
 
 
 
-<pre class="language-java'" data-language="java'"><code class="language-java'">package com.reflect.sty.test02;
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>sty<span class="token punctuation">.</span>test02</span><span class="token punctuation">;</span>
 
-public class Student &#123;
-    private String name;
-    private int age;
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
-    public Student() &#123;
-    &#125;
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public Student(String name) &#123;
-        this.name &#x3D; name;
-    &#125;
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    protected Student(int age) &#123;
-        this.age &#x3D; age;
-    &#125;
+    <span class="token keyword">protected</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public Student(String name, int age) &#123;
-        this.name &#x3D; name;
-        this.age &#x3D; age;
-    &#125;
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    &#x2F;**
+    <span class="token comment">/**
      * 获取
      * @return name
-     *&#x2F;
-    public String getName() &#123;
-        return name;
-    &#125;
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    &#x2F;**
+    <span class="token comment">/**
      * 设置
      * @param name
-     *&#x2F;
-    public void setName(String name) &#123;
-        this.name &#x3D; name;
-    &#125;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    &#x2F;**
+    <span class="token comment">/**
      * 获取
      * @return age
-     *&#x2F;
-    public int getAge() &#123;
-        return age;
-    &#125;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    &#x2F;**
+    <span class="token comment">/**
      * 设置
      * @param age
-     *&#x2F;
-    public void setAge(int age) &#123;
-        this.age &#x3D; age;
-    &#125;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public String toString() &#123;
-        return &quot;Student&#123;name &#x3D; &quot; + name + &quot;, age &#x3D; &quot; + age + &quot;&#125;&quot;;
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Student&#123;name = "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", age = "</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 </code></pre>
 
 
