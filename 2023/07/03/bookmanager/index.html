@@ -4,9 +4,58 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于Java Swing的图书管理系统, Spicy-pig">
-    <meta name="description" content="
-  71398416b9ef2f5de47ee806b61fc8c7f086e14600fed39e3f0361efd029052a55e8b04d1994797d555ce7012bcf2b387e91155cdfea7d5831a3f">
+    <meta name="keywords" content="基于Java Swing图书管理系统, Spicy-pig">
+    <meta name="description" content="1. 项目概述1.1 项目结构：
+用户注册
+
+用户登录
+
+图书管理
+
+
+用户
+
+
+
+
+
+
+
+
+管理员
+
+
+
+
+1.2 E—R图
+user
+
+
+
+
+
+
+book
+
+
+
+
+
+
+book_type
+
+
+
+
+
+
+
+
+borrowdetail
+
+
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +67,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于Java Swing的图书管理系统 | Spicy-pig</title>
+    <title>基于Java Swing图书管理系统 | Spicy-pig</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -335,7 +384,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '26f580ae0efc69079ed9a6beea0e30288ad90119';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -348,12 +397,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于Java Swing的图书管理系统</h1>
+                    <h1 class="description center-align post-title">基于Java Swing图书管理系统</h1>
                 </div>
             </div>
         </div>
@@ -416,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    189
                 </div>
                 
 
@@ -446,18 +495,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="8e8a8081c892f3be54f745bf03f9b611e46f73189224db6810b60d90853a1713">71398416b9ef2f5de47ee806b61fc8c7f086e14600fed39e3f0361efd029052a55e8b04d1994797d555ce7012bcf2b387e91155cdfea7d5831a3f250d26e5ea3c97141a94dc3d52523a5e21b027689fa61c6f31894932621459a4986b34e3fc763a9460dc639eedf77eacb71515755b9144107ac38bfec5e79ec67357241b3eac69ba4c649f4d69eb31d98a15a80991aad20427718c4595d3cbdcaf2295c4fa479232c42982946e6e721a656b2b095cd6d2c7bed10c5de4a8b926449eb71e59fce2959e29a8ee86dcc2d1574e96b019888834538d7eaa59d3ae3c2216294d9ac9929b3bc4b6cabb53282414b88339f92facef6574b87a934d26674c5e40e8a86d11b65c4d2de569d7cab4e30872257961f0bde7c3ab39fdca6e6d16fe7dfe2e012b790a7451b2a31965632f3de1ceb5453aab34ffcc13a432c7e52d242892e4d5cc80e631f754b03804d280bb23c6a2423a9727141ba9604e45dcd209cbf362d1acbd1f8a1a9087c62746a8503097103da1d5f444e5ef085bbb3a1349eafdae7141108c38ecc6566393da9ec278ee0e2bafaa85d39b4a559d4f3a016f60bd032fbb85815423bbf76f9837cdd4b6a2150c3881682e2e534f527f0d0de8d9c3e7f918545aff0d467d9ee91a8a77713feabe0e5695a933efa9765676be722b3747966a144241f150f7ba7d2798faaa764cda8702672566d8903836b385fcf24781a3ddf2151bb27bf17be02131fc862c2fcd81486bebd56e8ac6f617cb4ab761b3b10b3a2706a0bdb8f564fd2b5ab7a9d91be5da8463f26b99b2993d85056d49e14d4704a6578bc0a4b502a55466ba1447e9529aeef6f521e3debaad167063b31f0fb2e3d4d7a7889242bdd328d8284f206a7e6501ce9c23b305f289f523a037036f65b4801de9c1ccf71c72b466c900819e2c52d2a315cd03ce7efa5128880bc315efb947bc74f7f976126e2273b0325ebafee3ef5a9c41b052ddb7302f163c23e9296ac3a4521800dc664839428d7a2bd320f072a341f09609f2a0e2cecc46a2f8fb5323dbabed1e48bd84b8f1ffb2112a5ffd6e67d55df12e754b75ea489490d58f756d5f04a11620cf5b4c807fe0d08c1b287e5bba9505ca4e006e93f1b7431f6abf937614f0563aa6daa9775bf31233793a0b276e5ce9b8f3e3e4845c7966444da2d5024f63751e04604e0c722e65ed619a38e7af08bd886d3ecd91e023c39666cc624893d91a9ba56a5d6e17919f8da928587177a57294d466268a6c65663290980a7f629fe70d1146f1aad971bf8f4de2ba9e90fcd079e4efe60b1a7956d486b75ad3d3212d3213ab7925db2b9cb026598a359039c2f93832c6dd0bfdea57b3d100ca82ab0d41af46e5464bc14a05912883a9e95bee018a95b387411d8c85f7a0a17868c06bbdcad9f6c31e417fe33e466a6123cb485243d0aee24f9da9cd381f3d5d1ca03932d84523c3fac3a0178e1dc79cf47f6a8525faf306adb07a437f61f2505b6ae86129038d1d787877ea79f8fadcaca4224f83f49a1a67545cc4f00efaab75cece56d0c8fe35d5a4b1473f941e5a868e1744834efce9d66e2e37873eb6789740b8ac099b64eadcb5f5d88b72cfbdf7677a2806c4b4ce11e4ce6e248098f1c35fe44e627dfc16349462607280cdd8fe141ae663e79510138bee65b85093fae8c602e085906855acd675bf7dde0dac46d724e46f16a44aa4ab5885f682ad424c0e84035a5f2adb571257ee55319cb5aeb8e666e51720db3dd6894563c879f326f7a5a7c009d8471ab8f5801a7659a83d702375cdaad4261b64934e8e541f380803b2a6ad8d1bda42a805c9c0c08461adc8633eb59f8a7f64f19076ce2b6a65c24fc31c93cfa1da594144b33606366f72ec589fdb05fe6f74d77fede992259e9f2a7c9192f2027f42ab33a7f9bcd9b87031a90ee39b98790b2baad1945d01cf4b1d2a4756afe1f3c81f91c77504049dabf4fcb3221eb10a09df35e5720a7ea3e252bdc6016a55e0994e608f48563588b86f657bfb07153db03a681df0a1cb815f7cb8416d6bda7d191ebc5e48235e34e8f4dc56b41c5056e36443ca9ac0c0a85393c51818c214d9b597a70ac5e40dbbca97388911d41a60ea51da4e909e589390542baf5eb492312d3b26eb1908879687f96f76ccb6c2ad3c6d96c77038eb2fab32cf4fa6a583473a9392ce22f63a971be41ddb101bfcb7d43f1aa3d137c9d113de8706a9414e9e53e2e7842b747f72ca2e75fc13cad4db09208a83e64826982fbf36dcc9d92fb7251f4dcc2d4180141ee5d8d56dc0760d984dee76b14fbac38d5eb673d1545776c2840a6858a3b9e953022bbb20fabb7bfc5a4f5f633305fb30687ae6bddbef3e70e6378943cd4a81b9dde590a35fc3da2d17f9938efc64530f20fa274b49c5dc24493c06410f3be36fc60e6df2df995f3eea06b6c671b33e4ef8c6de1dcfc0819b788c09a147d69b24e726c1cc7d896c4bf5874ee157f7a83cc79428d8ecedfa9b9a9422669143106b307c5658c80c63b0ff6ce76de7c21ce345d5b37949f6cfba859b91ad98cbcfaeb38e94326d8adc48b568d715af664b6ec465a86c0a8a87436d8ac8d6ebc9144c2ac083f86daacf2cb9b3541eec0485c3542344d89dda82c2d8a468bca25a0cae4d0bb94b7f689cb8a31a9133e072e842fa308cfeeff6c163e46ec96318f15f92588f9af6ecd5d8dba5fee54e9fbf6f008b70d566ce01c1d88a5462a9eda60330ac462722eea16dbb7acdd79656665e0e7dfe63a962d35e75e1a0faee79a0e0b63630f0c8b5558c5c7e6722152c9b7b33b0bf272be87859743a3e3c55f2ad66565385459cf51b9ff6f7e175feaf2bda1542576c1ea1f0dc98793e6b5ae398f1bc42312f0d2076447526c7849e85a54bae1dd2aeb2a2aafd411cd265522defdcfc3c8e944f9427f01a9871589a62d77e386bc0872833f42be854a0bccc29b11d29a10ffb115c8f47f9fa65167cd4d649f71da4d0a12c99bb94d6cfc8437c1c8ad397ddbe6f1503f596525d6de6db499bb2df290ee852b3f1df0219965831a9e22e94e663caf6d8d202bc32f64dc490c7984434fe1bb5c0a9ef9172567c06ea89d445f0aa77d55d7c37eaaa6d0f9919502e4ad7823aa627ad2c6c0f4c007bca50bac3951f370578f3cb964c68156a571dde5799b945f68c3d09edc9556b1e37ff016edde6c0e99520d318b79c3652fdf70a7b7ed7f8a20034690df39c67acf111fa8ba14c591f272c40f6ab4f1528e5a61a6380108cde061c950b08199e9b84d781c2b438fde67f84d785f40620f9191da391bcc03b6fb23eb9e76eb1e9068ce7be25bb2d179db1df70df711ffb042eecaeee60010136a8d12a8ff5869e65a3e8a71aa3b7ef87f65f41085ee2fd9f58a314203250b2478b30bf77dc85783232bb739cfeac485db0aea45c2cd877b4911b1e658f5162069640e881c435a42291707a736e150863b88c00184494ea73ad1d86b80244041a346b6105b1a46c23e6e8121ef5aa16b9cbaba022a190702fd28f0b8495c1b098e36b2757ad4504e0f436de53909e570172cc5727941fd99486b57b4dde710cdbe86ac1ce179</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+                <h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><h3 id="1-1-项目结构："><a href="#1-1-项目结构：" class="headerlink" title="1.1 项目结构："></a>1.1 项目结构：</h3><ul>
+<li><p>用户注册</p>
+</li>
+<li><p>用户登录</p>
+</li>
+<li><p>图书管理</p>
+</li>
+</ul>
+<p><strong>用户</strong></p>
+<img src="/2023/07/03/bookmanager/1.png" class>
+
+
+
+
+
+
+
+<p><strong>管理员</strong></p>
+<img src="/2023/07/03/bookmanager/2.png" class>
+
+
+
+<h3 id="1-2-E—R图"><a href="#1-2-E—R图" class="headerlink" title="1.2 E—R图"></a>1.2 E—R图</h3><ol>
+<li>user</li>
+</ol>
+<img src="/2023/07/03/bookmanager/3.png" class>
+
+
+
+<ol start="2">
+<li>book</li>
+</ol>
+<img src="/2023/07/03/bookmanager/4.png" class>
+
+
+
+<ol start="3">
+<li>book_type</li>
+</ol>
+<img src="/2023/07/03/bookmanager/5.png" class>
+
+
+
+
+
+<ol start="4">
+<li>borrowdetail</li>
+</ol>
+<img src="/2023/07/03/bookmanager/6.png" class>
+
+
+
+
+
+
+
+<h2 id="2-数据库设计"><a href="#2-数据库设计" class="headerlink" title="2. 数据库设计"></a>2. 数据库设计</h2><p><strong>数据库名：mybookmanager</strong></p>
+<p><strong>字符集：utf-8</strong></p>
+<p><strong>端口号：3306</strong></p>
+<ol>
+<li>user</li>
+</ol>
+<img src="/2023/07/03/bookmanager/7.png" class>
+
+
+
+<ol start="2">
+<li>book</li>
+</ol>
+<img src="/2023/07/03/bookmanager/8.png" class>
+
+
+
+<ol start="3">
+<li>book_type</li>
+</ol>
+<img src="/2023/07/03/bookmanager/9.png" class>
+
+
+
+<ol start="4">
+<li>borrowdetail</li>
+</ol>
+<img src="/2023/07/03/bookmanager/10.png" class>
+
+
+
+
+
+
+
+<h2 id="3-项目环境搭建"><a href="#3-项目环境搭建" class="headerlink" title="3. 项目环境搭建"></a>3. 项目环境搭建</h2><h3 id="3-1-确定项目开发环境"><a href="#3-1-确定项目开发环境" class="headerlink" title="3.1 确定项目开发环境"></a>3.1 确定项目开发环境</h3><p><strong>操作系统：window10</strong></p>
+<p><strong>Java开发包：jdk18</strong></p>
+<p><strong>数据库：mysql8.0</strong></p>
+<p><strong>开发工具：IntelliJ IDEA 2022.2.2</strong></p>
+<h3 id="3-2-创建数据库"><a href="#3-2-创建数据库" class="headerlink" title="3.2 创建数据库"></a>3.2 创建数据库</h3><p>创建名为mybookmanager的数据库</p>
+<h3 id="3-3-引入jar包"><a href="#3-3-引入jar包" class="headerlink" title="3.3 引入jar包"></a>3.3 引入jar包</h3><img src="/2023/07/03/bookmanager/11.png" class>
+
+
+
+
+
+<h3 id="3-4-创建包"><a href="#3-4-创建包" class="headerlink" title="3.4 创建包"></a>3.4 创建包</h3><img src="/2023/07/03/bookmanager/12.png" class>
+
+<ul>
+<li>dao包下的java文件为与数据库进行交互的类</li>
+<li>Jframe包下的java文件为UI界面</li>
+<li>model包下的java文件为实体类</li>
+<li>utils包中的类为项目中所用到的工具类</li>
+</ul>
+<h2 id="4-实体类设计-model"><a href="#4-实体类设计-model" class="headerlink" title="4. 实体类设计(model)"></a>4. 实体类设计(model)</h2><p>666</p>
+
                 
             </div>
             <hr/>
@@ -877,15 +1026,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="基于Java Swing的图书管理系统">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于Java Swing图书管理系统">
                         
-                        <span class="card-title">基于Java Swing的图书管理系统</span>
+                        <span class="card-title">基于Java Swing图书管理系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Here's something encrypted, password is required to continue reading.
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1146,7 +1295,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25k</span>
+                        class="white-color">25.2k</span>
             
             
             
