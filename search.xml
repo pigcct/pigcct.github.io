@@ -4321,4 +4321,26 @@ method=teach</code></pre>
         <tag>反射</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于Java Swing的图书管理系统</title>
+    <url>/2023/07/03/bookmanager/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="55773749653bcbecfdf62a98d895963326c0f08e4f8b82ec20b1d74e9a05dc5d">f97ed084286a754e9dedc1878c49466528cf7e925d6a69e6c66f6f5664690c4404fc776f0a01923fb71522a1930c8ca712d3fbc8e18a736092c50ca228a42c7bc84314dea40fa3af04da6f5dbf80f18589e323b6367f228657124088cd7f34b9463713c9396151513cd4a5c3310280d21d09d9760b6682b3a03089106e1e993f950f89505b9b61d507afc006ef8d3ec3df98e7081e04815e68514605020279b75482cd007ba436d27cc6fe6da277b611503ad1e6b6ebccfe16e26bb76425322696c8fe7a08ea7f661ba1cdf085204619845622552e6d391b470856ba98f8a00c573c2342683c866d820012c83ad385bbc2300c9b196fbcdae4a336d54bab77ac0334b963b9126da63f6ccfc98d9a8687c4d6e984ca36e9af5d269b5704d9e44d60d7461fed6bc5298ad04ded8832eeaf01db41e1930fd4e38bc0755c6bb0d1886ac5df4875ce31bb697d7b8495e2d4f51cd73ff545e2a20a07d3edeb46b5290cb916e8325defb59f29329d1789009794fc4a35fea925b88bfc8bee430b51275b184e8c0c6d6773faf714e4626998750dfaa3938c481454d1052324e7f84e4b4415df3be0d8933658633cea55c1035021cf9fe5de0ba9933d0bf89010497fb6d725c2d7e9f8af23c8e5677a65e775a1b6ed848d1bd94638c04083474bf0a569c34f263a21e618c52909c2c27affba52ade84af001ff562bc56d9004e7a4f0ac63e6a798ccc3b2066ee883d334f694541fefae188d08b580249b8bece5dac73e77c534a4dadd88ad95daaf3c78276b5b141726715418c30023b6ffd2094bf39f697beee56abd8ab0d5575526fe8305a3f6e8c0b1388f6e6f7f9b837f1e0ff0715a82918f8353dcdb3d62e10646498854a6f272e1d43f1dde741ea153cd0c1d52073efbe740c4fa8182395c1b464ae0b5a12a8707a9f62fc779d41c6da60b588fa1b482c4cc5899180141a08265e27519a805c0c707eeb2db70e5117a50840839a622263bd01d96264de605d57974803fee3e36b3ea4585d7f2aa83d2fc0d169c3944ecdec8a820ee97ca9781fe619d6a88258c5d59c471b05b250741519c79cf32a82248da344a16391a05a4568225cd7d8b5c93e4eed959631299fc07d93b6a484600926cf2a6f65d51d4c8d658710d1fa55c91b441f166f834dda48b3b08976a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Swing</tag>
+      </tags>
+  </entry>
 </search>
