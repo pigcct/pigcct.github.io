@@ -27,17 +27,12 @@
 
 
 
-1.2 E—R图
-user
-
-
+1.2 E—R图user
 
 
 
 
 book
-
-
 
 
 
@@ -49,9 +44,13 @@ book_type
 
 
 
+borrowdetail
 
 
-borrowdetai">
+
+
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -454,21 +453,21 @@ borrowdetai">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-04
+                    2023-07-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17.4k
+                    18.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    92 分
+                    97 分
                 </div>
                 
 
@@ -513,32 +512,24 @@ borrowdetai">
 
 
 
-<h3 id="1-2-E—R图"><a href="#1-2-E—R图" class="headerlink" title="1.2 E—R图"></a>1.2 E—R图</h3><ol>
-<li>user</li>
-</ol>
+<h3 id="1-2-E—R图"><a href="#1-2-E—R图" class="headerlink" title="1.2 E—R图"></a>1.2 E—R图</h3><p><strong>user</strong></p>
 <img src="/2023/07/03/bookmanager/3.png" class>
 
 
 
-<ol start="2">
-<li>book</li>
-</ol>
+<p><strong>book</strong></p>
 <img src="/2023/07/03/bookmanager/4.png" class>
 
 
 
-<ol start="3">
-<li>book_type</li>
-</ol>
+<p><strong>book_type</strong></p>
 <img src="/2023/07/03/bookmanager/5.png" class>
 
 
 
 
 
-<ol start="4">
-<li>borrowdetail</li>
-</ol>
+<p><strong>borrowdetail</strong></p>
 <img src="/2023/07/03/bookmanager/6.png" class>
 
 
@@ -547,53 +538,18 @@ borrowdetai">
 
 
 
-<h2 id="2-数据库设计"><a href="#2-数据库设计" class="headerlink" title="2. 数据库设计"></a>2. 数据库设计</h2><p><strong>数据库名：mybookmanager</strong></p>
-<p><strong>字符集：utf-8</strong></p>
-<p><strong>端口号：3306</strong></p>
-<ol>
-<li>user</li>
-</ol>
-<img src="/2023/07/03/bookmanager/7.png" class>
-
-
-
-<ol start="2">
-<li>book</li>
-</ol>
-<img src="/2023/07/03/bookmanager/8.png" class>
-
-
-
-<ol start="3">
-<li>book_type</li>
-</ol>
-<img src="/2023/07/03/bookmanager/9.png" class>
-
-
-
-<ol start="4">
-<li>borrowdetail</li>
-</ol>
-<img src="/2023/07/03/bookmanager/10.png" class>
-
-
-
-
-
-
-
-<h2 id="3-项目环境搭建"><a href="#3-项目环境搭建" class="headerlink" title="3. 项目环境搭建"></a>3. 项目环境搭建</h2><h3 id="3-1-确定项目开发环境"><a href="#3-1-确定项目开发环境" class="headerlink" title="3.1 确定项目开发环境"></a>3.1 确定项目开发环境</h3><p><strong>操作系统：window10</strong></p>
+<h2 id="2-项目环境搭建"><a href="#2-项目环境搭建" class="headerlink" title="2. 项目环境搭建"></a>2. 项目环境搭建</h2><h3 id="2-1-确定项目开发环境"><a href="#2-1-确定项目开发环境" class="headerlink" title="2.1 确定项目开发环境"></a>2.1 确定项目开发环境</h3><p><strong>操作系统：window 10</strong></p>
 <p><strong>Java开发包：jdk18</strong></p>
-<p><strong>数据库：mysql8.0</strong></p>
+<p><strong>数据库：mysql 8.0(Navicate)</strong></p>
 <p><strong>开发工具：IntelliJ IDEA 2022.2.2</strong></p>
-<h3 id="3-2-创建数据库"><a href="#3-2-创建数据库" class="headerlink" title="3.2 创建数据库"></a>3.2 创建数据库</h3><p>创建名为mybookmanager的数据库</p>
-<h3 id="3-3-引入jar包"><a href="#3-3-引入jar包" class="headerlink" title="3.3 引入jar包"></a>3.3 引入jar包</h3><img src="/2023/07/03/bookmanager/11.png" class>
+<h3 id="2-2-创建数据库"><a href="#2-2-创建数据库" class="headerlink" title="2.2 创建数据库"></a>2.2 创建数据库</h3><p>在Navicat中连接MySQL数据库后新建数据库mybookmanager，并在该数据库中建立相应的表</p>
+<h3 id="2-3-引入jar包"><a href="#2-3-引入jar包" class="headerlink" title="2.3 引入jar包"></a>2.3 引入jar包</h3><img src="/2023/07/03/bookmanager/11.png" class>
 
 
 
 
 
-<h3 id="3-4-创建包"><a href="#3-4-创建包" class="headerlink" title="3.4 创建包"></a>3.4 创建包</h3><img src="/2023/07/03/bookmanager/12.png" class>
+<h3 id="2-4-创建包目录结构"><a href="#2-4-创建包目录结构" class="headerlink" title="2.4 创建包目录结构"></a>2.4 创建包目录结构</h3><img src="/2023/07/03/bookmanager/12.png" class>
 
 <ul>
 <li>dao包下的java文件为与数据库进行交互的类</li>
@@ -601,7 +557,165 @@ borrowdetai">
 <li>model包下的java文件为实体类</li>
 <li>utils包中的类为项目中所用到的工具类</li>
 </ul>
-<h2 id="4-实体类设计-model"><a href="#4-实体类设计-model" class="headerlink" title="4. 实体类设计(model)"></a>4. 实体类设计(model)</h2><h3 id="4-1-User类"><a href="#4-1-User类" class="headerlink" title="4.1 User类"></a>4.1 User类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
+<h2 id="3-数据库设计"><a href="#3-数据库设计" class="headerlink" title="3. 数据库设计"></a>3. 数据库设计</h2><p><strong>数据库名：mybookmanager</strong></p>
+<p><strong>字符集：utf-8</strong></p>
+<p><strong>端口号：3306</strong></p>
+<p><strong>user</strong></p>
+<img src="/2023/07/03/bookmanager/7.png" class>
+
+
+
+<p><strong>book</strong></p>
+<img src="/2023/07/03/bookmanager/8.png" class>
+
+
+
+<p><strong>book_type</strong></p>
+<img src="/2023/07/03/bookmanager/9.png" class>
+
+
+
+<p><strong>borrowdetail</strong></p>
+<img src="/2023/07/03/bookmanager/10.png" class>
+
+
+
+<p><strong>建表以及插入语句</strong></p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">/*
+ Navicat Premium Data Transfer
+
+ Source Server         : Java
+ Source Server Type    : MySQL
+ Source Server Version : 80026 (8.0.26)
+ Source Host           : localhost:3306
+ Source Schema         : bookmanager
+
+ Target Server Type    : MySQL
+ Target Server Version : 80026 (8.0.26)
+ File Encoding         : 65001
+
+ Date: 04/07/2023 12:34:07
+*/</span>
+
+<span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
+<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Table structure for book</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span>  <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>book_name<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>tyPE_id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>author<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>publish<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>PRice<span class="token punctuation">`</span></span> <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>number<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">1</span> <span class="token keyword">COMMENT</span> <span class="token string">'状态 1上架0下架'</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>remark<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">USING</span> <span class="token keyword">BTREE</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">17</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> <span class="token operator">=</span> utf8 <span class="token keyword">COLLATE</span> <span class="token operator">=</span> utf8_general_ci ROW_FORMAT <span class="token operator">=</span> COMPACT<span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Records of book</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Java核心技术'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'霍斯特曼'</span><span class="token punctuation">,</span> <span class="token string">'人民邮电出版社'</span><span class="token punctuation">,</span> <span class="token number">69.00</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Java基础教学'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'Tomcat与Java web'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'孙卫琴'</span><span class="token punctuation">,</span> <span class="token string">'人民邮电出版社'</span><span class="token punctuation">,</span> <span class="token number">119.00</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'javaweb教学'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">';mySQL基础教程'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'西泽梦路'</span><span class="token punctuation">,</span> <span class="token string">'人民邮电出版社'</span><span class="token punctuation">,</span> <span class="token number">129.00</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'MySQL基础教学'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'西游记'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'吴承恩'</span><span class="token punctuation">,</span> <span class="token string">'机械工业出版社'</span><span class="token punctuation">,</span> <span class="token number">23.00</span><span class="token punctuation">,</span> <span class="token number">213</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'四大名著之一'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'SpringCloud微服务架构开发'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'黑马程序员'</span><span class="token punctuation">,</span> <span class="token string">'人民邮电出版社'</span><span class="token punctuation">,</span> <span class="token number">28.00</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'微服务实战开发'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'水浒传'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'施耐庵 '</span><span class="token punctuation">,</span> <span class="token string">'人民文学出版社'</span><span class="token punctuation">,</span> <span class="token number">29.00</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'四大名著之一'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token string">'jspringboot'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'cc'</span><span class="token punctuation">,</span> <span class="token string">'xx'</span><span class="token punctuation">,</span> <span class="token number">5.20</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'springboot'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Table structure for book_type</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span>  <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>type_name<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>remark<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">USING</span> <span class="token keyword">BTREE</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">5</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> <span class="token operator">=</span> utf8 <span class="token keyword">COLLATE</span> <span class="token operator">=</span> utf8_general_ci ROW_FORMAT <span class="token operator">=</span> COMPACT<span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Records of book_type</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'技术'</span><span class="token punctuation">,</span> <span class="token string">'技术hhh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'人文'</span><span class="token punctuation">,</span> <span class="token string">'人文类'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'小说'</span><span class="token punctuation">,</span> <span class="token string">'人生情感小说'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>book_type<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'科技类'</span><span class="token punctuation">,</span> <span class="token string">'科技类'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Table structure for borrowdetail</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span>  <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>user_id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>book_id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'状态  1在借2已还'</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>borrow_time<span class="token punctuation">`</span></span> <span class="token keyword">bigint</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>return_time<span class="token punctuation">`</span></span> <span class="token keyword">bigint</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">USING</span> <span class="token keyword">BTREE</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">30</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> <span class="token operator">=</span> utf8 <span class="token keyword">COLLATE</span> <span class="token operator">=</span> utf8_general_ci ROW_FORMAT <span class="token operator">=</span> COMPACT<span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Records of borrowdetail</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546414916391</span><span class="token punctuation">,</span> <span class="token number">1546414948498</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546414932877</span><span class="token punctuation">,</span> <span class="token number">1556417443285</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546416530026</span><span class="token punctuation">,</span> <span class="token number">1546416640210</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546565100120</span><span class="token punctuation">,</span> <span class="token number">1556334334816</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546565102870</span><span class="token punctuation">,</span> <span class="token number">1688392384101</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1546565519776</span><span class="token punctuation">,</span> <span class="token number">1556207839074</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1546565522374</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1556427836809</span><span class="token punctuation">,</span> <span class="token number">1688392380686</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1556433544156</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1556503388763</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1556507260569</span><span class="token punctuation">,</span> <span class="token number">1556507349243</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1688389422921</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1688429793391</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>borrowdetail<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1688445082661</span><span class="token punctuation">,</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Table structure for user</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span>  <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>username<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>password<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>role<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'角色  1学生 2管理员'</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>sex<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>phone<span class="token punctuation">`</span></span> <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">USING</span> <span class="token keyword">BTREE</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">17</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> <span class="token operator">=</span> utf8 <span class="token keyword">COLLATE</span> <span class="token operator">=</span> utf8_general_ci ROW_FORMAT <span class="token operator">=</span> COMPACT<span class="token punctuation">;</span>
+
+<span class="token comment">-- ----------------------------</span>
+<span class="token comment">-- Records of user</span>
+<span class="token comment">-- ----------------------------</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'xx'</span><span class="token punctuation">,</span> <span class="token string">'111111'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'13195648799'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'admin'</span><span class="token punctuation">,</span> <span class="token string">'111111'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'13198645975'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'徐某人'</span><span class="token punctuation">,</span> <span class="token string">'xkj123'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">,</span> <span class="token string">'13195648529'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'肖淼'</span><span class="token punctuation">,</span> <span class="token string">'sDF78978'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'女'</span><span class="token punctuation">,</span> <span class="token string">'13195698458'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'1111'</span><span class="token punctuation">,</span> <span class="token string">'1111yyyy'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'15076281789'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'11'</span><span class="token punctuation">,</span> <span class="token string">'15076281789yy'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'15076281789'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">'222'</span><span class="token punctuation">,</span> <span class="token string">'15076281789yy'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'15076281789'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token string">'xxn'</span><span class="token punctuation">,</span> <span class="token string">'12345yyy'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'15076281789'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>user<span class="token punctuation">`</span></span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span> <span class="token string">'12345678yy'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'15076281789'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre>
+
+
+
+
+
+
+
+<h2 id="4-实体类设计-model"><a href="#4-实体类设计-model" class="headerlink" title="4. 实体类设计(model)"></a>4. 实体类设计(model)</h2><h3 id="4-1-User"><a href="#4-1-User" class="headerlink" title="4.1 User"></a>4.1 User</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 用户类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>
@@ -722,7 +836,7 @@ borrowdetai">
 
 
 
-<h3 id="4-2-Book类"><a href="#4-2-Book类" class="headerlink" title="4.2 Book类"></a>4.2 Book类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
+<h3 id="4-2-Book"><a href="#4-2-Book" class="headerlink" title="4.2 Book"></a>4.2 Book</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 图书类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Book</span> <span class="token punctuation">&#123;</span>
@@ -899,7 +1013,7 @@ borrowdetai">
 
 
 
-<h3 id="4-3-BookType类"><a href="#4-3-BookType类" class="headerlink" title="4.3 BookType类"></a>4.3 BookType类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
+<h3 id="4-3-BookType"><a href="#4-3-BookType" class="headerlink" title="4.3 BookType"></a>4.3 BookType</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
 
 
 <span class="token comment">// 图书类型</span>
@@ -969,7 +1083,7 @@ borrowdetai">
 
 
 
-<h3 id="4-4-BorrowDetail类"><a href="#4-4-BorrowDetail类" class="headerlink" title="4.4 BorrowDetail类"></a>4.4 BorrowDetail类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
+<h3 id="4-4-BorrowDetail"><a href="#4-4-BorrowDetail" class="headerlink" title="4.4 BorrowDetail"></a>4.4 BorrowDetail</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 借阅信息</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BorrowDetail</span> <span class="token punctuation">&#123;</span>
@@ -1128,7 +1242,7 @@ borrowdetai">
 
 
 
-<h3 id="ToolUtil"><a href="#ToolUtil" class="headerlink" title="ToolUtil"></a>ToolUtil</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>utils</span><span class="token punctuation">;</span>
+<h3 id="5-2-ToolUtil"><a href="#5-2-ToolUtil" class="headerlink" title="5.2 ToolUtil"></a>5.2 ToolUtil</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>utils</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>text<span class="token punctuation">.</span></span><span class="token class-name">SimpleDateFormat</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Date</span></span><span class="token punctuation">;</span>
@@ -1181,7 +1295,7 @@ borrowdetai">
 
 
 
-<h2 id="6-数据流交互类设计-dao"><a href="#6-数据流交互类设计-dao" class="headerlink" title="6. 数据流交互类设计(dao)"></a>6. 数据流交互类设计(dao)</h2><h3 id="6-1-UserDao"><a href="#6-1-UserDao" class="headerlink" title="6.1 UserDao"></a>6.1 UserDao</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+<h2 id="6-数据库交互类设计-dao"><a href="#6-数据库交互类设计-dao" class="headerlink" title="6. 数据库交互类设计(dao)"></a>6. 数据库交互类设计(dao)</h2><h3 id="6-1-UserDao"><a href="#6-1-UserDao" class="headerlink" title="6.1 UserDao"></a>6.1 UserDao</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>model<span class="token punctuation">.</span></span><span class="token class-name">User</span></span><span class="token punctuation">;</span>
@@ -2261,7 +2375,7 @@ borrowdetai">
 
 
 
-<h2 id="8-图书借还模块"><a href="#8-图书借还模块" class="headerlink" title="8. 图书借还模块"></a>8. 图书借还模块</h2><h3 id="8-1-用户操作主界面"><a href="#8-1-用户操作主界面" class="headerlink" title="8.1 用户操作主界面"></a>8.1 用户操作主界面</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>jframe</span><span class="token punctuation">;</span>
+<h2 id="8-图书借还模块"><a href="#8-图书借还模块" class="headerlink" title="8. 图书借还模块"></a>8. 图书借还模块</h2><h3 id="8-1-用户操作界面"><a href="#8-1-用户操作界面" class="headerlink" title="8.1 用户操作界面"></a>8.1 用户操作界面</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>jframe</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token class-name">Color</span></span><span class="token punctuation">;</span>
@@ -2746,7 +2860,7 @@ borrowdetai">
 
 
 
-<h2 id="9-书籍管理模块"><a href="#9-书籍管理模块" class="headerlink" title="9. 书籍管理模块"></a>9. 书籍管理模块</h2><h3 id="9-1-管理员操作主界面"><a href="#9-1-管理员操作主界面" class="headerlink" title="9.1 管理员操作主界面"></a>9.1 管理员操作主界面</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>jframe</span><span class="token punctuation">;</span>
+<h2 id="9-书籍管理模块"><a href="#9-书籍管理模块" class="headerlink" title="9. 书籍管理模块"></a>9. 书籍管理模块</h2><h3 id="9-1-管理员操作界面"><a href="#9-1-管理员操作界面" class="headerlink" title="9.1 管理员操作界面"></a>9.1 管理员操作界面</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>hechaodong<span class="token punctuation">.</span>bookmanager<span class="token punctuation">.</span>jframe</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span></span><span class="token class-name">MouseAdapter</span></span><span class="token punctuation">;</span>
@@ -5557,7 +5671,7 @@ borrowdetai">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.3k</span>
+                        class="white-color">43.2k</span>
             
             
             
