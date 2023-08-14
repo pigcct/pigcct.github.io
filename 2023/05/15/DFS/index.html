@@ -500,32 +500,32 @@
 </ul>
 <img src="/2023/05/15/DFS/2.png" class="">
 
-<h2 id="3-DFS代码模板："><a href="#3-DFS代码模板：" class="headerlink" title="3. DFS代码模板："></a>3. DFS代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// DFS—— 模板题 AcWing 842. 排列数字</span>
+<h2 id="3-DFS代码模板："><a href="#3-DFS代码模板：" class="headerlink" title="3. DFS代码模板："></a>3. DFS代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; DFS—— 模板题 AcWing 842. 排列数字
     
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment">//n为输入的数字的个数</span>
-<span class="token keyword">int</span> path<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//path存储树的值</span>
-<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//判断当前的数是否已经被使用，false为未使用，true为已使用</span>
+int n;  &#x2F;&#x2F;n为输入的数字的个数
+int path[N]; &#x2F;&#x2F;path存储树的值
+bool st[N];  &#x2F;&#x2F;判断当前的数是否已经被使用，false为未使用，true为已使用
 
-<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>u <span class="token operator">==</span> n<span class="token punctuation">)</span><span class="token comment">//如果当前的路已经走到了最后，输出路径上的所有值</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> cout <span class="token operator">&lt;&lt;</span> path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
-        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+void dfs(int u)
+&#123;
+    if(u &#x3D;&#x3D; n)&#x2F;&#x2F;如果当前的路已经走到了最后，输出路径上的所有值
+    &#123;
+        for(int i &#x3D; 0; i &lt; n; i ++) cout &lt;&lt; path[i] &lt;&lt;&quot; &quot;;
+        puts(&quot;&quot;);
+        return ;
+    &#125;
     
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">//判断当前的数还未使用</span>
-        <span class="token punctuation">&#123;</span>
-            path<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment">//给当前的数赋值</span>
-            st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">//标记当前数已被使用</span>
-            <span class="token function">dfs</span><span class="token punctuation">(</span>u <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//递归下一个数</span>
-            st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment">//回溯，恢复原来的数据</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    for(int i &#x3D; 1; i &lt;&#x3D; n; i ++)
+    &#123;
+        if(!st[i]) &#x2F;&#x2F;判断当前的数还未使用
+        &#123;
+            path[u] &#x3D; i;  &#x2F;&#x2F;给当前的数赋值
+            st[i] &#x3D; true; &#x2F;&#x2F;标记当前数已被使用
+            dfs(u + 1);   &#x2F;&#x2F;递归下一个数
+            st[i] &#x3D; false;&#x2F;&#x2F;回溯，恢复原来的数据
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

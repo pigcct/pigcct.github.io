@@ -507,28 +507,28 @@
 <li>常量名： 全大写， 如果是由多个单词构成， 可以用下划线隔开， 如YEAR和WEEK_OF_MONTH。</li>
 <li>方法名： 采用小驼峰法， 如balanceAccount、 isButtonPressed等。</li>
 </ul>
-<h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
+<h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.a51work6;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
+public class Date extends java.util.Date &#123;
 
-<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+private static final int DEFAULT_CAPACITY &#x3D; 10;
+private int size;
 
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
-<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span> 
+public static Date valueOf(String s) &#123;
+final int YEAR_LENGTH &#x3D; 4;
+final int MONTH_LENGTH &#x3D; 2;
+int firstDash;
+int secondDash;
+...
+&#125; 
 
-<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+public String toString () &#123;
+int year &#x3D; super.getYear() + 1900;
+int month &#x3D; super.getMonth() + 1;
+int day &#x3D; super.getDate();
+...
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h2><blockquote>
 <p>💡 Java中注释的语法有三种： 单行注释（&#x2F;&#x2F;） 、 多行注释（&#x2F;<em>…</em>&#x2F;） 和文档注释（&#x2F;**…*&#x2F;） </p>
@@ -553,40 +553,40 @@
 <h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><blockquote>
 <p>💡 文档注释就是指这种注释内容能够生成API帮助文档， JDK中javadoc命令能够提取这些注释信息并生成HTML文件。 文档注释主要对类（或接口） 、 实例变量、 静态变量、 实例方法和静态方法等进行注释。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>a51work6</span><span class="token punctuation">;</span>
-<span class="token comment">/**
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.a51work6;
+&#x2F;**
 * 自定义的日期类， 具有日期基本功能， 继承java.util.Date
-* &lt;p>实现日期对象和字符串之间的转换&lt;/p>
+* &lt;p&gt;实现日期对象和字符串之间的转换&lt;&#x2F;p&gt;
 * @author 关东升
-*/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Date</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span>Date</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">DEFAULT_CAPACITY</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token comment">/**
+*&#x2F;
+public class Date extends java.util.Date &#123;
+private static final int DEFAULT_CAPACITY &#x3D; 10;
+&#x2F;**
 * 容量
-*/</span>
-<span class="token keyword">public</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
-<span class="token comment">/**
+*&#x2F;
+public int size;
+&#x2F;**
 * 将字符串转换为Date日期对象
 * @param s 要转换的字符串
-* @return Date日期对象*/</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Date</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">YEAR_LENGTH</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token constant">MONTH_LENGTH</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> firstDash<span class="token punctuation">;</span>
-<span class="token keyword">int</span> secondDash<span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span> <span class="token operator">/</span>
-<span class="token operator">*</span><span class="token operator">*</span>
-<span class="token operator">*</span> 将日期转换为yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
-<span class="token operator">*</span> <span class="token annotation punctuation">@return</span> yyyy<span class="token operator">-</span>mm<span class="token operator">-</span>dd格式的字符串
-<span class="token operator">*</span><span class="token operator">/</span>
-<span class="token keyword">public</span> <span class="token class-name">String</span> toString <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> year <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> day <span class="token operator">=</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+* @return Date日期对象*&#x2F;
+public static Date valueOf(String s) &#123;
+final int YEAR_LENGTH &#x3D; 4;
+final int MONTH_LENGTH &#x3D; 2;
+int firstDash;
+int secondDash;
+...
+&#125; &#x2F;
+**
+* 将日期转换为yyyy-mm-dd格式的字符串
+* @return yyyy-mm-dd格式的字符串
+*&#x2F;
+public String toString () &#123;
+int year &#x3D; super.getYear() + 1900;
+int month &#x3D; super.getMonth() + 1;
+int day &#x3D; super.getDate();
+...
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="文档注释标签"><a href="#文档注释标签" class="headerlink" title="文档注释标签"></a>文档注释标签</h3><blockquote>
 <p>💡 如果你想生成API帮助文档， 可以使用javadoc指令， 如图5-1所示， 在命令行中输入javadoc -d apidocData.java指令， -d参数指明要生成文档的目录， apidoc是当前目录下面的apidoc目录， 如果不存在javadoc会创建一个apidoc目录； Data.java是当前目录下的Java源文件。</p>

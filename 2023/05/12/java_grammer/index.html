@@ -509,39 +509,39 @@
 <h2 id="2-常量，变量"><a href="#2-常量，变量" class="headerlink" title="2. 常量，变量"></a>2. 常量，变量</h2><h3 id="2-1-常量"><a href="#2-1-常量" class="headerlink" title="2.1 常量"></a>2.1 常量</h3><blockquote>
 <p>💡 final 数据类型 变量名 &#x3D; 初始值;</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 静态常量，替代保留字const</span>
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span> ①
-  <span class="token comment">// 声明成员常量</span>
-  <span class="token keyword">final</span> <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> ②
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 声明局部常量</span>
-  <span class="token keyword">final</span> <span class="token keyword">double</span> x <span class="token operator">=</span> <span class="token number">3.3</span><span class="token punctuation">;</span> ③
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
+  &#x2F;&#x2F; 静态常量，替代保留字const
+  public static final double PI &#x3D; 3.14; ①
+  &#x2F;&#x2F; 声明成员常量
+  final int y &#x3D; 10; ②
+  public static void main(String[] args) &#123;
+  &#x2F;&#x2F; 声明局部常量
+  final double x &#x3D; 3.3; ③
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>常量有三种类型：①静态常量、②成员常量和③局部常量</strong></p>
 <h3 id="2-2-变量"><a href="#2-2-变量" class="headerlink" title="2.2 变量"></a>2.2 变量</h3><blockquote>
 <p>💡 数据类型  变量名 &#x3D; [初始值]</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 声明int型成员变量</span>
-<span class="token keyword">int</span> y<span class="token punctuation">;</span> ①
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 声明int型局部变量</span>
-<span class="token keyword">int</span> x<span class="token punctuation">;</span> ②
-<span class="token comment">// 声明float型变量并赋值</span>
-<span class="token keyword">float</span> f <span class="token operator">=</span> <span class="token number">4.5f</span><span class="token punctuation">;</span> ③
-<span class="token comment">// x = 10;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x = "</span> <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 编译错误，局部变量 x未初始化 ④</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"f = "</span> <span class="token operator">+</span> f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>f <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 声明型局部变量</span>
-<span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> ⑤
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 编译错误 ⑥</span>
-<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
+&#x2F;&#x2F; 声明int型成员变量
+int y; ①
+public static void main(String[] args) &#123;
+&#x2F;&#x2F; 声明int型局部变量
+int x; ②
+&#x2F;&#x2F; 声明float型变量并赋值
+float f &#x3D; 4.5f; ③
+&#x2F;&#x2F; x &#x3D; 10;
+System.out.println(&quot;x &#x3D; &quot; + x);&#x2F;&#x2F; 编译错误，局部变量 x未初始化 ④
+System.out.println(&quot;f &#x3D; &quot; + f);
+if (f &lt; 10) &#123;
+&#x2F;&#x2F; 声明型局部变量
+int m &#x3D; 5; ⑤
+&#125;
+System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>第①行是声明的成员变量y，成员变量是在类体中，而在方法之外，作用域是整个类，如果没有初始赋值，系统会为它分配一个默认值，每一种数据类型都有默认值，int类型默认值是0。</li>
@@ -576,24 +576,24 @@
 <p>💡 long类型需要在数值后面加L, double类型加D, float类型加F</p>
 </blockquote>
 <p><strong>代码如下：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 声明整数变量</span>
-    <span class="token comment">// 输出一个默认整数常量</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认整数常量 = "</span> <span class="token operator">+</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//此处16默认为整数类型</span>
-    <span class="token keyword">byte</span> a <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span> 
-    <span class="token keyword">short</span> b <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span> 
-    <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span> 
-    <span class="token comment">//long类型后面加l或L，l容易混淆，建议加L</span>
-    <span class="token keyword">long</span> d <span class="token operator">=</span> <span class="token number">16L</span><span class="token punctuation">;</span> 
-    <span class="token keyword">long</span> e <span class="token operator">=</span> <span class="token number">16l</span><span class="token punctuation">;</span> 
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"byte整数 = "</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"short整数 = "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"int整数 = "</span> <span class="token operator">+</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"long整数 = "</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"long整数 = "</span> <span class="token operator">+</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
+  public static void main(String[] args) &#123;
+    &#x2F;&#x2F; 声明整数变量
+    &#x2F;&#x2F; 输出一个默认整数常量
+    System.out.println(&quot;默认整数常量 &#x3D; &quot; + 16); &#x2F;&#x2F;此处16默认为整数类型
+    byte a &#x3D; 16; 
+    short b &#x3D; 16; 
+    int c &#x3D; 16; 
+    &#x2F;&#x2F;long类型后面加l或L，l容易混淆，建议加L
+    long d &#x3D; 16L; 
+    long e &#x3D; 16l; 
+    System.out.println(&quot;byte整数 &#x3D; &quot; + a);
+    System.out.println(&quot;short整数 &#x3D; &quot; + b);
+    System.out.println(&quot;int整数 &#x3D; &quot; + c);
+    System.out.println(&quot;long整数 &#x3D; &quot; + d);
+    System.out.println(&quot;long整数 &#x3D; &quot; + e);
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="3-1-2-浮点类型"><a href="#3-1-2-浮点类型" class="headerlink" title="3.1.2 浮点类型"></a>3.1.2 浮点类型</h4><blockquote>
 <p>💡浮点类型主要用来储存小数数值， 也可以用来储存范围较大的整数。 它分为浮点数（float） 和双精度浮点数（double） 两种， 双精度浮点数所使用的内存空间比浮点数多， 可表示的数值范围与精确度也比较大</p>
@@ -617,19 +617,19 @@
 <ul>
 <li>Java语言浮点类型默认是double类型， 例如0.0表示double类型常量， 而不是float类型。 如果想要表示float类型， 则需要在数值后面加f或F</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token comment">// 声明浮点数</span>
-		<span class="token comment">// 输出一个默认浮点常量</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认浮点常量 = "</span> <span class="token operator">+</span> <span class="token number">360.66</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-		<span class="token keyword">float</span> myMoney <span class="token operator">=</span> <span class="token number">360.66f</span><span class="token punctuation">;</span> 
-		<span class="token keyword">double</span> yourMoney <span class="token operator">=</span> <span class="token number">360.66</span><span class="token punctuation">;</span> 
-		<span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.14159d</span><span class="token punctuation">;</span> 
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"float整数 = "</span> <span class="token operator">+</span> myMoney<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"double整数 = "</span> <span class="token operator">+</span> yourMoney<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"PI = "</span> <span class="token operator">+</span> <span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
+	public static void main(String[] args) &#123;
+		&#x2F;&#x2F; 声明浮点数
+		&#x2F;&#x2F; 输出一个默认浮点常量
+		System.out.println(&quot;默认浮点常量 &#x3D; &quot; + 360.66); 
+		float myMoney &#x3D; 360.66f; 
+		double yourMoney &#x3D; 360.66; 
+		final double PI &#x3D; 3.14159d; 
+		System.out.println(&quot;float整数 &#x3D; &quot; + myMoney);
+		System.out.println(&quot;double整数 &#x3D; &quot; + yourMoney);
+		System.out.println(&quot;PI &#x3D; &quot; + PI);
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-1-3-字符类型"><a href="#3-1-3-字符类型" class="headerlink" title="3.1.3 字符类型"></a>3.1.3 字符类型</h4><blockquote>
 <p>💡字符类型表示单个字符， Java中char声明字符类型， Java中的字符常量必须用单引号括起来的单个字符 ，如char c &#x3D; ‘A’;</p>
 </blockquote>
@@ -638,9 +638,9 @@
 <h4 id="3-1-4-布尔类型"><a href="#3-1-4-布尔类型" class="headerlink" title="3.1.4 布尔类型"></a>3.1.4 布尔类型</h4><blockquote>
 <p>💡在Java语言中声明布尔类型的关键字是boolean， 它只有两个值： true和false。不能与int等数值类型之间进行数学计算或类型转化。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//唯一正确的两种赋值方式</span>
-<span class="token keyword">boolean</span> isMan <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token keyword">boolean</span> isWoman <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;唯一正确的两种赋值方式
+boolean isMan &#x3D; true;
+boolean isWoman &#x3D; false;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -648,24 +648,24 @@
 <ul>
 <li>二进制数： 以 0b 或0B为前缀， 注意0是阿拉伯数字， 不要误认为是英文字母o。</li>
 <li>八进制数： 以0为前缀， 注意0是阿拉伯数字。</li>
-<li>十六进制数： 以 0x 或0X为前缀， 注意0是阿拉伯数字。<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//int型28的不同表示方法</span>
-<span class="token keyword">int</span> decimalInt <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
-<span class="token comment">//二进制</span>
-<span class="token keyword">int</span> binaryInt1 <span class="token operator">=</span> <span class="token number">0b11100</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> binaryInt2 <span class="token operator">=</span> <span class="token number">0B11100</span><span class="token punctuation">;</span>
-<span class="token comment">//八进制</span>
-<span class="token keyword">int</span> octalInt <span class="token operator">=</span> <span class="token number">034</span><span class="token punctuation">;</span>
-<span class="token comment">//十六进制</span>
-<span class="token keyword">int</span> hexadecimalInt1 <span class="token operator">=</span> <span class="token number">0x1C</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> hexadecimalInt2 <span class="token operator">=</span> <span class="token number">0X1C</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>十六进制数： 以 0x 或0X为前缀， 注意0是阿拉伯数字。<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型28的不同表示方法
+int decimalInt &#x3D; 28;
+&#x2F;&#x2F;二进制
+int binaryInt1 &#x3D; 0b11100;
+int binaryInt2 &#x3D; 0B11100;
+&#x2F;&#x2F;八进制
+int octalInt &#x3D; 034;
+&#x2F;&#x2F;十六进制
+int hexadecimalInt1 &#x3D; 0x1C;
+int hexadecimalInt2 &#x3D; 0X1C;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="3-2-2-指数表示"><a href="#3-2-2-指数表示" class="headerlink" title="3.2.2 指数表示"></a>3.2.2 指数表示</h4><blockquote>
 <p>💡如果采用十进制表示指数， 需要使用大写或小写的e表示幂， e2表示102。</p>
 </blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//表示为3.36×10^2</span>
-<span class="token keyword">double</span> myMoney <span class="token operator">=</span> <span class="token number">3.36e2</span><span class="token punctuation">;</span>
-<span class="token comment">//表示为1.56×10^(-2)</span>
-<span class="token keyword">double</span> interestRate <span class="token operator">=</span> <span class="token number">1.56e-2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;表示为3.36×10^2
+double myMoney &#x3D; 3.36e2;
+&#x2F;&#x2F;表示为1.56×10^(-2)
+double interestRate &#x3D; 1.56e-2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -677,37 +677,37 @@
 <img src="/2023/05/12/java_grammer/6.jpg" class="">
 
 <p><strong>代码如下：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 声明整数变量</span>
-<span class="token keyword">byte</span> byteNum <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
-<span class="token keyword">short</span> shortNum <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> intNum <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
-<span class="token keyword">long</span> longNum <span class="token operator">=</span> <span class="token number">16L</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 声明整数变量
+byte byteNum &#x3D; 16;
+short shortNum &#x3D; 16;
+int intNum &#x3D; 16;
+long longNum &#x3D; 16L;
 
-<span class="token comment">// byte类型转换为int类型</span>
-intNum <span class="token operator">=</span> byteNum<span class="token punctuation">;</span>
-<span class="token comment">// 声明char变量char charNum = '花';</span>
-<span class="token comment">// char类型转换为int类型</span>
-intNum <span class="token operator">=</span> charNum<span class="token punctuation">;</span>
-<span class="token comment">// 声明浮点变量</span>
-<span class="token comment">// long类型转换为float类型</span>
-<span class="token keyword">float</span> floatNum <span class="token operator">=</span> longNum<span class="token punctuation">;</span>
-<span class="token comment">// float类型转换为double类型</span>
-<span class="token keyword">double</span> doubleNum <span class="token operator">=</span> floatNum<span class="token punctuation">;</span>
-<span class="token comment">//表达式计算后类型是double</span>
-<span class="token keyword">double</span> result <span class="token operator">=</span> floatNum <span class="token operator">*</span> intNum <span class="token operator">+</span> doubleNum <span class="token operator">/</span> shortNum<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#x2F;&#x2F; byte类型转换为int类型
+intNum &#x3D; byteNum;
+&#x2F;&#x2F; 声明char变量char charNum &#x3D; &#39;花&#39;;
+&#x2F;&#x2F; char类型转换为int类型
+intNum &#x3D; charNum;
+&#x2F;&#x2F; 声明浮点变量
+&#x2F;&#x2F; long类型转换为float类型
+float floatNum &#x3D; longNum;
+&#x2F;&#x2F; float类型转换为double类型
+double doubleNum &#x3D; floatNum;
+&#x2F;&#x2F;表达式计算后类型是double
+double result &#x3D; floatNum * intNum + doubleNum &#x2F; shortNum;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-3-强制类型转换"><a href="#3-3-强制类型转换" class="headerlink" title="3.3 强制类型转换"></a>3.3 强制类型转换</h3><p><em><strong>强制类型转换是在变量或常量之前加上“(目标类型)”实现， 示例代码如下：</strong></em></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//int型变量</span>
-<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token comment">//把int变量i强制转换为byte</span>
-<span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> i<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型变量
+int i &#x3D; 10;
+&#x2F;&#x2F;把int变量i强制转换为byte
+byte b &#x3D; (byte) i;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//int型变量</span>
-<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token comment">//把int变量i强制转换为byte</span>
-<span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> i<span class="token punctuation">;</span>
-<span class="token keyword">int</span> i2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>i<span class="token punctuation">;</span> ①
-<span class="token keyword">int</span> i3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>b<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型变量
+int i &#x3D; 10;
+&#x2F;&#x2F;把int变量i强制转换为byte
+byte b &#x3D; (byte) i;
+int i2 &#x3D; (int)i; ①
+int i3 &#x3D; (int)b;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>引用数据类型（包含： 类、 接口和数组声明的数据类型）</strong></p>
 <img src="/2023/05/12/java_grammer/7.png" class="">
@@ -715,12 +715,12 @@ intNum <span class="token operator">=</span> charNum<span class="token punctuati
 <p>💡Java中的引用数据类型， 相当于C等语言中指针（pointer） 类型， 引用事实上就是指针， 是指向一个对象的内存地址。 引用数据类型变量中保持的是指向对象的内存地址。 很多资料上提到Java不支持指针， 事实上是不支持指针计算， 而指针类型还是保留了下来， 只是在Java中称为引用数据类型。</p>
 </blockquote>
 <p><strong>引用数据类型实例如下</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>①
-<span class="token keyword">int</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span>②
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">int x &#x3D; 7;①
+int y &#x3D; x;②
 
-<span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>③
-<span class="token class-name">String</span> str2 <span class="token operator">=</span> str1<span class="token punctuation">;</span>④
-str2 <span class="token operator">=</span> <span class="token string">"World"</span><span class="token punctuation">;</span>⑤<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+String str1 &#x3D; &quot;Hello&quot;;③
+String str2 &#x3D; str1;④
+str2 &#x3D; &quot;World&quot;;⑤<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p>上述代码声明了两个基本数据类型(int）和两个引用数据类型(String)。当程序执行完第②行代码后，x值为7，x赋值给y，这时y的值也是7，它们的保持方式如图6-4所示，x和y两个变量值都是7，但是它们之间是独立的，任何一个变化都不会影响另一个。</p>
@@ -739,14 +739,14 @@ str2 <span class="token operator">=</span> <span class="token string">"World"</s
 <ul>
 <li>i ++ 是先赋值再自加</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">//  i = 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">int i &#x3D; 1;
+System.out.println( i ++) &#x2F;&#x2F;  i &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
 <li>++ i 是先自加再赋值</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token operator">++</span> i<span class="token punctuation">)</span> <span class="token comment">//  i = 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">int i &#x3D; 1;
+System.out.println( ++ i) &#x2F;&#x2F;  i &#x3D; 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -782,20 +782,20 @@ str2 <span class="token operator">=</span> <span class="token string">"World"</s
 
 <p><em><strong>注意 无符号右移&gt;&gt;&gt;运算符仅被允许用在int和long整数类型, 如果用于short或byte数据, 则数据在位移之前， 转换为int类型后再进行位移计算。</strong></em></p>
 <p><strong>代码演示：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">byte</span> a <span class="token operator">=</span> <span class="token number">0B00110010</span><span class="token punctuation">;</span> <span class="token comment">//十进制50 ①</span>
-<span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token number">0B01011110</span><span class="token punctuation">;</span> <span class="token comment">//十进制94 ②</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a | b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">|</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01111110 ③</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &amp; b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&amp;</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00010010 ④</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a ^ b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">^</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01101100 ⑤</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"~b = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">~</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B10100001 ⑥</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00001100 ⑦</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >> 1 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00011001 ⑧</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a >>> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">>>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B00001100 ⑨</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &lt;&lt; 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B11001000 ⑩</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a &lt;&lt; 1 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0B01100100 ⑪</span>
-<span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">;</span> ⑫
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"c >>> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>c <span class="token operator">>>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ⑬
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"c >> 2 = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>c <span class="token operator">>></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ⑭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">byte a &#x3D; 0B00110010; &#x2F;&#x2F;十进制50 ①
+byte b &#x3D; 0B01011110; &#x2F;&#x2F;十进制94 ②
+System.out.println(&quot;a | b &#x3D; &quot; + (a | b)); &#x2F;&#x2F; 0B01111110 ③
+System.out.println(&quot;a &amp; b &#x3D; &quot; + (a &amp; b)); &#x2F;&#x2F; 0B00010010 ④
+System.out.println(&quot;a ^ b &#x3D; &quot; + (a ^ b)); &#x2F;&#x2F; 0B01101100 ⑤
+System.out.println(&quot;~b &#x3D; &quot; + (~b)); &#x2F;&#x2F; 0B10100001 ⑥
+System.out.println(&quot;a &gt;&gt; 2 &#x3D; &quot; + (a &gt;&gt; 2)); &#x2F;&#x2F; 0B00001100 ⑦
+System.out.println(&quot;a &gt;&gt; 1 &#x3D; &quot; + (a &gt;&gt; 1)); &#x2F;&#x2F; 0B00011001 ⑧
+System.out.println(&quot;a &gt;&gt;&gt; 2 &#x3D; &quot; + (a &gt;&gt;&gt; 2)); &#x2F;&#x2F; 0B00001100 ⑨
+System.out.println(&quot;a &lt;&lt; 2 &#x3D; &quot; + (a &lt;&lt; 2)); &#x2F;&#x2F; 0B11001000 ⑩
+System.out.println(&quot;a &lt;&lt; 1 &#x3D; &quot; + (a &lt;&lt; 1)); &#x2F;&#x2F; 0B01100100 ⑪
+int c &#x3D; -12; ⑫
+System.out.println(&quot;c &gt;&gt;&gt; 2 &#x3D; &quot; + (c &gt;&gt;&gt; 2)); ⑬
+System.out.println(&quot;c &gt;&gt; 2 &#x3D; &quot; + (c &gt;&gt; 2)); ⑭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -830,16 +830,16 @@ c >> 2 = -3<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <p>三元运算符（ a ?  b : c ) –&gt; 表示 a表达式是否成立，成立的话执行b语句，否则执行c语句</p>
 </blockquote>
 <p><strong>示例代码：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Date</span></span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">int</span> score <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> result <span class="token operator">=</span> score <span class="token operator">></span> <span class="token number">60</span> <span class="token operator">?</span> <span class="token string">"及格"</span> <span class="token operator">:</span> <span class="token string">"不及格"</span><span class="token punctuation">;</span> <span class="token comment">// 三元运算符（? : ）</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new运算符可以创建Date对象</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//通过.运算符调用方法</span>
-<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Date;
+public class HelloWorld &#123;
+public static void main(String[] args) &#123;
+int score &#x3D; 80;
+String result &#x3D; score &gt; 60 ? &quot;及格&quot; : &quot;不及格&quot;; &#x2F;&#x2F; 三元运算符（? : ）
+System.out.println(result);
+Date date &#x3D; new Date(); &#x2F;&#x2F; new运算符可以创建Date对象
+System.out.println(date.toString()); &#x2F;&#x2F;通过.运算符调用方法
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

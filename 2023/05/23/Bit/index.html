@@ -546,13 +546,13 @@
 <li><p>即：输出为 0 1 <code>1</code> 0中最后一位1的值为<code>2</code></p>
 </li>
 </ul>
-<h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 返回n的最后一位1的值</span>
-<span class="token keyword">int</span> <span class="token function">lowbit</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token comment">// n &amp; -n 等价于 n &amp; (~n + 1)</span>
-    <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token operator">-</span>n<span class="token punctuation">;</span>
-    <span class="token comment">//return n &amp; (~n + 1);</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; 返回n的最后一位1的值
+int lowbit(int n)
+&#123;
+	&#x2F;&#x2F; n &amp; -n 等价于 n &amp; (~n + 1)
+    return n &amp; -n;
+    &#x2F;&#x2F;return n &amp; (~n + 1);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

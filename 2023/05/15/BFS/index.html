@@ -495,52 +495,52 @@
 <li>如果点满足在图中的要求，则可以向不同的方向扩展</li>
 <li>从上到下依次按层级遍历</li>
 </ul>
-<h2 id="3-BFS代码模板："><a href="#3-BFS代码模板：" class="headerlink" title="3. BFS代码模板："></a>3. BFS代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// BFS——套路模板</span>
-queue <span class="token operator">&lt;</span><span class="token operator">--</span> 初始状态
+<h2 id="3-BFS代码模板："><a href="#3-BFS代码模板：" class="headerlink" title="3. BFS代码模板："></a>3. BFS代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; BFS——套路模板
+queue &lt;-- 初始状态
 
-<span class="token keyword">while</span> <span class="token punctuation">(</span>queue 非空<span class="token punctuation">)</span> 
-<span class="token punctuation">&#123;</span>
-	 t <span class="token operator">&lt;</span><span class="token operator">--</span> 取出队头元素
-   <span class="token keyword">for</span> <span class="token punctuation">(</span>拓展 t<span class="token punctuation">)</span> 
-		<span class="token punctuation">&#123;</span>
-       ver <span class="token operator">&lt;</span><span class="token operator">--</span> 新节点
-       <span class="token keyword">if</span> <span class="token punctuation">(</span> 该点未遍历 <span class="token punctuation">)</span> 
-			 <span class="token punctuation">&#123;</span>
+while (queue 非空) 
+&#123;
+	 t &lt;-- 取出队头元素
+   for (拓展 t) 
+		&#123;
+       ver &lt;-- 新节点
+       if ( 该点未遍历 ) 
+			 &#123;
            在队尾插入 ver
-       <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+       &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// BFS——模板题 AcWing 846. 走迷宫</span>
-<span class="token keyword">int</span> <span class="token function">bfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> hh <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> tt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    q<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; BFS——模板题 AcWing 846. 走迷宫
+int bfs()
+&#123;
+    int hh &#x3D; 0, tt &#x3D; 0;
+    q[0] &#x3D;&#123;0, 0&#125;;
     
-    <span class="token function">memset</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    d<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    memset(d, -1, sizeof d);
+    d[0][0] &#x3D; 0;
     
-    <span class="token keyword">int</span> dx<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span> <span class="token punctuation">,</span> dy<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token comment">//四个点的坐标分别为上，下，左，右</span>
+    int dx[4] &#x3D; &#123;-1, 0, 1, 0&#125; , dy[4] &#x3D; &#123;0, 1, 0, -1&#125;;&#x2F;&#x2F;四个点的坐标分别为上，下，左，右
     
-    <span class="token keyword">while</span><span class="token punctuation">(</span>hh <span class="token operator">&lt;=</span> tt<span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">auto</span> t <span class="token operator">=</span> q<span class="token punctuation">[</span>hh <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//取出队头</span>
+    while(hh &lt;&#x3D; tt)
+    &#123;
+        auto t &#x3D; q[hh ++ ];&#x2F;&#x2F;取出队头
         
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment">//让该点向不同的方向扩展</span>
-        <span class="token punctuation">&#123;</span>
-            <span class="token comment">//表示能够扩展成功的方向</span>
-            <span class="token keyword">int</span> x <span class="token operator">=</span> t<span class="token punctuation">.</span>first <span class="token operator">+</span> dx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">=</span> t<span class="token punctuation">.</span>second <span class="token operator">+</span> dy<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> n <span class="token operator">&amp;&amp;</span> y <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> m <span class="token operator">&amp;&amp;</span> g<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> d<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token punctuation">&#123;</span>
-                d<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">[</span>t<span class="token punctuation">.</span>first<span class="token punctuation">]</span><span class="token punctuation">[</span>t<span class="token punctuation">.</span>second<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>x<span class="token punctuation">,</span> y<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> d<span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        for(int i &#x3D; 0; i &lt; 4; i ++)&#x2F;&#x2F;让该点向不同的方向扩展
+        &#123;
+            &#x2F;&#x2F;表示能够扩展成功的方向
+            int x &#x3D; t.first + dx[i], y &#x3D; t.second + dy[i];
+            if(x &gt;&#x3D; 0 &amp;&amp; x &lt; n &amp;&amp; y &gt;&#x3D; 0 &amp;&amp; y &lt; m &amp;&amp; g[x][y] &#x3D;&#x3D; 0 &amp;&amp; d[x][y] &#x3D;&#x3D; -1)
+            &#123;
+                d[x][y] &#x3D; d[t.first][t.second] + 1;
+                q[ ++ tt] &#x3D; &#123;x, y&#125;;
+            &#125;
+        &#125;
+    &#125;
+    return d[n - 1][m - 1];
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

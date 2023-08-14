@@ -502,35 +502,35 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-1-3-朴素版Dijkstra算法代码模板："><a href="#1-1-3-朴素版Dijkstra算法代码模板：" class="headerlink" title="1.1.3 朴素版Dijkstra算法代码模板："></a>1.1.3 朴素版Dijkstra算法代码模板：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">朴素dijkstra算法 —— 模板题 AcWing <span class="token number">849.</span> Dijkstra求最短路 I
-时间复杂是 <span class="token function">O</span><span class="token punctuation">(</span>n2<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n2<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
-<span class="token keyword">int</span> g<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 存储每条边</span>
-<span class="token keyword">int</span> dist<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 存储1号点到每个点的最短距离</span>
-<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">// 存储每个点的最短路是否已经确定</span>
+<h4 id="1-1-3-朴素版Dijkstra算法代码模板："><a href="#1-1-3-朴素版Dijkstra算法代码模板：" class="headerlink" title="1.1.3 朴素版Dijkstra算法代码模板："></a>1.1.3 朴素版Dijkstra算法代码模板：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">朴素dijkstra算法 —— 模板题 AcWing 849. Dijkstra求最短路 I
+时间复杂是 O(n2+m)O(n2+m), nn 表示点数，mm 表示边数
+int g[N][N];  &#x2F;&#x2F; 存储每条边
+int dist[N];  &#x2F;&#x2F; 存储1号点到每个点的最短距离
+bool st[N];   &#x2F;&#x2F; 存储每个点的最短路是否已经确定
 
-<span class="token comment">// 求1号点到n号点的最短路，如果不存在则返回-1</span>
-<span class="token keyword">int</span> <span class="token function">dijkstra</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">memset</span><span class="token punctuation">(</span>dist<span class="token punctuation">,</span> <span class="token number">0x3f</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dist<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将所有点的距离都初始化为无穷大</span>
-    dist<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//初始化距离，这里表示第一个点的距离为0</span>
+&#x2F;&#x2F; 求1号点到n号点的最短路，如果不存在则返回-1
+int dijkstra()
+&#123;
+    memset(dist, 0x3f, sizeof dist);&#x2F;&#x2F;将所有点的距离都初始化为无穷大
+    dist[1] &#x3D; 0;&#x2F;&#x2F;初始化距离，这里表示第一个点的距离为0
 
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> t <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>     <span class="token comment">// 在还未确定最短路的点中，寻找距离最小的点</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>t <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">></span> dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-                t <span class="token operator">=</span> j<span class="token punctuation">;</span>
+    for (int i &#x3D; 0; i &lt; n - 1; i ++ )
+    &#123;
+        int t &#x3D; -1;     &#x2F;&#x2F; 在还未确定最短路的点中，寻找距离最小的点
+        for (int j &#x3D; 1; j &lt;&#x3D; n; j ++ )
+            if (!st[j] &amp;&amp; (t &#x3D;&#x3D; -1 || dist[t] &gt; dist[j]))
+                t &#x3D; j;
 
-        <span class="token comment">// 用t更新其他点的距离</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
-            dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> g<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        &#x2F;&#x2F; 用t更新其他点的距离
+        for (int j &#x3D; 1; j &lt;&#x3D; n; j ++ )
+            dist[j] &#x3D; min(dist[j], dist[t] + g[t][j]);
 
-        st<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+        st[t] &#x3D; true;
+    &#125;
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0x3f3f3f3f</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    if (dist[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;
+    return dist[n];
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -578,47 +578,47 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-2-3-堆优化版的Dijkstra算法代码模板："><a href="#1-2-3-堆优化版的Dijkstra算法代码模板：" class="headerlink" title="1.2.3 堆优化版的Dijkstra算法代码模板："></a>1.2.3 堆优化版的Dijkstra算法代码模板：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">堆优化版dijkstra —— 模板题 AcWing <span class="token number">850.</span> Dijkstra求最短路 II
-时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>mlogn<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>mlogn<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
-<span class="token keyword">typedef</span> pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> PII<span class="token punctuation">;</span>
+<h4 id="1-2-3-堆优化版的Dijkstra算法代码模板："><a href="#1-2-3-堆优化版的Dijkstra算法代码模板：" class="headerlink" title="1.2.3 堆优化版的Dijkstra算法代码模板："></a>1.2.3 堆优化版的Dijkstra算法代码模板：</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">堆优化版dijkstra —— 模板题 AcWing 850. Dijkstra求最短路 II
+时间复杂度 O(mlogn)O(mlogn), nn 表示点数，mm 表示边数
+typedef pair&lt;int, int&gt; PII;
 
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>      <span class="token comment">// 点的数量</span>
-<span class="token keyword">int</span> h<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> w<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> ne<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> idx<span class="token punctuation">;</span>       <span class="token comment">// 邻接表存储所有边</span>
-<span class="token keyword">int</span> dist<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">// 存储所有点到1号点的距离</span>
-<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">// 存储每个点的最短距离是否已确定</span>
+int n;      &#x2F;&#x2F; 点的数量
+int h[N], w[N], e[N], ne[N], idx;       &#x2F;&#x2F; 邻接表存储所有边
+int dist[N];        &#x2F;&#x2F; 存储所有点到1号点的距离
+bool st[N];     &#x2F;&#x2F; 存储每个点的最短距离是否已确定
 
-<span class="token comment">// 求1号点到n号点的最短距离，如果不存在，则返回-1</span>
-<span class="token keyword">int</span> <span class="token function">dijkstra</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">memset</span><span class="token punctuation">(</span>dist<span class="token punctuation">,</span> <span class="token number">0x3f</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dist<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    dist<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    priority_queue<span class="token operator">&lt;</span>PII<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>PII<span class="token operator">></span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span>PII<span class="token operator">>></span> heap<span class="token punctuation">;</span>
-    heap<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// first存储距离，second存储节点编号</span>
+&#x2F;&#x2F; 求1号点到n号点的最短距离，如果不存在，则返回-1
+int dijkstra()
+&#123;
+    memset(dist, 0x3f, sizeof dist);
+    dist[1] &#x3D; 0;
+    priority_queue&lt;PII, vector&lt;PII&gt;, greater&lt;PII&gt;&gt; heap;
+    heap.push(&#123;0, 1&#125;);      &#x2F;&#x2F; first存储距离，second存储节点编号
 
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>heap<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">auto</span> t <span class="token operator">=</span> heap<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        heap<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    while (heap.size())
+    &#123;
+        auto t &#x3D; heap.top();
+        heap.pop();
 
-        <span class="token keyword">int</span> ver <span class="token operator">=</span> t<span class="token punctuation">.</span>second<span class="token punctuation">,</span> distance <span class="token operator">=</span> t<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+        int ver &#x3D; t.second, distance &#x3D; t.first;
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>st<span class="token punctuation">[</span>ver<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-        st<span class="token punctuation">[</span>ver<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        if (st[ver]) continue;
+        st[ver] &#x3D; true;
 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>ver<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> dist<span class="token punctuation">[</span>ver<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token punctuation">&#123;</span>
-                dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>ver<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                heap<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> j<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        for (int i &#x3D; h[ver]; i !&#x3D; -1; i &#x3D; ne[i])
+        &#123;
+            int j &#x3D; e[i];
+            if (dist[j] &gt; dist[ver] + w[i])
+            &#123;
+                dist[j] &#x3D; dist[ver] + w[i];
+                heap.push(&#123;dist[j], j&#125;);
+            &#125;
+        &#125;
+    &#125;
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0x3f3f3f3f</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    if (dist[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;
+    return dist[n];
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -638,38 +638,38 @@
 </li>
 </ul>
 <p><strong>迭代k次的意义：从1号点结果k条边到每一个点的最短距离。</strong></p>
-<h3 id="2-3-Bellman-Ford算法代码模板："><a href="#2-3-Bellman-Ford算法代码模板：" class="headerlink" title="2.3 Bellman-Ford算法代码模板："></a>2.3 Bellman-Ford算法代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">Bellman<span class="token operator">-</span>Ford算法 —— 模板题 AcWing <span class="token number">853.</span> 有边数限制的最短路
-时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
+<h3 id="2-3-Bellman-Ford算法代码模板："><a href="#2-3-Bellman-Ford算法代码模板：" class="headerlink" title="2.3 Bellman-Ford算法代码模板："></a>2.3 Bellman-Ford算法代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">Bellman-Ford算法 —— 模板题 AcWing 853. 有边数限制的最短路
+时间复杂度 O(nm)O(nm), nn 表示点数，mm 表示边数
 注意在模板题中需要对下面的模板稍作修改，加上备份数组，详情见模板题。
 
-<span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">;</span>       <span class="token comment">// n表示点数，m表示边数</span>
-<span class="token keyword">int</span> dist<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">// dist[x]存储1到x的最短路距离</span>
+int n, m;       &#x2F;&#x2F; n表示点数，m表示边数
+int dist[N];        &#x2F;&#x2F; dist[x]存储1到x的最短路距离
 
-<span class="token keyword">struct</span> <span class="token class-name">Edge</span>     <span class="token comment">// 边，a表示出点，b表示入点，w表示边的权重</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> w<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>edges<span class="token punctuation">[</span>M<span class="token punctuation">]</span><span class="token punctuation">;</span>
+struct Edge     &#x2F;&#x2F; 边，a表示出点，b表示入点，w表示边的权重
+&#123;
+    int a, b, w;
+&#125;edges[M];
 
-<span class="token comment">// 求1到n的最短路距离，如果无法从1走到n，则返回-1。</span>
-<span class="token keyword">int</span> <span class="token function">bellman_ford</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">memset</span><span class="token punctuation">(</span>dist<span class="token punctuation">,</span> <span class="token number">0x3f</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dist<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    dist<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+&#x2F;&#x2F; 求1到n的最短路距离，如果无法从1走到n，则返回-1。
+int bellman_ford()
+&#123;
+    memset(dist, 0x3f, sizeof dist);
+    dist[1] &#x3D; 0;
 
-    <span class="token comment">// 如果第n次迭代仍然会松弛三角不等式，就说明存在一条长度是n+1的最短路径，由抽屉原理，路径中至少存在两个相同的点，说明图中存在负权回路。</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
-        <span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> a <span class="token operator">=</span> edges<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>a<span class="token punctuation">,</span> b <span class="token operator">=</span> edges<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>b<span class="token punctuation">,</span> w <span class="token operator">=</span> edges<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">></span> dist<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">)</span>
-                dist<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+    &#x2F;&#x2F; 如果第n次迭代仍然会松弛三角不等式，就说明存在一条长度是n+1的最短路径，由抽屉原理，路径中至少存在两个相同的点，说明图中存在负权回路。
+    for (int i &#x3D; 0; i &lt; n; i ++ )
+    &#123;
+        for (int j &#x3D; 0; j &lt; m; j ++ )
+        &#123;
+            int a &#x3D; edges[j].a, b &#x3D; edges[j].b, w &#x3D; edges[j].w;
+            if (dist[b] &gt; dist[a] + w)
+                dist[b] &#x3D; dist[a] + w;
+        &#125;
+    &#125;
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0x3f3f3f3f</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    if (dist[n] &gt; 0x3f3f3f3f &#x2F; 2) return -1;
+    return dist[n];
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -687,47 +687,47 @@
 <li>遍历以队首为起点的所有边<strong>（t, i)</strong> ,如果 <strong>dist[ i ] &gt; dist [ t ] + w [ i ]</strong> ,更新 <strong>dist [ i ]</strong></li>
 <li>如果 i不在队列中，则标记入队，一直循环到为空为止</li>
 </ul>
-<h3 id="3-3-SPFA代码模板："><a href="#3-3-SPFA代码模板：" class="headerlink" title="3.3 SPFA代码模板："></a>3.3 SPFA代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">spfa 算法（队列优化的Bellman<span class="token operator">-</span>Ford算法） —— 模板题 AcWing <span class="token number">851.</span> spfa求最短路
-时间复杂度 平均情况下 <span class="token function">O</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>，最坏情况下 <span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>      <span class="token comment">// 总点数</span>
-<span class="token keyword">int</span> h<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> w<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> ne<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> idx<span class="token punctuation">;</span>       <span class="token comment">// 邻接表存储所有边</span>
-<span class="token keyword">int</span> dist<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">// 存储每个点到1号点的最短距离</span>
-<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">// 存储每个点是否在队列中</span>
+<h3 id="3-3-SPFA代码模板："><a href="#3-3-SPFA代码模板：" class="headerlink" title="3.3 SPFA代码模板："></a>3.3 SPFA代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">spfa 算法（队列优化的Bellman-Ford算法） —— 模板题 AcWing 851. spfa求最短路
+时间复杂度 平均情况下 O(m)O(m)，最坏情况下 O(nm)O(nm), nn 表示点数，mm 表示边数
+int n;      &#x2F;&#x2F; 总点数
+int h[N], w[N], e[N], ne[N], idx;       &#x2F;&#x2F; 邻接表存储所有边
+int dist[N];        &#x2F;&#x2F; 存储每个点到1号点的最短距离
+bool st[N];     &#x2F;&#x2F; 存储每个点是否在队列中
 
-<span class="token comment">// 求1号点到n号点的最短路距离，如果从1号点无法走到n号点则返回-1</span>
-<span class="token keyword">int</span> <span class="token function">spfa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">memset</span><span class="token punctuation">(</span>dist<span class="token punctuation">,</span> <span class="token number">0x3f</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dist<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    dist<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+&#x2F;&#x2F; 求1号点到n号点的最短路距离，如果从1号点无法走到n号点则返回-1
+int spfa()
+&#123;
+    memset(dist, 0x3f, sizeof dist);
+    dist[1] &#x3D; 0;
 
-    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
-    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    st<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    queue&lt;int&gt; q;
+    q.push(1);
+    st[1] &#x3D; true;
 
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">auto</span> t <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    while (q.size())
+    &#123;
+        auto t &#x3D; q.front();
+        q.pop();
 
-        st<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        st[t] &#x3D; false;
 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token punctuation">&#123;</span>
-                dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token comment">// 如果队列中已存在j，则不需要将j重复插入</span>
-                <span class="token punctuation">&#123;</span>
-                    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    st<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        for (int i &#x3D; h[t]; i !&#x3D; -1; i &#x3D; ne[i])
+        &#123;
+            int j &#x3D; e[i];
+            if (dist[j] &gt; dist[t] + w[i])
+            &#123;
+                dist[j] &#x3D; dist[t] + w[i];
+                if (!st[j])     &#x2F;&#x2F; 如果队列中已存在j，则不需要将j重复插入
+                &#123;
+                    q.push(j);
+                    st[j] &#x3D; true;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
 
-    <span class="token keyword">return</span> dist<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    return dist[n];
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-4-SPFA算法判断图中是否存在负环问题"><a href="#3-4-SPFA算法判断图中是否存在负环问题" class="headerlink" title="3.4 SPFA算法判断图中是否存在负环问题"></a>3.4 SPFA算法判断图中是否存在负环问题</h3><p><strong>判断存在负环的思想：</strong></p>
 <ul>
@@ -740,52 +740,52 @@
 <li>dist [x] &#x3D; dist[t] + w[i]（这里是更新1号点到x号点的距离，用dist[t]更新）</li>
 <li>cnt[x] &#x3D; cnt[t] + 1（这里入下图所示，因为1号点到t号点的距离更新了，1号点到x号点的边数相对于1号点到t号点多了1，所以ccnt[x]就应该加上1）</li>
 </ul>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">spfa判断图中是否存在负环 —— 模板题 AcWing <span class="token number">852.</span> spfa判断负环
-时间复杂度是 <span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>nm<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>      <span class="token comment">// 总点数</span>
-<span class="token keyword">int</span> h<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> w<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> ne<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> idx<span class="token punctuation">;</span>       <span class="token comment">// 邻接表存储所有边</span>
-<span class="token keyword">int</span> dist<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> cnt<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">// dist[x]存储1号点到x的最短距离，cnt[x]存储1到x的最短路中经过的点数</span>
-<span class="token keyword">bool</span> st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">// 存储每个点是否在队列中</span>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">spfa判断图中是否存在负环 —— 模板题 AcWing 852. spfa判断负环
+时间复杂度是 O(nm)O(nm), nn 表示点数，mm 表示边数
+int n;      &#x2F;&#x2F; 总点数
+int h[N], w[N], e[N], ne[N], idx;       &#x2F;&#x2F; 邻接表存储所有边
+int dist[N], cnt[N];        &#x2F;&#x2F; dist[x]存储1号点到x的最短距离，cnt[x]存储1到x的最短路中经过的点数
+bool st[N];     &#x2F;&#x2F; 存储每个点是否在队列中
 
-<span class="token comment">// 如果存在负环，则返回true，否则返回false。</span>
-<span class="token keyword">bool</span> <span class="token function">spfa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token comment">// 不需要初始化dist数组</span>
-    <span class="token comment">// 原理：如果某条最短路径上有n个点（除了自己），那么加上自己之后一共有n+1个点，由抽屉原理一定有两个点相同，所以存在环。</span>
-<span class="token comment">//*****************************************************</span>
-    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        st<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token comment">//****************************************************</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token keyword">auto</span> t <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+&#x2F;&#x2F; 如果存在负环，则返回true，否则返回false。
+bool spfa()
+&#123;
+    &#x2F;&#x2F; 不需要初始化dist数组
+    &#x2F;&#x2F; 原理：如果某条最短路径上有n个点（除了自己），那么加上自己之后一共有n+1个点，由抽屉原理一定有两个点相同，所以存在环。
+&#x2F;&#x2F;*****************************************************
+    queue&lt;int&gt; q;
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ )
+    &#123;
+        q.push(i);
+        st[i] &#x3D; true;
+    &#125;
+&#x2F;&#x2F;****************************************************
+    while (q.size())
+    &#123;
+        auto t &#x3D; q.front();
+        q.pop();
 
-        st<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        st[t] &#x3D; false;
 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">&#123;</span>
-            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token punctuation">&#123;</span>
-                dist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                cnt<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> cnt<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">>=</span> n<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>       <span class="token comment">// 如果从1号点到x的最短路中包含至少n个点（不包括自己），则说明存在环</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>st<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token punctuation">&#123;</span>
-                    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    st<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        for (int i &#x3D; h[t]; i !&#x3D; -1; i &#x3D; ne[i])
+        &#123;
+            int j &#x3D; e[i];
+            if (dist[j] &gt; dist[t] + w[i])
+            &#123;
+                dist[j] &#x3D; dist[t] + w[i];
+                cnt[j] &#x3D; cnt[t] + 1;
+                if (cnt[j] &gt;&#x3D; n) return true;       &#x2F;&#x2F; 如果从1号点到x的最短路中包含至少n个点（不包括自己），则说明存在环
+                if (!st[j])
+                &#123;
+                    q.push(j);
+                    st[j] &#x3D; true;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
 
-    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    return false;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="4-Floyd"><a href="#4-Floyd" class="headerlink" title="4. Floyd"></a>4. Floyd</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N^3)$</p>
@@ -795,28 +795,28 @@
 <li>邻接矩阵(二维数组)dist储存路径，数组中的值开始表示点点之间初始直接路径，最终是点点之间的最小路径，有两点需要注意的，第一是如果没有直接相连的两点那么默认为一个很大的值(不要因为计算溢出成负数)，第二是自己和自己的距离要为 0。</li>
 <li>状态转移方程（其中**d[i][j]**的意思可以理解为点a到点b的最短路径,所以**d[i][k]**的意思可以理解为**i到k的最短路径d[k][j]**的意思为**k到j的最短路径.**）</li>
 </ul>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">dp[i][j]&#x3D;min(dp[i][j],dp[i][k]+dp[k][j])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>从第1个到第n个点依次加入松弛计算，每个点加入进行试探枚举是否有路径长度被更改(自己能否更新路径)。顺序加入(k枚举)松弛的点时候，需要遍历图中每一个点对(i,j双重循环)，判断每一个点对距离是否因为加入的点而发生最小距离变化，如果发生改变(变小)，那么两点(i,j)距离就更改。</li>
 <li>重复上述直到最后插点试探完成。</li>
 </ul>
-<h3 id="4-3-Floyd代码模板："><a href="#4-3-Floyd代码模板：" class="headerlink" title="4.3 Floyd代码模板："></a>4.3 Floyd代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">floyd算法 —— 模板题 AcWing <span class="token number">854.</span> Floyd求最短路
-时间复杂度是 <span class="token function">O</span><span class="token punctuation">(</span>n3<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n3<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数
+<h3 id="4-3-Floyd代码模板："><a href="#4-3-Floyd代码模板：" class="headerlink" title="4.3 Floyd代码模板："></a>4.3 Floyd代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">floyd算法 —— 模板题 AcWing 854. Floyd求最短路
+时间复杂度是 O(n3)O(n3), nn 表示点数
 初始化：
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> j<span class="token punctuation">)</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> INF<span class="token punctuation">;</span>
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ )
+        for (int j &#x3D; 1; j &lt;&#x3D; n; j ++ )
+            if (i &#x3D;&#x3D; j) d[i][j] &#x3D; 0;
+            else d[i][j] &#x3D; INF;
 
-<span class="token comment">// 算法结束后，d[a][b]表示a到b的最短距离</span>
-<span class="token keyword">void</span> <span class="token function">floyd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> k <span class="token operator">++</span> <span class="token punctuation">)</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
-                d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> d<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#x2F;&#x2F; 算法结束后，d[a][b]表示a到b的最短距离
+void floyd()
+&#123;
+    for (int k &#x3D; 1; k &lt;&#x3D; n; k ++ )
+        for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ )
+            for (int j &#x3D; 1; j &lt;&#x3D; n; j ++ )
+                d[i][j] &#x3D; min(d[i][j], d[i][k] + d[k][j]);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
