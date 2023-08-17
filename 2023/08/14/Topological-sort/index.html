@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="拓扑排序, Spicy-pig">
-    <meta name="description" content="拓扑排序
+    <meta name="description" content="
 💡 拓扑排序思想：有向无环图（DAG图）
 
-1. 拓扑排序算法思想：拓扑排序是指将一个有向无环图(Directed Acyclic Graph简称DAG)进行排序进而得到一个有序的线性序列。利用拓扑排序可以将事件按照顺序排序后进">
+1. 拓扑排序算法思想：拓扑排序是指将一个有向无环图(Directed Acyclic Graph简称DAG)进行排序进而得到一个有序的线性序列。利用拓扑排序可以将事件按照顺序排序后进行处理，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-15
+                    2023-08-14
                 </div>
                 
 
@@ -415,30 +415,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><blockquote>
+                <blockquote>
 <p>💡 <strong>拓扑排序思想：有向无环图（DAG图）</strong></p>
 </blockquote>
 <h2 id="1-拓扑排序算法思想："><a href="#1-拓扑排序算法思想：" class="headerlink" title="1. 拓扑排序算法思想："></a>1. 拓扑排序算法思想：</h2><p><strong>拓扑排序</strong>是指将一个有向无环图(Directed Acyclic Graph简称DAG)进行排序进而得到一个有序的线性序列。利用拓扑排序可以将事件按照顺序排序后进行处理，可以确定事件发生的先后顺序。我们把入度为 0 的那些顶点放入 queue 中，然后通过每次执行 queue 中的顶点，就可以让依赖这个被执行的顶点的那些点的 入度-1，如果有顶点的入度变成了 0，就可以放入 queue 了，直到 queue 为空。</p>
-<img src="/2023/05/15/Topological-sort/1.png" class="">
-
+<img src="/2023/08/14/Topological-sort/1.png" class="">
 <blockquote>
 <p>拓扑排序必须为有向无环图</p>
 </blockquote>
 <p><strong>拓扑排序中存在度</strong></p>
 <ul>
-<li>例如<strong>3</strong>的<strong>入度（既指向3的边的个数）**是**2**，</strong>出度（从3指出的边的个数）*<em>是*<em>1</em></em></li>
+<li>例如<strong>3</strong>的<strong>入度（既指向3的边的个数）\</strong>是*<em>2<strong>，</strong>出度（从3指出的边的个数）*<em>是**1</em></em></li>
 </ul>
 <h2 id="2-拓扑排序算法实现方式："><a href="#2-拓扑排序算法实现方式：" class="headerlink" title="2. 拓扑排序算法实现方式："></a>2. 拓扑排序算法实现方式：</h2><ul>
 <li>把入度为0的点放入一个queue中， 然后就需要把某些点拿出去执行了，把 C1 拿出来执行，那这意味「以 C1 为顶点」的「指向其他点」的「边」都消失了，也就是 C1 的出度变成了 0.</li>
 </ul>
-<img src="/2023/05/15/Topological-sort/2.png" class="">
-
+<img src="/2023/08/14/Topological-sort/2.png" class="">
 <p>此时我们更新了C3和C8点的入度：（此时队列中的数为C2，C8）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th></th>
-<th align="center">c3</th>
+<th style="text-align:center">c3</th>
 <th>c4</th>
 <th>c5</th>
 <th>c6</th>
@@ -447,9 +446,10 @@
 <th>c9</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>入度</td>
-<td align="center">1</td>
+<td style="text-align:center">1</td>
 <td>2</td>
 <td>1</td>
 <td>2</td>
@@ -457,18 +457,20 @@
 <td>0</td>
 <td>1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>下一个我们再执行 C2，C2 所指向的 C3, C5 的 入度就要减一</li>
 </ul>
-<img src="/2023/05/15/Topological-sort/3.png" class="">
-
+<img src="/2023/08/14/Topological-sort/3.png" class="">
 <p>更新表格：（此时队列中的数为C8，C3, C5）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th></th>
-<th align="center">c3</th>
+<th style="text-align:center">c3</th>
 <th>c4</th>
 <th>c5</th>
 <th>c6</th>
@@ -476,46 +478,48 @@
 <th>c9</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>入度</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
 <td>2</td>
 <td>0</td>
 <td>2</td>
 <td>2</td>
 <td>1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>如此继续执行，直到queue为空即可</li>
 </ul>
-<h2 id="3-拓扑排序代码模板："><a href="#3-拓扑排序代码模板：" class="headerlink" title="3. 拓扑排序代码模板："></a>3. 拓扑排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">拓扑排序 —— 模板题 AcWing 848. 有向图的拓扑序列
-时间复杂度 O(n+m)O(n+m), nn 表示点数，mm 表示边数
-bool topsort()
-&#123;
-    int hh &#x3D; 0, tt &#x3D; -1;
+<h2 id="3-拓扑排序代码模板："><a href="#3-拓扑排序代码模板：" class="headerlink" title="3. 拓扑排序代码模板："></a>3. 拓扑排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">拓扑排序 —— 模板题 AcWing <span class="token number">848.</span> 有向图的拓扑序列
+时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数
+<span class="token keyword">bool</span> <span class="token function">topsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> hh <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> tt <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 
-    &#x2F;&#x2F; d[i] 存储点i的入度
-    for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ )
-        if (!d[i])
-            q[ ++ tt] &#x3D; i;
+    <span class="token comment">// d[i] 存储点i的入度</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
 
-    while (hh &lt;&#x3D; tt)
-    &#123;
-        int t &#x3D; q[hh ++ ];
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>hh <span class="token operator">&lt;=</span> tt<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> t <span class="token operator">=</span> q<span class="token punctuation">[</span>hh <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-        for (int i &#x3D; h[t]; i !&#x3D; -1; i &#x3D; ne[i])
-        &#123;
-            int j &#x3D; e[i];
-            if (-- d[j] &#x3D;&#x3D; 0)
-                q[ ++ tt] &#x3D; j;
-        &#125;
-    &#125;
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span> d<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    &#x2F;&#x2F; 如果所有点都入队了，说明存在拓扑序列；否则不存在拓扑序列。
-    return tt &#x3D;&#x3D; n - 1;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    <span class="token comment">// 如果所有点都入队了，说明存在拓扑序列；否则不存在拓扑序列。</span>
+    <span class="token keyword">return</span> tt <span class="token operator">==</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -542,7 +546,7 @@ bool topsort()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://spicypig.top/2023/05/15/Topological-sort/">https://spicypig.top/2023/05/15/Topological-sort/</a>
+                    <a href="https://spicypig.top/2023/08/14/Topological-sort/">https://spicypig.top/2023/08/14/Topological-sort/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -927,17 +931,18 @@ bool topsort()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/15/Shortest-path/">
+                <a href="/2023/08/14/Topological-sort/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="最短路">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="拓扑排序">
                         
-                        <span class="card-title">最短路</span>
+                        <span class="card-title">拓扑排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -947,9 +952,9 @@ bool topsort()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -962,11 +967,12 @@ bool topsort()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
-                        <span class="chip bg-color">最短路</span>
+                    <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">拓扑排序</span>
                     </a>
                     
                 </div>
@@ -980,13 +986,13 @@ bool topsort()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/15/Tree-graph-traversal/">
+                <a href="/2023/08/14/sort/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="树和图的遍历">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="排序算法">
                         
-                        <span class="card-title">树和图的遍历</span>
+                        <span class="card-title">排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -997,7 +1003,7 @@ bool topsort()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
                             </span>
                         <span class="publish-author">
                             
@@ -1014,12 +1020,8 @@ bool topsort()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A0%91/">
-                        <span class="chip bg-color">树</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%BE/">
-                        <span class="chip bg-color">图</span>
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
@@ -1473,15 +1475,6 @@ $(function () {
 
     
     
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 雪花特效 -->

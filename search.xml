@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>拓扑排序</title>
+      <link href="/2023/08/14/Topological-sort/"/>
+      <url>/2023/08/14/Topological-sort/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>💡 <strong>拓扑排序思想：有向无环图（DAG图）</strong></p></blockquote><h2 id="1-拓扑排序算法思想："><a href="#1-拓扑排序算法思想：" class="headerlink" title="1. 拓扑排序算法思想："></a>1. 拓扑排序算法思想：</h2><p><strong>拓扑排序</strong>是指将一个有向无环图(Directed Acyclic Graph简称DAG)进行排序进而得到一个有序的线性序列。利用拓扑排序可以将事件按照顺序排序后进行处理，可以确定事件发生的先后顺序。我们把入度为 0 的那些顶点放入 queue 中，然后通过每次执行 queue 中的顶点，就可以让依赖这个被执行的顶点的那些点的 入度-1，如果有顶点的入度变成了 0，就可以放入 queue 了，直到 queue 为空。</p><img src="/2023/08/14/Topological-sort/1.png" class=""><blockquote><p>拓扑排序必须为有向无环图</p></blockquote><p><strong>拓扑排序中存在度</strong></p><ul><li>例如<strong>3</strong>的<strong>入度（既指向3的边的个数）\</strong>是*<em>2<strong>，</strong>出度（从3指出的边的个数）*<em>是**1</em></em></li></ul><h2 id="2-拓扑排序算法实现方式："><a href="#2-拓扑排序算法实现方式：" class="headerlink" title="2. 拓扑排序算法实现方式："></a>2. 拓扑排序算法实现方式：</h2><ul><li>把入度为0的点放入一个queue中， 然后就需要把某些点拿出去执行了，把 C1 拿出来执行，那这意味「以 C1 为顶点」的「指向其他点」的「边」都消失了，也就是 C1 的出度变成了 0.</li></ul><img src="/2023/08/14/Topological-sort/2.png" class=""><p>此时我们更新了C3和C8点的入度：（此时队列中的数为C2，C8）</p><div class="table-container"><table><thead><tr><th></th><th style="text-align:center">c3</th><th>c4</th><th>c5</th><th>c6</th><th>c7</th><th>c8</th><th>c9</th></tr></thead><tbody><tr><td>入度</td><td style="text-align:center">1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>0</td><td>1</td></tr></tbody></table></div><ul><li>下一个我们再执行 C2，C2 所指向的 C3, C5 的 入度就要减一</li></ul><img src="/2023/08/14/Topological-sort/3.png" class=""><p>更新表格：（此时队列中的数为C8，C3, C5）</p><div class="table-container"><table><thead><tr><th></th><th style="text-align:center">c3</th><th>c4</th><th>c5</th><th>c6</th><th>c7</th><th>c9</th></tr></thead><tbody><tr><td>入度</td><td style="text-align:center">0</td><td>2</td><td>0</td><td>2</td><td>2</td><td>1</td></tr></tbody></table></div><ul><li>如此继续执行，直到queue为空即可</li></ul><h2 id="3-拓扑排序代码模板："><a href="#3-拓扑排序代码模板：" class="headerlink" title="3. 拓扑排序代码模板："></a>3. 拓扑排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">拓扑排序 —— 模板题 AcWing <span class="token number">848.</span> 有向图的拓扑序列时间复杂度 <span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token function">O</span><span class="token punctuation">(</span>n<span class="token operator">+</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> nn 表示点数，mm 表示边数<span class="token keyword">bool</span> <span class="token function">topsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">int</span> hh <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> tt <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">// d[i] 存储点i的入度</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>            q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>hh <span class="token operator">&lt;=</span> tt<span class="token punctuation">)</span>    <span class="token punctuation">&#123;</span>        <span class="token keyword">int</span> t <span class="token operator">=</span> q<span class="token punctuation">[</span>hh <span class="token operator">++</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span> i <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">=</span> ne<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>        <span class="token punctuation">&#123;</span>            <span class="token keyword">int</span> j <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span> d<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>                q<span class="token punctuation">[</span> <span class="token operator">++</span> tt<span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span>    <span class="token comment">// 如果所有点都入队了，说明存在拓扑序列；否则不存在拓扑序列。</span>    <span class="token keyword">return</span> tt <span class="token operator">==</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 拓扑排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>排序算法</title>
       <link href="/2023/08/14/sort/"/>
       <url>/2023/08/14/sort/</url>
@@ -271,31 +296,6 @@
         <tags>
             
             <tag> 最短路 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>拓扑排序</title>
-      <link href="/2023/05/15/Topological-sort/"/>
-      <url>/2023/05/15/Topological-sort/</url>
-      
-        <content type="html"><![CDATA[<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><blockquote><p>💡 <strong>拓扑排序思想：有向无环图（DAG图）</strong></p></blockquote><h2 id="1-拓扑排序算法思想："><a href="#1-拓扑排序算法思想：" class="headerlink" title="1. 拓扑排序算法思想："></a>1. 拓扑排序算法思想：</h2><p><strong>拓扑排序</strong>是指将一个有向无环图(Directed Acyclic Graph简称DAG)进行排序进而得到一个有序的线性序列。利用拓扑排序可以将事件按照顺序排序后进行处理，可以确定事件发生的先后顺序。我们把入度为 0 的那些顶点放入 queue 中，然后通过每次执行 queue 中的顶点，就可以让依赖这个被执行的顶点的那些点的 入度-1，如果有顶点的入度变成了 0，就可以放入 queue 了，直到 queue 为空。</p><img src="/2023/05/15/Topological-sort/1.png" class=""><blockquote><p>拓扑排序必须为有向无环图</p></blockquote><p><strong>拓扑排序中存在度</strong></p><ul><li>例如<strong>3</strong>的<strong>入度（既指向3的边的个数）**是**2**，</strong>出度（从3指出的边的个数）*<em>是*<em>1</em></em></li></ul><h2 id="2-拓扑排序算法实现方式："><a href="#2-拓扑排序算法实现方式：" class="headerlink" title="2. 拓扑排序算法实现方式："></a>2. 拓扑排序算法实现方式：</h2><ul><li>把入度为0的点放入一个queue中， 然后就需要把某些点拿出去执行了，把 C1 拿出来执行，那这意味「以 C1 为顶点」的「指向其他点」的「边」都消失了，也就是 C1 的出度变成了 0.</li></ul><img src="/2023/05/15/Topological-sort/2.png" class=""><p>此时我们更新了C3和C8点的入度：（此时队列中的数为C2，C8）</p><table><thead><tr><th></th><th align="center">c3</th><th>c4</th><th>c5</th><th>c6</th><th>c7</th><th>c8</th><th>c9</th></tr></thead><tbody><tr><td>入度</td><td align="center">1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>0</td><td>1</td></tr></tbody></table><ul><li>下一个我们再执行 C2，C2 所指向的 C3, C5 的 入度就要减一</li></ul><img src="/2023/05/15/Topological-sort/3.png" class=""><p>更新表格：（此时队列中的数为C8，C3, C5）</p><table><thead><tr><th></th><th align="center">c3</th><th>c4</th><th>c5</th><th>c6</th><th>c7</th><th>c9</th></tr></thead><tbody><tr><td>入度</td><td align="center">0</td><td>2</td><td>0</td><td>2</td><td>2</td><td>1</td></tr></tbody></table><ul><li>如此继续执行，直到queue为空即可</li></ul><h2 id="3-拓扑排序代码模板："><a href="#3-拓扑排序代码模板：" class="headerlink" title="3. 拓扑排序代码模板："></a>3. 拓扑排序代码模板：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">拓扑排序 —— 模板题 AcWing 848. 有向图的拓扑序列时间复杂度 O(n+m)O(n+m), nn 表示点数，mm 表示边数bool topsort()&#123;    int hh &#x3D; 0, tt &#x3D; -1;    &#x2F;&#x2F; d[i] 存储点i的入度    for (int i &#x3D; 1; i &lt;&#x3D; n; i ++ )        if (!d[i])            q[ ++ tt] &#x3D; i;    while (hh &lt;&#x3D; tt)    &#123;        int t &#x3D; q[hh ++ ];        for (int i &#x3D; h[t]; i !&#x3D; -1; i &#x3D; ne[i])        &#123;            int j &#x3D; e[i];            if (-- d[j] &#x3D;&#x3D; 0)                q[ ++ tt] &#x3D; j;        &#125;    &#125;    &#x2F;&#x2F; 如果所有点都入队了，说明存在拓扑序列；否则不存在拓扑序列。    return tt &#x3D;&#x3D; n - 1;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 拓扑排序 </tag>
             
         </tags>
       
