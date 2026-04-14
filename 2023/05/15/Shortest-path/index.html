@@ -6,11 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="最短路, Spicy-pig">
     <meta name="description" content="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)
-
 1. Dijsttra1.1 素版Dijkstra算法（稠密图——邻接矩阵）
 💡时间复杂度：$O(N^2)$
 
-1.1.1 朴素版Dijkstra算法思想">
+1.1.1 朴素版Dijkstra算法思想：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -449,15 +448,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="最短路-Dijkstra-Bellman-ford-SPFA-Floyd"><a href="#最短路-Dijkstra-Bellman-ford-SPFA-Floyd" class="headerlink" title="最短路(Dijkstra, Bellman-ford, SPFA, Floyd)"></a>最短路(Dijkstra, Bellman-ford, SPFA, Floyd)</h1><img src="/2023/05/15/Shortest-path/1.png" class="">
-
 <h2 id="1-Dijsttra"><a href="#1-Dijsttra" class="headerlink" title="1. Dijsttra"></a>1. Dijsttra</h2><h3 id="1-1-素版Dijkstra算法（稠密图——邻接矩阵）"><a href="#1-1-素版Dijkstra算法（稠密图——邻接矩阵）" class="headerlink" title="1.1 素版Dijkstra算法（稠密图——邻接矩阵）"></a>1.1 素版Dijkstra算法（稠密图——邻接矩阵）</h3><blockquote>
 <p>💡时间复杂度：$O(N^2)$</p>
 </blockquote>
 <h4 id="1-1-1-朴素版Dijkstra算法思想："><a href="#1-1-1-朴素版Dijkstra算法思想：" class="headerlink" title="1.1.1 朴素版Dijkstra算法思想："></a>1.1.1 朴素版Dijkstra算法思想：</h4><p>迪杰斯特拉（dijkstra）算法是一种求单源最短路的算法，假若从一个点a出发，终点是s，dijkstra算法可以求出从a到达s的最短路径（所有边权都是正数）。</p>
 <img src="/2023/05/15/Shortest-path/1.gif" class="">
-
 <h4 id="1-1-2-朴素版Dijkstra算法实现方式："><a href="#1-1-2-朴素版Dijkstra算法实现方式：" class="headerlink" title="1.1.2 朴素版Dijkstra算法实现方式："></a>1.1.2 朴素版Dijkstra算法实现方式：</h4><ul>
-<li>初始化距离<strong>dist[1] &#x3D; 0 , dist[i] &#x3D; 无穷</strong> （表示起点到i点的距离）</li>
+<li>初始化距离<strong>dist[1] = 0 , dist[i] = 无穷</strong> （表示起点到i点的距离）</li>
 <li>循环n次<ul>
 <li>将已确定的最短距离的点存放到数组<strong>dist</strong>中</li>
 <li>找到不在<strong>dist</strong>中且距离最近的点—&gt;<strong>t</strong></li>
@@ -495,15 +492,11 @@ int dijkstra()
     if (dist[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;
     return dist[n];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="1-2-堆优化版Dijkstra算法（稀疏图——邻接表）"><a href="#1-2-堆优化版Dijkstra算法（稀疏图——邻接表）" class="headerlink" title="1.2 堆优化版Dijkstra算法（稀疏图——邻接表）"></a>1.2 堆优化版Dijkstra算法（稀疏图——邻接表）</h3><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(M*log N)$</p>
 </blockquote>
-<h4 id="1-2-1-堆优化版Dijkstra算法思想："><a href="#1-2-1-堆优化版Dijkstra算法思想：" class="headerlink" title="1.2.1 堆优化版Dijkstra算法思想："></a>1.2.1 堆优化版Dijkstra算法思想：</h4><table>
+<h4 id="1-2-1-堆优化版Dijkstra算法思想："><a href="#1-2-1-堆优化版Dijkstra算法思想：" class="headerlink" title="1.2.1 堆优化版Dijkstra算法思想："></a>1.2.1 堆优化版Dijkstra算法思想：</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>方法</th>
@@ -512,7 +505,8 @@ int dijkstra()
 <th>时间复杂度</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>push</td>
 <td>将元素插入堆</td>
 <td>q.push(x)</td>
@@ -527,14 +521,15 @@ int dijkstra()
 <tr>
 <td>top</td>
 <td>查询堆顶元素</td>
-<td>int x &#x3D; q.top()</td>
+<td>int x = q.top()</td>
 <td>O（1）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <img src="/2023/05/15/Shortest-path/2.png" class="">
-
 <h4 id="1-2-2-堆优化版Dijkstra算法实现方式："><a href="#1-2-2-堆优化版Dijkstra算法实现方式：" class="headerlink" title="1.2.2 堆优化版Dijkstra算法实现方式："></a>1.2.2 堆优化版Dijkstra算法实现方式：</h4><ul>
-<li>初始化距离<strong>dist[1] &#x3D; 0 , dist[i] &#x3D; 无穷</strong> （表示起点到i点的距离）</li>
+<li>初始化距离<strong>dist[1] = 0 , dist[i] = 无穷</strong> （表示起点到i点的距离）</li>
 <li>循环n次（dist为已经确定最短距离的点）<ul>
 <li>找到不在<strong>dist</strong>中且离起点最近的点，赋值<strong>→t</strong>（优化：小根堆）</li>
 <li>将 <strong>t 加入</strong>如到<strong>dist</strong>中</li>
@@ -583,21 +578,16 @@ int dijkstra()
     if (dist[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;
     return dist[n];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="2-Bellman-Ford"><a href="#2-Bellman-Ford" class="headerlink" title="2. Bellman-Ford"></a>2. Bellman-Ford</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N*M)$</p>
 </blockquote>
 <h3 id="2-1-Bellman-Ford算法思想："><a href="#2-1-Bellman-Ford算法思想：" class="headerlink" title="2.1 Bellman-Ford算法思想："></a>2.1 Bellman-Ford算法思想：</h3><p>Bellman_Ford算法的原理是对n条边进行n - 1次松弛操作，得到所有可能的最短路径。由于是有<strong>步数限制和负数边</strong>存在，我们不能使用Djkstra算法，但是Bellman_Ford算法的实现和Djkstra算法在思路上还是差不多。Ballman_Ford算法可以解决存在负权边的问题，对于一些有步数限制的问题只能使用Bellman_ford算法，但是其他的负权边问题用SPFA解决会更佳。</p>
 <h3 id="2-2-Bellman-Ford算法实现方式："><a href="#2-2-Bellman-Ford算法实现方式：" class="headerlink" title="2.2 Bellman-Ford算法实现方式："></a>2.2 Bellman-Ford算法实现方式：</h3><ul>
-<li>初始化距离<strong>dist[1] &#x3D; 0 , dist[i] &#x3D; 无穷</strong> （表示起点到i点的距离）</li>
+<li>初始化距离<strong>dist[1] = 0 , dist[i] = 无穷</strong> （表示起点到i点的距离）</li>
 <li><strong>循环n次（外层）</strong></li>
 <li>循环m次（内层）→遍历所有边<ul>
-<li>每一次更新一个节点的最短距离（<strong>dist[b] &#x3D; dist[a] + w</strong>(松弛操作)）</li>
-<li>循环n次后所有边都满足：<strong>dist[b] &#x3D; dist[a] + w</strong>(三角不等式)</li>
+<li>每一次更新一个节点的最短距离（<strong>dist[b] = dist[a] + w</strong>(松弛操作)）</li>
+<li>循环n次后所有边都满足：<strong>dist[b] = dist[a] + w</strong>(三角不等式)</li>
 </ul>
 </li>
 </ul>
@@ -634,18 +624,13 @@ int bellman_ford()
     if (dist[n] &gt; 0x3f3f3f3f &#x2F; 2) return -1;
     return dist[n];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="3-SPFA"><a href="#3-SPFA" class="headerlink" title="3. SPFA"></a>3. SPFA</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N)或(N * M)$</p>
 </blockquote>
-<h3 id="3-1-SPFA算法思想："><a href="#3-1-SPFA算法思想：" class="headerlink" title="3.1 SPFA算法思想："></a>3.1 SPFA算法思想：</h3><p><em><strong>代码跟堆优化版Dijkstra相似，只用更改一下spfa函数即可</strong></em></p>
+<h3 id="3-1-SPFA算法思想："><a href="#3-1-SPFA算法思想：" class="headerlink" title="3.1 SPFA算法思想："></a>3.1 SPFA算法思想：</h3><p><strong><em>代码跟堆优化版Dijkstra相似，只用更改一下spfa函数即可</em></strong></p>
 <p>SPFA算法就是将bellman_ford算法加上了队列优化，在使用bellman_ford算法时<strong>对每一条边都要进行遍历</strong>，实际上是将每一个边都进行了n - 1 次松弛操作，实际上我们没必要松弛每一个点，那么我们希望去掉一些无用的松弛操作，这个时候我们用<strong>队列</strong>来维护哪些点可能会需要松弛操作，这样就能<strong>只访问必要的边</strong>，SPFA同样能处理负权回路的图。</p>
 <h3 id="3-2-SPFA算法实现方式："><a href="#3-2-SPFA算法实现方式：" class="headerlink" title="3.2 SPFA算法实现方式："></a>3.2 SPFA算法实现方式：</h3><ul>
-<li>初始化距离<strong>dist[1] &#x3D; 0 , dist[i] &#x3D; 无穷</strong> （表示起点到i点的距离）</li>
+<li>初始化距离<strong>dist[1] = 0 , dist[i] = 无穷</strong> （表示起点到i点的距离）</li>
 <li>将源点的队头元素入列给t， 然后弹出</li>
 <li>队首 <strong>t</strong> 出队，<strong>并将 t 标记为没有访问过</strong>，方便下次入队(进行松弛操作)</li>
 <li>遍历以队首为起点的所有边<strong>（t, i)</strong> ,如果 <strong>dist[ i ] &gt; dist [ t ] + w [ i ]</strong> ,更新 <strong>dist [ i ]</strong></li>
@@ -692,7 +677,6 @@ int spfa()
 
     return dist[n];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="3-4-SPFA算法判断图中是否存在负环问题"><a href="#3-4-SPFA算法判断图中是否存在负环问题" class="headerlink" title="3.4 SPFA算法判断图中是否存在负环问题"></a>3.4 SPFA算法判断图中是否存在负环问题</h3><p><strong>判断存在负环的思想：</strong></p>
 <ul>
 <li><p>dsit[ x ] 表示的是1号点到x号点的距离</p>
@@ -701,8 +685,8 @@ int spfa()
 </li>
 <li><p>判断负环是增加了更新的步骤</p>
 <ul>
-<li>dist [x] &#x3D; dist[t] + w[i]（这里是更新1号点到x号点的距离，用dist[t]更新）</li>
-<li>cnt[x] &#x3D; cnt[t] + 1（这里入下图所示，因为1号点到t号点的距离更新了，1号点到x号点的边数相对于1号点到t号点多了1，所以ccnt[x]就应该加上1）</li>
+<li>dist [x] = dist[t] + w[i]（这里是更新1号点到x号点的距离，用dist[t]更新）</li>
+<li>cnt[x] = cnt[t] + 1（这里入下图所示，因为1号点到t号点的距离更新了，1号点到x号点的边数相对于1号点到t号点多了1，所以ccnt[x]就应该加上1）</li>
 </ul>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">spfa判断图中是否存在负环 —— 模板题 AcWing 852. spfa判断负环
 时间复杂度是 O(nm)O(nm), nn 表示点数，mm 表示边数
@@ -749,7 +733,8 @@ bool spfa()
     &#125;
 
     return false;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h2 id="4-Floyd"><a href="#4-Floyd" class="headerlink" title="4. Floyd"></a>4. Floyd</h2><blockquote>
 <p>💡 <strong>时间复杂度：</strong>$O(N^3)$</p>
@@ -757,10 +742,9 @@ bool spfa()
 <h3 id="4-1-Floyd算法思想："><a href="#4-1-Floyd算法思想：" class="headerlink" title="4.1 Floyd算法思想："></a>4.1 Floyd算法思想：</h3><p>Floyd算法又称为插点法，是一种利用动态规划的思想寻找给定的加权图中多源点之间最短路径的算法，算法的主要思想基于动态规划（Dp)。</p>
 <h3 id="4-2-Floyd算法实现方式："><a href="#4-2-Floyd算法实现方式：" class="headerlink" title="4.2 Floyd算法实现方式："></a>4.2 Floyd算法实现方式：</h3><ul>
 <li>邻接矩阵(二维数组)dist储存路径，数组中的值开始表示点点之间初始直接路径，最终是点点之间的最小路径，有两点需要注意的，第一是如果没有直接相连的两点那么默认为一个很大的值(不要因为计算溢出成负数)，第二是自己和自己的距离要为 0。</li>
-<li>状态转移方程（其中**d[i][j]**的意思可以理解为点a到点b的最短路径,所以**d[i][k]**的意思可以理解为**i到k的最短路径d[k][j]**的意思为**k到j的最短路径.**）</li>
+<li>状态转移方程（其中<strong>d[i][j]\</strong>的意思可以理解为点a到点b的最短路径,所以*<em>d[i][k]*<em>的意思可以理解为*<em>i到k的最短路径d[k][j]*<em>的意思为\</em></em>k到j的最短路径.</em></em>）</li>
 </ul>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">dp[i][j]&#x3D;min(dp[i][j],dp[i][k]+dp[k][j])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ul>
 <li>从第1个到第n个点依次加入松弛计算，每个点加入进行试探枚举是否有路径长度被更改(自己能否更新路径)。顺序加入(k枚举)松弛的点时候，需要遍历图中每一个点对(i,j双重循环)，判断每一个点对距离是否因为加入的点而发生最小距离变化，如果发生改变(变小)，那么两点(i,j)距离就更改。</li>
 <li>重复上述直到最后插点试探完成。</li>
@@ -781,9 +765,6 @@ void floyd()
             for (int j &#x3D; 1; j &lt;&#x3D; n; j ++ )
                 d[i][j] &#x3D; min(d[i][j], d[i][k] + d[k][j]);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 
                 
             </div>
@@ -1466,7 +1447,7 @@ void floyd()
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

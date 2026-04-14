@@ -478,9 +478,7 @@ idx &#x3D; 0;
 memset(h, -1, sizeof h);
 树与图的遍历
 时间复杂度 O(n+m)O(n+m), nn 表示点数，mm 表示边数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="2-树的深度优先遍历"><a href="#2-树的深度优先遍历" class="headerlink" title="2. 树的深度优先遍历"></a>2. 树的深度优先遍历</h2><h3 id="2-1-树的深度优先遍历的算法思想："><a href="#2-1-树的深度优先遍历的算法思想：" class="headerlink" title="2.1 树的深度优先遍历的算法思想："></a>2.1 树的深度优先遍历的算法思想：</h3><img src="/2023/05/15/Tree-graph-traversal/1.gif" class="">
-
 <p>树的深度优先遍历，（既一条道走到黑），先从第一个点开始往下遍历，依次遍历以下的每一个点，直到遍历到最后的点为止。</p>
 <h3 id="2-2-代码模板："><a href="#2-2-代码模板：" class="headerlink" title="2.2 代码模板："></a>2.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">深度优先遍历 —— 模板题 AcWing 846. 树的重心
 
@@ -516,7 +514,6 @@ int dfs(int u)
     
     return sum;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="3-树的宽度优先遍历"><a href="#3-树的宽度优先遍历" class="headerlink" title="3. 树的宽度优先遍历"></a>3. 树的宽度优先遍历</h2><h3 id="3-1-树的宽度优先遍历的算法思想："><a href="#3-1-树的宽度优先遍历的算法思想：" class="headerlink" title="3.1 树的宽度优先遍历的算法思想："></a>3.1 树的宽度优先遍历的算法思想：</h3><p>树的宽度优先遍历，既按层级从上层到下层依次遍历，比如说从第一个点开始，1号点可以拓展到它周围的所有邻点，每次只向下拓展一次，每次拓展的数都属于同一层级。</p>
 <h3 id="3-2-代码模板："><a href="#3-2-代码模板：" class="headerlink" title="3.2 代码模板："></a>3.2 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">宽度优先遍历 —— 模板题 AcWing 847. 图中点的层次
 
@@ -566,7 +563,6 @@ int bfs()
     
     return d[n];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1249,7 +1245,7 @@ int bfs()
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

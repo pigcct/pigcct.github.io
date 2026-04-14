@@ -451,14 +451,8 @@
 <h3 id="2-2-并行"><a href="#2-2-并行" class="headerlink" title="2.2 并行"></a>2.2 并行</h3><p>在同一时刻，有多个指令在单个CPU上<strong>同时</strong>执行。</p>
 <h2 id="3-多线程的实现方式"><a href="#3-多线程的实现方式" class="headerlink" title="3. 多线程的实现方式"></a>3. 多线程的实现方式</h2><p><strong>多线程的三种实现方式对比：</strong></p>
 <img src="/2023/05/25/multithreading-program/1.png" class="">
-
-
-
 <p><strong>常见的成员方法：</strong></p>
 <img src="/2023/05/25/multithreading-program/2.png" class="">
-
-
-
 <h3 id="3-1-继承Thread类的方式实现"><a href="#3-1-继承Thread类的方式实现" class="headerlink" title="3.1 继承Thread类的方式实现"></a>3.1 继承Thread类的方式实现</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 public class ThreadDemo1 &#123;
@@ -482,11 +476,6 @@ public class ThreadDemo1 &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 public class MyThread extends Thread &#123;
@@ -499,11 +488,6 @@ public class MyThread extends Thread &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="3-2-实现Runnable接口的方式实现"><a href="#3-2-实现Runnable接口的方式实现" class="headerlink" title="3.2 实现Runnable接口的方式实现"></a>3.2 实现Runnable接口的方式实现</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 public class ThreadDeom2 &#123;
@@ -535,11 +519,6 @@ public class ThreadDeom2 &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 public class MyRun implements Runnable &#123;
@@ -553,11 +532,6 @@ public class MyRun implements Runnable &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="3-3-利用Callable接口和Future接口方式实现"><a href="#3-3-利用Callable接口和Future接口方式实现" class="headerlink" title="3.3 利用Callable接口和Future接口方式实现"></a>3.3 利用Callable接口和Future接口方式实现</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 import java.util.concurrent.ExecutionException;
@@ -597,11 +571,6 @@ public class ThreadDemo3 &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.Test1;
 
 import java.util.concurrent.Callable;
@@ -618,19 +587,7 @@ public class MyCallable implements Callable&lt;Integer&gt; &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h3 id="3-4-线程的生命周期"><a href="#3-4-线程的生命周期" class="headerlink" title="3.4 线程的生命周期"></a>3.4 线程的生命周期</h3><img src="/2023/05/25/multithreading-program/3.png" class="">
-
-
-
-
-
 <h2 id="4-锁"><a href="#4-锁" class="headerlink" title="4. 锁"></a>4. 锁</h2><h3 id="4-1-Lock锁"><a href="#4-1-Lock锁" class="headerlink" title="4.1 Lock锁"></a>4.1 Lock锁</h3><p>Lock实现提供比使用synchronized方法和语句可以获得更广泛的锁定操作Lock中提供了获得锁和释放锁的方法</p>
 <ul>
 <li>void lock( ): 获得锁</li>
@@ -667,9 +624,6 @@ public class ThreadDemo &#123;
 
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa1;
 
 public class MyThread extends Thread &#123;
@@ -699,7 +653,6 @@ public class MyThread extends Thread &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>Runnable方法</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa2;
 
@@ -728,9 +681,6 @@ public class ThreadDemo &#123;
 
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa2;
 
 public class MyRunnable implements Runnable &#123;
@@ -765,9 +715,6 @@ public class MyRunnable implements Runnable &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p><strong>Callable方法：</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa3;
 
@@ -793,9 +740,6 @@ public class ThreadDemo &#123;
 
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa3;
 
 import java.util.concurrent.locks.Lock;
@@ -834,17 +778,7 @@ public class MyThread extends Thread&#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h3 id="4-1-死锁"><a href="#4-1-死锁" class="headerlink" title="4.1 死锁"></a>4.1 死锁</h3><img src="/2023/05/25/multithreading-program/5.png" class="">
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa4;
 
 
@@ -863,9 +797,6 @@ public class ThreadDemo &#123;
 
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.aa4;
 
 public class MyThread extends Thread &#123;
@@ -897,17 +828,8 @@ public class MyThread extends Thread &#123;
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h2 id="5-生产者和消费者"><a href="#5-生产者和消费者" class="headerlink" title="5. 生产者和消费者"></a>5. 生产者和消费者</h2><img src="/2023/05/25/multithreading-program/4.png" class="">
-
 <h3 id="5-1-常见的成员方法"><a href="#5-1-常见的成员方法" class="headerlink" title="5.1 常见的成员方法"></a>5.1 常见的成员方法</h3><img src="/2023/05/25/multithreading-program/6.png" class="">
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.wait_and_notify;
 &#x2F;&#x2F; 消费者
 public class Foodie extends Thread &#123;
@@ -950,11 +872,6 @@ public class Foodie extends Thread &#123;
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.wait_and_notify;
 &#x2F;&#x2F; 桌子
 public class Desk &#123;
@@ -975,11 +892,6 @@ public class Desk &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.wait_and_notify;
 &#x2F;&#x2F; 厨师
 public class Cook extends Thread &#123;
@@ -1021,11 +933,6 @@ public class Cook extends Thread &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.wait_and_notify;
 &#x2F;&#x2F; 主方法
 public class ThreadDemo &#123;
@@ -1051,14 +958,8 @@ public class ThreadDemo &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <hr>
 <h3 id="5-2-等待唤醒机制"><a href="#5-2-等待唤醒机制" class="headerlink" title="5.2 等待唤醒机制"></a>5.2 等待唤醒机制</h3><img src="/2023/05/25/multithreading-program/7.png" class="">
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.zs_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -1085,11 +986,6 @@ public class ThreadDemo &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.zs_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -1116,11 +1012,6 @@ public class Foodie extends Thread&#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.zs_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -1148,17 +1039,7 @@ public class Cook extends Thread&#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <img src="/2023/05/25/multithreading-program/8.png" class="">
-
-
-
-
-
 <h2 id="6-线程池"><a href="#6-线程池" class="headerlink" title="6. 线程池"></a>6. 线程池</h2><h3 id="6-1-核心原理"><a href="#6-1-核心原理" class="headerlink" title="6.1 核心原理"></a>6.1 核心原理</h3><ul>
 <li>创建一个池子，池子中是空的。</li>
 <li>提交任务时，池子会创建新的线程对象，任务执行完毕，线程归还给池子下回再次提交任务时，不需要创建新的线程，直接复用已有的线程即可。</li>
@@ -1170,7 +1051,7 @@ public class Cook extends Thread&#123;
 <li>所有的任务全部执行完毕，关闭线程池</li>
 </ol>
 <p><strong>线程池的实现方法：</strong></p>
-<p><code>public static ExecutorService newFixedThreadPool(int nThreads) </code> 创建有上限的线程池</p>
+<p><code>public static ExecutorService newFixedThreadPool(int nThreads)</code> 创建有上限的线程池</p>
 <h3 id="6-3-自定义线程池"><a href="#6-3-自定义线程池" class="headerlink" title="6.3 自定义线程池"></a>6.3 自定义线程池</h3><img src="/2023/05/25/multithreading-program/9.png" class="">
 
                 
@@ -1850,7 +1731,7 @@ public class Cook extends Thread&#123;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

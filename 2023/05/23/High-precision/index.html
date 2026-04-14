@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="高精度, Spicy-pig">
     <meta name="description" content="高精度1. 高精度加法
-💡 ( A + B ）( len(A) , len（B） &amp;lt;&amp;#x3D; $10^6$)
+💡 ( A + B ）( len(A) , len（B） &amp;lt;= $10^6$)
 
-1.1 算法思想：两个大的数**A + B ( len &amp;lt;&amp;#x3D; $10^6$)在计算时候，可以使用高精">
+1.1 算法思想：两个大的数A + B ( len &amp;lt;= $10^6$)在计算时候，可以使用高精度加法，通过数组的形式存">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -423,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    5 分
                 </div>
                 
 
@@ -447,15 +447,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="高精度"><a href="#高精度" class="headerlink" title="高精度"></a>高精度</h1><h2 id="1-高精度加法"><a href="#1-高精度加法" class="headerlink" title="1. 高精度加法"></a>1. 高精度加法</h2><blockquote>
-<p>💡 ( A + B ）( len(A) , len（B） &lt;&#x3D; $10^6$)</p>
+<p>💡 ( A + B ）( len(A) , len（B） &lt;= $10^6$)</p>
 </blockquote>
-<h3 id="1-1-算法思想："><a href="#1-1-算法思想：" class="headerlink" title="1.1 算法思想："></a>1.1 算法思想：</h3><p>两个大的数**A + B ( len &lt;&#x3D; $10^6$)<strong>在计算时候，可以使用高精度加法，通过数组的形式存储数位，首先让数组</strong>a[ 0 ]**存储各位，数组的最后一位存储最高位以便于相加进位。</p>
+<h3 id="1-1-算法思想："><a href="#1-1-算法思想：" class="headerlink" title="1.1 算法思想："></a>1.1 算法思想：</h3><p>两个大的数<strong>A + B ( len &lt;= $10^6$)</strong>在计算时候，可以使用高精度加法，通过数组的形式存储数位，首先让数组<strong>a[ 0 ]</strong>存储各位，数组的最后一位存储最高位以便于相加进位。</p>
 <img src="/2023/05/23/High-precision/1.png" class="">
-
 <h3 id="1-2-算法描述："><a href="#1-2-算法描述：" class="headerlink" title="1.2 算法描述："></a>1.2 算法描述：</h3><ul>
 <li>对于两个高精度的整数 A 和 B 应该是 <strong>String类型</strong>的。</li>
-<li>为了便于相加进位，将数的个位存在 **A[ 0 ]**的位置，数的最高位存在数组的最后一位。</li>
-<li>定义进位 <strong>int t  &#x3D; 0;</strong> 使得 <strong>t &#x3D; A[ i ] + B[ i ] + t ，</strong>输出的数为 <strong>t % 10</strong> ，然后进位 <strong>t</strong> 的值为 <strong>t &#x2F; 10</strong></li>
+<li>为了便于相加进位，将数的个位存在 <strong>A[ 0 ]</strong>的位置，数的最高位存在数组的最后一位。</li>
+<li>定义进位 <strong>int t  = 0;</strong> 使得 <strong>t = A[ i ] + B[ i ] + t ，</strong>输出的数为 <strong>t % 10</strong> ，然后进位 <strong>t</strong> 的值为 <strong>t / 10</strong></li>
 <li>将各个位的数和进位相加，push_back依次存到到数组的最后一位。</li>
 <li>按照反位输出。先输出最高位，再输出…..到个位。</li>
 </ul>
@@ -477,19 +476,16 @@ vector&lt;int&gt; add(vector&lt;int&gt; &amp;A, vector&lt;int&gt; &amp;B)
     if (t) C.push_back(t);
     return C;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="2-高精度减法"><a href="#2-高精度减法" class="headerlink" title="2. 高精度减法"></a>2. 高精度减法</h2><blockquote>
-<p>💡 ( A - B ）( len(A) , len（B） &lt;&#x3D; $10^6$)</p>
+<p>💡 ( A - B ）( len(A) , len（B） &lt;= $10^6$)</p>
 </blockquote>
-<h3 id="2-1-算法思想："><a href="#2-1-算法思想：" class="headerlink" title="2.1 算法思想："></a>2.1 算法思想：</h3><p>两个大的数**A - B ( len &lt;&#x3D; $10^6$)<strong>在计算时候，可以使用高精度减法，通过数组的形式存储数位，（同高精度加法一样，反位存储数列）首先让数组</strong>a[ 0 ]**存储各位，数组的最后一位存储最高位以便于相加进位。</p>
+<h3 id="2-1-算法思想："><a href="#2-1-算法思想：" class="headerlink" title="2.1 算法思想："></a>2.1 算法思想：</h3><p>两个大的数<strong>A - B ( len &lt;= $10^6$)</strong>在计算时候，可以使用高精度减法，通过数组的形式存储数位，（同高精度加法一样，反位存储数列）首先让数组<strong>a[ 0 ]</strong>存储各位，数组的最后一位存储最高位以便于相加进位。</p>
 <img src="/2023/05/23/High-precision/2.png" class="">
-
 <img src="/2023/05/23/High-precision/3.png" class="">
-
 <h3 id="2-2-算法描述："><a href="#2-2-算法描述：" class="headerlink" title="2.2 算法描述："></a>2.2 算法描述：</h3><ul>
 <li>对于两个高精度的整数 A 和 B 应该是 <strong>String类型</strong>的。</li>
-<li>为了便于相减借位后结果的长度变短，将数的个位存在 **A[ 0 ]**的位置，数的最高位存在数组的最后一位。</li>
-<li>定义进位 <strong>int t  &#x3D; 0;</strong> 使得 <strong>t &#x3D;  A[ i ] - B[ i ] - t （ t &gt;&#x3D; 0）或t &#x3D;  A[ i ] - B[ i ] + 10 - t （ t &lt;0），**输出的数为**( ( t + 10 ) % 10)，**因为当 **t &gt;&#x3D; 0</strong> 时，得到的数仍为 <strong>t</strong> ，当 <strong>t &lt; 0</strong> 时，得到的值为 <strong>t</strong> 借位后相减的值</li>
+<li>为了便于相减借位后结果的长度变短，将数的个位存在 <strong>A[ 0 ]</strong>的位置，数的最高位存在数组的最后一位。</li>
+<li>定义进位 <strong>int t  = 0;</strong> 使得 <strong>t =  A[ i ] - B[ i ] - t （ t &gt;= 0）或t =  A[ i ] - B[ i ] + 10 - t （ t &lt;0），</strong>输出的数为<strong>( ( t + 10 ) % 10)，</strong>因为当 <strong>t &gt;= 0</strong> 时，得到的数仍为 <strong>t</strong> ，当 <strong>t &lt; 0</strong> 时，得到的值为 <strong>t</strong> 借位后相减的值</li>
 <li>将各个位的数和进位相减，push_back依次存到数组的最后一位。</li>
 <li>按照反位输出。先输出最高位，再输出…..到个位。</li>
 </ul>
@@ -509,18 +505,16 @@ vector&lt;int&gt; sub(vector&lt;int&gt; &amp;A, vector&lt;int&gt; &amp;B)
     while (C.size() &gt; 1 &amp;&amp; C.back() &#x3D;&#x3D; 0) C.pop_back();
     return C;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="3-高精度乘低精度"><a href="#3-高精度乘低精度" class="headerlink" title="3. 高精度乘低精度"></a>3. 高精度乘低精度</h2><blockquote>
-<p>💡 ( A *  b ）( len(A)  &lt;&#x3D; $10^6$ ,  b &lt;&#x3D; 10000 )</p>
+<p>💡 ( A *  b ）( len(A)  &lt;= $10^6$ ,  b &lt;= 10000 )</p>
 </blockquote>
-<h3 id="3-1算法的思想："><a href="#3-1算法的思想：" class="headerlink" title="3.1算法的思想："></a>3.1算法的思想：</h3><p>一个大整数 <strong>A</strong>  和一个小整数 <strong>b</strong> 相乘，<strong>A</strong> 的每一位数 <strong>A [ i ]*<em>乘以 **b** 得到的数加上进位 **t** ，然后*</em>%10**就是该位的结果（既</strong>（ C [ i ] &#x3D; A [ i ] * b）%10）**, **t [ i ] &#x3D; ( A [ i ] * b )  &#x2F; 10**，得到的每一位**C [ i ]**就是相乘得到的结果。</p>
+<h3 id="3-1算法的思想："><a href="#3-1算法的思想：" class="headerlink" title="3.1算法的思想："></a>3.1算法的思想：</h3><p>一个大整数 <strong>A</strong>  和一个小整数 <strong>b</strong> 相乘，<strong>A</strong> 的每一位数 <strong>A [ i ]\</strong>乘以 **b** 得到的数加上进位 **t** ，然后*<em>%10<strong>就是该位的结果（既</strong>（ C [ i ] = A [ i ] </em> b）%10）<strong>, \</strong>t [ i ] = ( A [ i ] * b )  / 10*<em>，得到的每一位<em>*C [ i ]</em></em>就是相乘得到的结果。</p>
 <img src="/2023/05/23/High-precision/4.png" class="">
-
 <h3 id="3-2-算法描述："><a href="#3-2-算法描述：" class="headerlink" title="3.2 算法描述："></a>3.2 算法描述：</h3><ul>
-<li>一个大整数 A 是String类型乘以一个小整数 b （b &lt;&#x3D;10000 ）</li>
+<li>一个大整数 A 是String类型乘以一个小整数 b （b &lt;=10000 ）</li>
 <li>倒叙存入数组每一位数</li>
-<li>结果的每一位数 <strong>C [ i ] &#x3D; A [ i ] * b）%10</strong></li>
-<li>每一个数的进位 <strong>t [ i ] &#x3D; ( A [ i ] * b )  &#x2F; 10</strong></li>
+<li>结果的每一位数 <strong>C [ i ] = A [ i ] * b）%10</strong></li>
+<li>每一个数的进位 <strong>t [ i ] = ( A [ i ] * b )  / 10</strong></li>
 <li>倒叙输出</li>
 </ul>
 <h3 id="3-3-代码模板："><a href="#3-3-代码模板：" class="headerlink" title="3.3 代码模板："></a>3.3 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; C &#x3D; A * b, A &gt;&#x3D; 0, b &gt;&#x3D; 0
@@ -540,19 +534,17 @@ vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A, int b)
 
     return C;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="4-高精度除法"><a href="#4-高精度除法" class="headerlink" title="4. 高精度除法"></a>4. 高精度除法</h2><blockquote>
-<p>💡 ( A  &#x2F;  b ）( len(A)  &lt;&#x3D; $10^6$ ,  b &lt;&#x3D; 10000 )</p>
+<p>💡 ( A  /  b ）( len(A)  &lt;= $10^6$ ,  b &lt;= 10000 )</p>
 </blockquote>
-<h3 id="4-1-算法的思想："><a href="#4-1-算法的思想：" class="headerlink" title="4.1 算法的思想："></a>4.1 算法的思想：</h3><p>一个大整数 <strong>A</strong> 除以一个小整数 <strong>b</strong> ,得到商和余数，余数为 <strong>r &#x3D; r * 10 + A[i</strong>] ;每一位的商为<strong>C.push_back &#x3D;（ r &#x2F; b）</strong>, 然后再使  <strong>r &#x3D;  r % b</strong> 这里可以正序存储法，但是考虑到一个运算中包含了加减乘除，所以使用倒叙存储也是可以的，最后只需要使用<strong>reverse（）</strong>函数反转一下就OK。</p>
+<h3 id="4-1-算法的思想："><a href="#4-1-算法的思想：" class="headerlink" title="4.1 算法的思想："></a>4.1 算法的思想：</h3><p>一个大整数 <strong>A</strong> 除以一个小整数 <strong>b</strong> ,得到商和余数，余数为 <strong>r = r * 10 + A[i</strong>] ;每一位的商为<strong>C.push_back =（ r / b）</strong>, 然后再使  <strong>r =  r % b</strong> 这里可以正序存储法，但是考虑到一个运算中包含了加减乘除，所以使用倒叙存储也是可以的，最后只需要使用<strong>reverse（）</strong>函数反转一下就OK。</p>
 <img src="/2023/05/23/High-precision/5.png" class="">
-
 <h3 id="4-2-算法描述："><a href="#4-2-算法描述：" class="headerlink" title="4.2 算法描述："></a>4.2 算法描述：</h3><ul>
-<li>一个大整数 A 是String类型乘以一个小整数 b （b &lt;&#x3D;10000 ）</li>
+<li>一个大整数 A 是String类型乘以一个小整数 b （b &lt;=10000 ）</li>
 <li>倒叙存入数组每一位数（也可以正序存，为了考虑混合运算中包含加减乘除，所以使用倒叙）</li>
 <li>先算余数，再算商。</li>
-<li>每一个数的余数  <strong>r &#x3D; r * 10 + A[i</strong>]</li>
-<li>结果的每一位数 <strong>C [ i ] &#x3D; r &#x2F; b</strong></li>
+<li>每一个数的余数  <strong>r = r * 10 + A[i</strong>]</li>
+<li>结果的每一位数 <strong>C [ i ] = r / b</strong></li>
 <li>倒叙输出</li>
 </ul>
 <h3 id="4-3-代码模板："><a href="#4-3-代码模板：" class="headerlink" title="4.3 代码模板："></a>4.3 代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; A &#x2F; b &#x3D; C ... r, A &gt;&#x3D; 0, b &gt; 0
@@ -1248,7 +1240,7 @@ vector&lt;int&gt; div(vector&lt;int&gt; &amp;A, int b, int &amp;r)
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

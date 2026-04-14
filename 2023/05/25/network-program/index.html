@@ -5,12 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="网络编程, Spicy-pig">
-    <meta name="description" content="网络编程1.常见的网络架构1.1 客户端&amp;#x2F;服务器（Client&amp;#x2F;Server）用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…
+    <meta name="description" content="网络编程1.常见的网络架构1.1 客户端/服务器（Client/Server）用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…
 特征：
 
 画面精美，用户体验好
-
-需要开发客户端和">
+需要开发客户端和服务端
+用户需要下载和">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -448,50 +448,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="1-常见的网络架构"><a href="#1-常见的网络架构" class="headerlink" title="1.常见的网络架构"></a>1.常见的网络架构</h2><h3 id="1-1-客户端-服务器（Client-Server）"><a href="#1-1-客户端-服务器（Client-Server）" class="headerlink" title="1.1 客户端&#x2F;服务器（Client&#x2F;Server）"></a>1.1 客户端&#x2F;服务器（Client&#x2F;Server）</h3><p>用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…</p>
+                <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="1-常见的网络架构"><a href="#1-常见的网络架构" class="headerlink" title="1.常见的网络架构"></a>1.常见的网络架构</h2><h3 id="1-1-客户端-服务器（Client-Server）"><a href="#1-1-客户端-服务器（Client-Server）" class="headerlink" title="1.1 客户端/服务器（Client/Server）"></a>1.1 客户端/服务器（Client/Server）</h3><p>用户在本地需要下载并且安装客户端程序，在远程有一个服务器端程序。例如：QQ，Stream…</p>
 <p><strong>特征：</strong></p>
 <ul>
-<li><p>画面精美，用户体验好</p>
-</li>
-<li><p>需要开发客户端和服务端</p>
-</li>
+<li>画面精美，用户体验好</li>
+<li>需要开发客户端和服务端</li>
 <li><p>用户需要下载和更新客户端</p>
 </li>
 <li><p>适合开发互联网应用，可以随时随地访问</p>
 </li>
 </ul>
-<h3 id="1-2-浏览器-服务器（Browser-Server）"><a href="#1-2-浏览器-服务器（Browser-Server）" class="headerlink" title="1.2 浏览器&#x2F;服务器（Browser&#x2F;Server）"></a>1.2 浏览器&#x2F;服务器（Browser&#x2F;Server）</h3><p>只需要有一个浏览器，用户通过不同的网址，客户访问不同的服务器。例如：淘宝，百度</p>
+<h3 id="1-2-浏览器-服务器（Browser-Server）"><a href="#1-2-浏览器-服务器（Browser-Server）" class="headerlink" title="1.2 浏览器/服务器（Browser/Server）"></a>1.2 浏览器/服务器（Browser/Server）</h3><p>只需要有一个浏览器，用户通过不同的网址，客户访问不同的服务器。例如：淘宝，百度</p>
 <p><strong>特征：</strong></p>
 <ul>
-<li><p>不需要开发客户端，只需要开发服务端</p>
-</li>
-<li><p>用户不需要下载，打开浏览器就能用</p>
-</li>
+<li>不需要开发客户端，只需要开发服务端</li>
+<li>用户不需要下载，打开浏览器就能用</li>
 <li><p>如果应用过大，数据过多的话，用户体验会受影响</p>
 </li>
 <li><p>适合开发办公类及其大型游戏，稳定，体验好</p>
 </li>
 </ul>
 <img src="/2023/05/25/network-program/1.png" class="">
-
-
-
 <h2 id="2-网络编程三要素"><a href="#2-网络编程三要素" class="headerlink" title="2. 网络编程三要素"></a>2. 网络编程三要素</h2><h3 id="2-1-IP地址"><a href="#2-1-IP地址" class="headerlink" title="2.1 IP地址"></a>2.1 IP地址</h3><p>设备在网络中的地址，识别该设备的唯一标识</p>
 <h4 id="2-1-1-IPV4"><a href="#2-1-1-IPV4" class="headerlink" title="2.1.1  IPV4"></a>2.1.1  IPV4</h4><p>采用32位地址长度，分成4组，共有个IP地址，IPV4共有2^32个IP地址（约有43亿）。</p>
 <img src="/2023/05/25/network-program/2.png" class="">
-
 <p><strong>IPV4的地址分类形式</strong></p>
 <ul>
 <li>公网地址(万维网使用)和私有地址(局域网使用)。</li>
-<li>192.168.开头的就是私有址址，范围即为192.168.0.0–192.168.255.255，专门为组织机构内部使用，以此节省IP</li>
+<li>192.168.开头的就是私有址址，范围即为192.168.0.0—192.168.255.255，专门为组织机构内部使用，以此节省IP</li>
 </ul>
 <h4 id="2-1-2-IPV6"><a href="#2-1-2-IPV6" class="headerlink" title="2.1.2  IPV6"></a>2.1.2  IPV6</h4><p>采用128位地址长度，分成8组，可以给地球上的每一粒沙子分配一个IP地址。</p>
 <img src="/2023/05/25/network-program/3.png" class="">
-
-
-
-
-
 <h4 id="2-1-3-常用的CMD命令"><a href="#2-1-3-常用的CMD命令" class="headerlink" title="2.1.3 常用的CMD命令"></a>2.1.3 常用的CMD命令</h4><ul>
 <li><p>ipconfig：查看本机IP地址</p>
 </li>
@@ -499,15 +486,12 @@
 </li>
 </ul>
 <img src="/2023/05/25/network-program/4.png" class="">
-
-
-
 <blockquote>
-<p>特殊IP地址：127.0.0.1 &lt;&#x3D;&#x3D;&gt; localhost (本机IP地址)</p>
+<p>特殊IP地址：127.0.0.1 &lt;==&gt; localhost (本机IP地址)</p>
 </blockquote>
 <h4 id="2-1-4-获取IP地址的方法"><a href="#2-1-4-获取IP地址的方法" class="headerlink" title="2.1.4  获取IP地址的方法"></a>2.1.4  获取IP地址的方法</h4><ul>
 <li><code>static InetAddress getByName(String host)</code>确定主机名的IP地址，主机名可以是机器名称，也可以是IP地址</li>
-<li><code>String getHostName() </code>获取IP地址的主机名</li>
+<li><code>String getHostName()</code>获取IP地址的主机名</li>
 <li><code>String getHostAddress()</code>返回文本显示中的IP地址字符串</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.study.a01;
@@ -537,42 +521,23 @@ public class Test &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="2-2-端口号"><a href="#2-2-端口号" class="headerlink" title="2.2 端口号"></a>2.2 端口号</h3><p>应用程序在设备中的唯一标识。</p>
 <p>端口号:由两个字节表示的整数，取值范围:0—65535。</p>
 <p>其中0—1023之间的端口号用于一些知名的网络服务或者应用。我们自己使用1024以上的端口号就可以了。</p>
 <img src="/2023/05/25/network-program/5.png" class="">
-
-
-
 <h3 id="2-3-协议"><a href="#2-3-协议" class="headerlink" title="2.3 协议"></a>2.3 协议</h3><p>数据在网络中传输的规则，常见的协议有UDP，TCP，HTTP，HTTPS，FTP。</p>
 <img src="/2023/05/25/network-program/6.png" class="">
-
-
-
 <h4 id="2-3-1-UDP协议"><a href="#2-3-1-UDP协议" class="headerlink" title="2.3.1 UDP协议"></a>2.3.1 UDP协议</h4><ul>
 <li>用户数据报协议(User Datagram Protocol)</li>
 <li>UDP是面向无连接通信协议。</li>
 <li>速度快，有大小限制一次最多发送64K，数据不安全，易丢失数据。</li>
 </ul>
 
-
-
-
-
-
 <h4 id="2-3-2-TCP协议"><a href="#2-3-2-TCP协议" class="headerlink" title="2.3.2 TCP协议"></a>2.3.2 TCP协议</h4><ul>
 <li>传输控制协议TCP(Transmission Control Protocol)</li>
 <li>TCP协议是面向连接的通信协议。</li>
 <li>速度慢，没有大小限制，数据安全。</li>
 </ul>
-
-
-
 
 <h4 id="2-3-3-数据的收发步骤"><a href="#2-3-3-数据的收发步骤" class="headerlink" title="2.3.3 数据的收发步骤"></a>2.3.3 数据的收发步骤</h4><p><strong>接收数据的一般步骤：</strong></p>
 <ul>
@@ -621,9 +586,6 @@ public class Receive &#123;
 &#125;
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p><strong>发送数据的一般步骤：</strong></p>
 <ul>
 <li>创建接收端DatagramSocket的对象</li>
@@ -667,11 +629,6 @@ public class Send &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="3-UDP通信程序"><a href="#3-UDP通信程序" class="headerlink" title="3. UDP通信程序"></a>3. UDP通信程序</h2><h3 id="3-1-UDP发送数据"><a href="#3-1-UDP发送数据" class="headerlink" title="3.1 UDP发送数据"></a>3.1 UDP发送数据</h3><ul>
 <li>找到快递公司（创建发送端的DatagramSocket对象）</li>
 <li>打包快递（打包数据DatagramPacket）</li>
@@ -719,9 +676,6 @@ public class Send &#123;
 &#125;
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="3-2-UDP接收数据"><a href="#3-2-UDP接收数据" class="headerlink" title="3.2 UDP接收数据"></a>3.2 UDP接收数据</h3><ul>
 <li>找快递公司（创建接收端的DatagramSocket对象）</li>
 <li>取快递（接收打包好的数据）</li>
@@ -767,15 +721,7 @@ public class Receive &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h2 id="4-TCP通信程序"><a href="#4-TCP通信程序" class="headerlink" title="4. TCP通信程序"></a>4. TCP通信程序</h2><img src="/2023/05/25/network-program/9.png" class="">
-
 <h3 id="4-1-TCP发送数据"><a href="#4-1-TCP发送数据" class="headerlink" title="4.1 TCP发送数据"></a>4.1 TCP发送数据</h3><ul>
 <li>创建客户端的Socket对象与指定服务器连接<ul>
 <li>Socket ( String host, int port )</li>
@@ -819,13 +765,6 @@ public class Client &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h3 id="4-2-TCP接收数据"><a href="#4-2-TCP接收数据" class="headerlink" title="4.2 TCP接收数据"></a>4.2 TCP接收数据</h3><ul>
 <li>创建服务端的Socket对象ServerSocket<ul>
 <li>ServerSocket  ( int port )</li>
@@ -882,11 +821,6 @@ public class Server &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 
                 
             </div>
@@ -1565,7 +1499,7 @@ public class Server &#123;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

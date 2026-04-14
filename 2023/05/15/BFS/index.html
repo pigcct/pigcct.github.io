@@ -414,7 +414,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    644
+                    639
                 </div>
                 
 
@@ -452,10 +452,10 @@
 </blockquote>
 <p>BFS既宽度优先搜索，搜索方式为<strong>按层级搜索</strong>，先搜索第一层，再依次搜索下一层（既不管每一层元素有多少，都是按层级从上到下的顺序搜索），如果树或图的<strong>边权为 1</strong> ，可作为<strong>最短路</strong>的方式搜索。BFS是通过<strong>队列实现</strong>的。</p>
 <h2 id="2-BFS算法实现方式："><a href="#2-BFS算法实现方式：" class="headerlink" title="2. BFS算法实现方式："></a>2. BFS算法实现方式：</h2><ul>
-<li>BFS通过队列实现，int g[N][N]，int d[N][N] &#x2F;&#x2F;分别存储图和距离</li>
-<li>q[0] &#x3D;{0, 0} 这里定义的是起点（题目要求从（0,0）起点开始）</li>
+<li>BFS通过队列实现，int g[N][N]，int d[N][N] //分别存储图和距离</li>
+<li>q[0] ={0, 0} 这里定义的是起点（题目要求从（0,0）起点开始）</li>
 <li>memset (d, -1, sizeof d) ，将d数组至为 -1，表示没有遍历（拓展）过</li>
-<li>int dx[4] &#x3D; {-1, 0, 1, 0} , dy[4] &#x3D; {0, 1, 0, -1};定义上下左右四个方向的扩展</li>
+<li>int dx[4] = {-1, 0, 1, 0} , dy[4] = {0, 1, 0, -1};定义上下左右四个方向的扩展</li>
 <li>如果点满足在图中的要求，则可以向不同的方向扩展</li>
 <li>从上到下依次按层级遍历</li>
 </ul>
@@ -474,9 +474,6 @@ while (queue 非空)
        &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">&#x2F;&#x2F; BFS——模板题 AcWing 846. 走迷宫
 int bfs()
 &#123;
@@ -505,7 +502,6 @@ int bfs()
     &#125;
     return d[n - 1][m - 1];
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1188,7 +1184,7 @@ int bfs()
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

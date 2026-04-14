@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    15 分
                 </div>
                 
 
@@ -457,9 +457,6 @@
 <p>Java中的关键字全部是小写字母</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/1.jpg" class="">
-
-
-
 <h3 id="1-3-保留字"><a href="#1-3-保留字" class="headerlink" title="1.3 保留字"></a>1.3 保留字</h3><p>Java中有一些字符序列既不能当作标识符使用，也不是关键字，也不能在程序中使用，这些字符序列称为保留字。Java语言中的保留字只有两个goto和const：</p>
 <ul>
 <li><p>goto：在其他语言中叫做“无限跳转”语句，在Java语言中不再使用goto语句，因为“无限跳转”语句会破坏程序结构。在Java语言中goto的替换语句可以通过break、continue和return实现“有限跳转”。</p>
@@ -471,7 +468,7 @@
 <p>java分隔符：用”;”表示一条语句的结束</p>
 </blockquote>
 <h2 id="2-常量，变量"><a href="#2-常量，变量" class="headerlink" title="2. 常量，变量"></a>2. 常量，变量</h2><h3 id="2-1-常量"><a href="#2-1-常量" class="headerlink" title="2.1 常量"></a>2.1 常量</h3><blockquote>
-<p>💡 final 数据类型 变量名 &#x3D; 初始值;</p>
+<p>💡 final 数据类型 变量名 = 初始值;</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
   &#x2F;&#x2F; 静态常量，替代保留字const
@@ -483,10 +480,9 @@
   final double x &#x3D; 3.3; ③
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>常量有三种类型：①静态常量、②成员常量和③局部常量</strong></p>
 <h3 id="2-2-变量"><a href="#2-2-变量" class="headerlink" title="2.2 变量"></a>2.2 变量</h3><blockquote>
-<p>💡 数据类型  变量名 &#x3D; [初始值]</p>
+<p>💡 数据类型  变量名 = [初始值]</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
 &#x2F;&#x2F; 声明int型成员变量
@@ -506,7 +502,6 @@ int m &#x3D; 5; ⑤
 System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
 &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>第①行是声明的成员变量y，成员变量是在类体中，而在方法之外，作用域是整个类，如果没有初始赋值，系统会为它分配一个默认值，每一种数据类型都有默认值，int类型默认值是0。</li>
 <li>第②和③行声明局部变量作用域是整个方法</li>
@@ -515,10 +510,9 @@ System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
 </ul>
 <h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h2><blockquote>
 <p>💡 Java语言的数据类型分为： 基本类型和引用类型。在声明变量或常量时会用到数据类型， 在前面已经用到一些数据类型， 例如int、 double和String等。</p>
-</blockquote>
-<h3 id="3-1-基本数据类型"><a href="#3-1-基本数据类型" class="headerlink" title="3.1 基本数据类型"></a>3.1 基本数据类型</h3><img src="/2023/05/12/java_grammer/10.png" class="">
-
-<p><em><strong>基本类型表示简单的数据， 基本类型分为4大类， 共8种数据类型。</strong></em></p>
+<h3 id="3-1-基本数据类型"><a href="#3-1-基本数据类型" class="headerlink" title="3.1 基本数据类型"></a>3.1 基本数据类型</h3></blockquote>
+<img src="/2023/05/12/java_grammer/10.png" class="">
+<p><strong><em>基本类型表示简单的数据， 基本类型分为4大类， 共8种数据类型。</em></strong></p>
 <ul>
 <li>整数类型： byte、 short、 int和long</li>
 <li>浮点类型： float和double</li>
@@ -526,16 +520,10 @@ System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
 <li>布尔类型： boolean</li>
 </ul>
 <img src="/2023/05/12/java_grammer/2.png" class="" title="数据类型之间的转换关系">
-
-
-
 <h4 id="3-1-1-整形类型"><a href="#3-1-1-整形类型" class="headerlink" title="3.1.1 整形类型"></a>3.1.1 整形类型</h4><blockquote>
 <p>💡如图可见Java中整数类型包括： byte、 short、 int和long ， 它们之间的区别仅仅是宽度和范围的不同。 Java中整数都是有符号， 与C不同没有无符号的整数类型。</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/3.png" class="">
-
-
-
 <blockquote>
 <p>💡 long类型需要在数值后面加L, double类型加D, float类型加F</p>
 </blockquote>
@@ -558,28 +546,31 @@ System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
     System.out.println(&quot;long整数 &#x3D; &quot; + e);
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="3-1-2-浮点类型"><a href="#3-1-2-浮点类型" class="headerlink" title="3.1.2 浮点类型"></a>3.1.2 浮点类型</h4><blockquote>
 <p>💡浮点类型主要用来储存小数数值， 也可以用来储存范围较大的整数。 它分为浮点数（float） 和双精度浮点数（double） 两种， 双精度浮点数所使用的内存空间比浮点数多， 可表示的数值范围与精确度也比较大</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th>浮点类型</th>
-<th align="center">宽度</th>
+<th style="text-align:center">宽度</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>float</td>
-<td align="center">4字节（32位）</td>
+<td style="text-align:center">4字节（32位）</td>
 </tr>
 <tr>
 <td>double</td>
-<td align="center">8字节（64位）</td>
+<td style="text-align:center">8字节（64位）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
-<li>Java语言浮点类型默认是double类型， 例如0.0表示double类型常量， 而不是float类型。 如果想要表示float类型， 则需要在数值后面加f或F</li>
+<li>Java语言浮点类型默认是double类型， 例如0.0表示double类型常量， 而不是float类型。 如果想要表示float类型， 则需要在数值后面加f或F </li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HelloWorld &#123;
 	public static void main(String[] args) &#123;
@@ -595,19 +586,15 @@ System.out.println(m); &#x2F;&#x2F; 编译错误 ⑥
 	&#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-1-3-字符类型"><a href="#3-1-3-字符类型" class="headerlink" title="3.1.3 字符类型"></a>3.1.3 字符类型</h4><blockquote>
-<p>💡字符类型表示单个字符， Java中char声明字符类型， Java中的字符常量必须用单引号括起来的单个字符 ，如char c &#x3D; ‘A’;</p>
+<p>💡字符类型表示单个字符， Java中char声明字符类型， Java中的字符常量必须用单引号括起来的单个字符 ，如char c = ‘A’;</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/4.png" class="" title="转义字符">
-
 <h4 id="3-1-4-布尔类型"><a href="#3-1-4-布尔类型" class="headerlink" title="3.1.4 布尔类型"></a>3.1.4 布尔类型</h4><blockquote>
 <p>💡在Java语言中声明布尔类型的关键字是boolean， 它只有两个值： true和false。不能与int等数值类型之间进行数学计算或类型转化。</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;唯一正确的两种赋值方式
 boolean isMan &#x3D; true;
 boolean isWoman &#x3D; false;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="3-2-数字的表示方法"><a href="#3-2-数字的表示方法" class="headerlink" title="3.2 数字的表示方法"></a>3.2 数字的表示方法</h3><h4 id="3-2-1-进制数字的表示"><a href="#3-2-1-进制数字的表示" class="headerlink" title="3.2.1 进制数字的表示"></a>3.2.1 进制数字的表示</h4><p>如果为一个整数变量赋值， 使用二进制数、 八进制数和十六进制数表示， 它们的表示方式分别如下：</p>
 <ul>
 <li>二进制数： 以 0b 或0B为前缀， 注意0是阿拉伯数字， 不要误认为是英文字母o。</li>
@@ -621,7 +608,8 @@ int binaryInt2 &#x3D; 0B11100;
 int octalInt &#x3D; 034;
 &#x2F;&#x2F;十六进制
 int hexadecimalInt1 &#x3D; 0x1C;
-int hexadecimalInt2 &#x3D; 0X1C;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+int hexadecimalInt2 &#x3D; 0X1C;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h4 id="3-2-2-指数表示"><a href="#3-2-2-指数表示" class="headerlink" title="3.2.2 指数表示"></a>3.2.2 指数表示</h4><blockquote>
 <p>💡如果采用十进制表示指数， 需要使用大写或小写的e表示幂， e2表示102。</p>
@@ -630,16 +618,10 @@ int hexadecimalInt2 &#x3D; 0X1C;<span aria-hidden="true" class="line-numbers-row
 double myMoney &#x3D; 3.36e2;
 &#x2F;&#x2F;表示为1.56×10^(-2)
 double interestRate &#x3D; 1.56e-2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h4 id="3-3-3-数值类型的转换"><a href="#3-3-3-数值类型的转换" class="headerlink" title="3.3.3 数值类型的转换"></a>3.3.3 数值类型的转换</h4><p><strong>自动转换类型</strong>：</p>
-<p>自动类型转换就是需要类型之间转换是自动的，不需要采取其他手段，总的原则是小范围数据类型可以自动转换为大范围数据类型，列类型转换顺序如图所示，从左到右是自动。</p>
-<img src="/2023/05/12/java_grammer/5.jpg" class="">
-
+<p>自动类型转换就是需要类型之间转换是自动的，不需要采取其他手段，总的原则是小范围数据类型可以自动转换为大范围数据类型，列类型转换顺序如图所示，从左到右是自动。<br><img src="/2023/05/12/java_grammer/5.jpg" class=""></p>
 <p><strong>计算过程中自动类型转换规则</strong></p>
 <img src="/2023/05/12/java_grammer/6.jpg" class="">
-
 <p><strong>代码如下：</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 声明整数变量
 byte byteNum &#x3D; 16;
@@ -659,20 +641,16 @@ float floatNum &#x3D; longNum;
 double doubleNum &#x3D; floatNum;
 &#x2F;&#x2F;表达式计算后类型是double
 double result &#x3D; floatNum * intNum + doubleNum &#x2F; shortNum;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-3-强制类型转换"><a href="#3-3-强制类型转换" class="headerlink" title="3.3 强制类型转换"></a>3.3 强制类型转换</h3><p><em><strong>强制类型转换是在变量或常量之前加上“(目标类型)”实现， 示例代码如下：</strong></em></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型变量
+<h3 id="3-3-强制类型转换"><a href="#3-3-强制类型转换" class="headerlink" title="3.3 强制类型转换"></a>3.3 强制类型转换</h3><p><strong><em>强制类型转换是在变量或常量之前加上“(目标类型)”实现， 示例代码如下：</em></strong><br><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型变量
 int i &#x3D; 10;
 &#x2F;&#x2F;把int变量i强制转换为byte
-byte b &#x3D; (byte) i;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+byte b &#x3D; (byte) i;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;int型变量
 int i &#x3D; 10;
 &#x2F;&#x2F;把int变量i强制转换为byte
 byte b &#x3D; (byte) i;
 int i2 &#x3D; (int)i; ①
 int i3 &#x3D; (int)b;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>引用数据类型（包含： 类、 接口和数组声明的数据类型）</strong></p>
 <img src="/2023/05/12/java_grammer/7.png" class="">
 <blockquote>
@@ -685,8 +663,6 @@ int y &#x3D; x;②
 String str1 &#x3D; &quot;Hello&quot;;③
 String str2 &#x3D; str1;④
 str2 &#x3D; &quot;World&quot;;⑤<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 <p>上述代码声明了两个基本数据类型(int）和两个引用数据类型(String)。当程序执行完第②行代码后，x值为7，x赋值给y，这时y的值也是7，它们的保持方式如图6-4所示，x和y两个变量值都是7，但是它们之间是独立的，任何一个变化都不会影响另一个。</p>
 <p>当程序执行完第③行时，字符串“Hello”对象被创建，保持到内存地址0x12345678中，str1是引用类型变量，它保存的是内存地址Ox12345678，这个地址指向”Hello”对象。</p>
 <p>当程序执行完第④行时，str1变量内容（Ox12345678）被赋值给str2是引用类型变量，这样一来str1和str2保存了相同的内存地址，都指向”Hello”对象。见图6-4所示，此时str1和str2本质上是引用一个对象，通过任何一个引用都可以修改对象本身。</p>
@@ -696,55 +672,32 @@ str2 &#x3D; &quot;World&quot;;⑤<span aria-hidden="true" class="line-numbers-ro
 </blockquote>
 <p><strong>一元运算符</strong></p>
 <img src="/2023/05/12/java_grammer/11.png" class="">
-
-
-
-<p><em><strong>i ++ 和 ++ i的区别：</strong></em></p>
+<p><strong><em>i ++ 和 ++ i的区别：</em></strong></p>
 <ul>
 <li>i ++ 是先赋值再自加</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">int i &#x3D; 1;
 System.out.println( i ++) &#x2F;&#x2F;  i &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <ul>
 <li>++ i 是先自加再赋值</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">int i &#x3D; 1;
 System.out.println( ++ i) &#x2F;&#x2F;  i &#x3D; 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
 <p><strong>二级运算符</strong></p>
 <img src="/2023/05/12/java_grammer/12.png" class="">
-
-
-
-
-
 <h3 id="4-2-关系运算符"><a href="#4-2-关系运算符" class="headerlink" title="4.2 关系运算符"></a>4.2 关系运算符</h3><blockquote>
-<p>关系运算是比较两个表达式大小关系的运算， 它的结果是布尔类型数据， 即true或false。 关系运算符有6种： &#x3D;&#x3D;、 !&#x3D;、 &gt;、 &lt;、 &gt;&#x3D;和&lt;&#x3D;</p>
+<p>关系运算是比较两个表达式大小关系的运算， 它的结果是布尔类型数据， 即true或false。 关系运算符有6种： ==、 !=、 &gt;、 &lt;、 &gt;=和&lt;=</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/13.png" class="">
-
-
-
-
-
-
-
 <h3 id="4-3-逻辑运算符"><a href="#4-3-逻辑运算符" class="headerlink" title="4.3 逻辑运算符"></a>4.3 逻辑运算符</h3><blockquote>
 <p>💡 逻辑运算符是对布尔型变量进行运算， 其结果也是布尔型</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/14.png" class="">
-
 <h3 id="4-4-位运算符"><a href="#4-4-位运算符" class="headerlink" title="4.4 位运算符"></a>4.4 位运算符</h3><blockquote>
 <p>位运算是以二进位（bit） 为单位进行运算的， 操作数和结果都是整型数据。 位运算符有如下几个运算符： &amp;、 |、 ^、 ~、 &gt;&gt;、 &lt;&lt;和&gt;&gt;&gt;， 以及相应的赋值运算符</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/15.png" class="">
-
-
-
-<p><em><strong>注意 无符号右移&gt;&gt;&gt;运算符仅被允许用在int和long整数类型, 如果用于short或byte数据, 则数据在位移之前， 转换为int类型后再进行位移计算。</strong></em></p>
+<p><strong><em>注意 无符号右移&gt;&gt;&gt;运算符仅被允许用在int和long整数类型, 如果用于short或byte数据, 则数据在位移之前， 转换为int类型后再进行位移计算。</em></strong></p>
 <p><strong>代码演示：</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">byte a &#x3D; 0B00110010; &#x2F;&#x2F;十进制50 ①
 byte b &#x3D; 0B01011110; &#x2F;&#x2F;十进制94 ②
@@ -760,9 +713,6 @@ System.out.println(&quot;a &lt;&lt; 1 &#x3D; &quot; + (a &lt;&lt; 1)); &#x2F;&#x
 int c &#x3D; -12; ⑫
 System.out.println(&quot;c &gt;&gt;&gt; 2 &#x3D; &quot; + (c &gt;&gt;&gt; 2)); ⑬
 System.out.println(&quot;c &gt;&gt; 2 &#x3D; &quot; + (c &gt;&gt; 2)); ⑭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p><strong>输出结果：</strong></p>
 <pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">a | b = 126
 a &amp; b = 18
@@ -775,7 +725,6 @@ a &lt;&lt; 2 = 200
 a &lt;&lt; 1 = 100
 c >>> 2 = 1073741821
 c >> 2 = -3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>上述代码第①行和第②行分别定义了byte变量a和b， 为了便于查看代码采用二进制整数表示。</li>
 <li>代码第③行中表达式(a | b)进行位或运算， 结果是二进制的0B01111110。 a和b按位进行或计算， 只要有</li>
@@ -788,10 +737,10 @@ c >> 2 = -3<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <li>代码第⑫声明int类型负数。 右位移（&gt;&gt;&gt;和&gt;&gt;） 在负数情况下差别比较大。 代码第⑬行的(c &gt;&gt;&gt; 2)表达式输出结果是1073741821， 这是一个如此大的正数， 从一个负数变成一个正数， 这说明无符号右位移对于负数计算会导致精度的丢失。 而有符号右位移对于负数的计算是正确的， 见代码第⑭行。</li>
 </ul>
 <blockquote>
-<p>提示 有符号右移n位， 相当于操作数除以2n， 例如代码第⑦行(a &gt;&gt; 2)表达式相当于(a &#x2F; 22)， a &#x3D;50所以结果等于12， 类似的还有代码第⑧行和第⑭行。 另外， 左位移n位， 相当于操作数乘以2n，例如代码第⑩行(a &lt;&lt; 2)表达式相当于(a * 22)， a &#x3D; 50所以结果等于200， 类似的还有代码第⑪行。</p>
+<p>提示 有符号右移n位， 相当于操作数除以2n， 例如代码第⑦行(a &gt;&gt; 2)表达式相当于(a / 22)， a =50所以结果等于12， 类似的还有代码第⑧行和第⑭行。 另外， 左位移n位， 相当于操作数乘以2n，例如代码第⑩行(a &lt;&lt; 2)表达式相当于(a * 22)， a = 50所以结果等于200， 类似的还有代码第⑪行。</p>
 </blockquote>
 <h3 id="4-5-三元运算符"><a href="#4-5-三元运算符" class="headerlink" title="4.5 三元运算符"></a>4.5 三元运算符</h3><blockquote>
-<p>三元运算符（ a ?  b : c ) –&gt; 表示 a表达式是否成立，成立的话执行b语句，否则执行c语句</p>
+<p>三元运算符（ a ?  b : c ) —&gt; 表示 a表达式是否成立，成立的话执行b语句，否则执行c语句</p>
 </blockquote>
 <p><strong>示例代码：</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Date;
@@ -804,14 +753,10 @@ Date date &#x3D; new Date(); &#x2F;&#x2F; new运算符可以创建Date对象
 System.out.println(date.toString()); &#x2F;&#x2F;通过.运算符调用方法
 &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="4-6-运算符优先级"><a href="#4-6-运算符优先级" class="headerlink" title="4.6 运算符优先级"></a>4.6 运算符优先级</h3><blockquote>
 <p>运算符优先级</p>
 </blockquote>
 <img src="/2023/05/12/java_grammer/3.jpg" class="">
-
 <blockquote>
 <p>总结 运算符优先级大体顺序， 从高到低是： 算术运算符→位运算符→关系运算符→逻辑运算符→赋值运算符。</p>
 </blockquote>
@@ -1493,7 +1438,7 @@ System.out.println(date.toString()); &#x2F;&#x2F;通过.运算符调用方法
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

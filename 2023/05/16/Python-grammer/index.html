@@ -459,15 +459,12 @@
 _name
 name_1
 value2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>以下是无效的标识符：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">1name # 以数字开头
 if # 是Python的关键字
 my-name # 中间有横线<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="1-2-关键字"><a href="#1-2-关键字" class="headerlink" title="1.2 关键字"></a>1.2 关键字</h3><table>
+<h3 id="1-2-关键字"><a href="#1-2-关键字" class="headerlink" title="1.2 关键字"></a>1.2 关键字</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>False</th>
@@ -476,7 +473,8 @@ my-name # 中间有横线<span aria-hidden="true" class="line-numbers-rows"><spa
 <th>raise</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>False</td>
 <td>def</td>
 <td>if</td>
@@ -528,9 +526,10 @@ my-name # 中间有横线<span aria-hidden="true" class="line-numbers-rows"><spa
 <td>continue</td>
 <td>global</td>
 <td>pass</td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="1-3-保留字"><a href="#1-3-保留字" class="headerlink" title="1.3 保留字"></a>1.3 保留字</h3><p>Python 没有保留字（Reserved Words）的概念，但是有一些特殊用途的标识符，应当避免使用它们作为变量、函数名等标识符。这些特殊用途的标识符包括：</p>
 <ul>
 <li><code>_</code>（单下划线）：一般用作临时变量、不重要的变量、表示国际化文本中的占位符等。</li>
@@ -539,7 +538,6 @@ my-name # 中间有横线<span aria-hidden="true" class="line-numbers-rows"><spa
 </ul>
 <h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h2><h3 id="2-1-定义变量"><a href="#2-1-定义变量" class="headerlink" title="2.1 定义变量"></a>2.1 定义变量</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">变量名 &#x3D; 值
 eg ： a &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
 <ul>
 <li>由数字、字母、下划线组成</li>
@@ -554,7 +552,6 @@ eg ： a &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span
 <li>下划线：例如：<code>my_name</code>。</li>
 </ul>
 <h2 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h2><h3 id="3-1-基础数据类型"><a href="#3-1-基础数据类型" class="headerlink" title="3.1 基础数据类型"></a>3.1 基础数据类型</h3><img src="/2023/05/16/Python-grammer/1.png" class="">
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 这里介绍的是python中的数据类型
 a &#x3D; 1 # int 整形
 b &#x3D; 3.14 # float 浮点型
@@ -573,11 +570,7 @@ print(type(e))
 print(type(f))
 print(type(g))
 print(type(h))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="3-2-数据类型的转换"><a href="#3-2-数据类型的转换" class="headerlink" title="3.2 数据类型的转换"></a>3.2 数据类型的转换</h3><img src="/2023/05/16/Python-grammer/3.png" class="">
-
-
-
 <p><strong>代码示例：</strong></p>
 <pre class="line-numbers language-pytho" data-language="pytho"><code class="language-pytho"># python中数据的输入(input)
 # python中输入的用户输入的数据都是当做字符串str来处理
@@ -592,22 +585,16 @@ print(list1)         # 列表 list [10, 20, 30]
 print(tuple(list1))  # 元组 tuple (10, 20, 30)
 print(set(list1))    # 集合 set  &#123;10, 20, 30&#125;
 print(type(list1))   # 若未标明转换的数据类型，则仍然输出原始的数据类型<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4. 运算符"></a>4. 运算符</h2><h3 id="4-1-算数运算符"><a href="#4-1-算数运算符" class="headerlink" title="4.1 算数运算符"></a>4.1 算数运算符</h3><blockquote>
-<p>💡 <em><em>混合运算优先级顺序：()高于 *</em> 高于 * &#x2F; &#x2F;&#x2F; % 高于 + -</em>*</p>
+<p>💡 <strong>混合运算优先级顺序：()高于 \</strong> 高于 * / // % 高于 + -**</p>
 </blockquote>
 <img src="/2023/05/16/Python-grammer/2.png" class="">
-
-<p>*** 这里是和C语言不同的算数运算符***</p>
+<p><strong><em> 这里是和C语言不同的算数运算符</em></strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x &#x3D; 11 &#x2F;&#x2F; 2  # 相当于int型的整数除法
 y &#x3D; 2 ** 4   # 这里是求2的4次方
 print(x, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="4-2-逻辑运算符"><a href="#4-2-逻辑运算符" class="headerlink" title="4.2 逻辑运算符"></a>4.2 逻辑运算符</h3><table>
+<h3 id="4-2-逻辑运算符"><a href="#4-2-逻辑运算符" class="headerlink" title="4.2 逻辑运算符"></a>4.2 逻辑运算符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -616,7 +603,8 @@ print(x, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <th>示例</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>and</td>
 <td>x and y</td>
 <td>布尔”与”:如果×为False，x and y返回False，否则它返回y的值</td>
@@ -634,7 +622,9 @@ print(x, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <td>布尔”与”:如果×为False，x and y返回False，否则它返回y的值</td>
 <td>not True返回False, not False返回True</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 多个变量赋值
 um1, float1, str1 &#x3D; 10, 0.5, &#39;hello world&#39;
 print(um1,  float1,  str1)
@@ -656,7 +646,6 @@ print(aa &#x3D;&#x3D; cc) or (aa &gt; bb)  # 输出True
 print(aa and dd) # 不成立 输出0
 print(aa and bb) # 成立 输出的是较大的数 bb &#x3D; 6
 print(aa or dd)  # 成立 输出的是较大的数 aa &#x3D; 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="4-3-补充知识"><a href="#4-3-补充知识" class="headerlink" title="4.3 补充知识"></a>4.3 补充知识</h3><p><strong>数字之间的逻辑运算</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a &#x3D; 0
 b &#x3D; 1
@@ -674,16 +663,10 @@ print(c and b)  # 1
 print(a or b)  # 1
 print(a or c)  # 2
 print(b or c)  # 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="5-控制语句"><a href="#5-控制语句" class="headerlink" title="5. 控制语句"></a>5. 控制语句</h2><h3 id="5-1-while循环"><a href="#5-1-while循环" class="headerlink" title="5.1 while循环"></a>5.1 while循环</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">while 条件:
     条件成立重复执行的代码1
     条件成立重复执行的代码2
     ......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>示例代码：</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Python中的while循环
 n &#x3D; 10
@@ -699,11 +682,6 @@ while i &lt;&#x3D; 100:
 
 # 输出5050
 print(result)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="5-2-for循环"><a href="#5-2-for循环" class="headerlink" title="5.2 for循环"></a>5.2 for循环</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"># for循环
 &#39;&#39;&#39;
 (切记 &quot; : &quot; 这个符号)
@@ -724,14 +702,12 @@ for car in cars:
         print(car.upper())
     else:
         print(car.title())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="5-3-循环的嵌套"><a href="#5-3-循环的嵌套" class="headerlink" title="5.3 循环的嵌套"></a>5.3 循环的嵌套</h3><h4 id="5-3-1-while循环嵌套"><a href="#5-3-1-while循环嵌套" class="headerlink" title="5.3.1  while循环嵌套"></a>5.3.1  while循环嵌套</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">while 条件1:
     条件1成立执行的代码
     ......
     while 条件2:
         条件2成立执行的代码
         ......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>示例代码：</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 重复打印9行表达式
 j &#x3D; 1
@@ -743,11 +719,6 @@ while j &lt;&#x3D; 9:
         i +&#x3D; 1
     print()
     j +&#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h4 id="5-3-2-while…else…语句"><a href="#5-3-2-while…else…语句" class="headerlink" title="5.3.2 while…else…语句"></a>5.3.2 while…else…语句</h4><blockquote>
 <p>💡 所谓else指的是循环正常结束之后要执行的代码，即如果是break终止循环的情况，else下方缩进的代码将不执行,都是continue语句结束可以执行else语句。</p>
 </blockquote>
@@ -756,7 +727,6 @@ while j &lt;&#x3D; 9:
     条件成立重复执行的代码
 else:
     循环正常结束之后要执行的代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>示例代码：</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">i &#x3D; 1
 while i &lt;&#x3D; 5:
@@ -764,11 +734,6 @@ while i &lt;&#x3D; 5:
     i +&#x3D; 1
 else:
     print(&#39;执行完毕&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h4 id="5-3-3-for…else…-语句"><a href="#5-3-3-for…else…-语句" class="headerlink" title="5.3.3  for…else… 语句"></a>5.3.3  for…else… 语句</h4><blockquote>
 <p>💡 所谓else指的是循环正常结束之后要执行的代码，即如果是break终止循环的情况，else下方缩进的代码将不执行,都是continue语句结束可以执行else语句。</p>
 </blockquote>
@@ -778,11 +743,6 @@ else:
     ...
 else:
     循环正常结束之后要执行的代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="5-4-跳出循环"><a href="#5-4-跳出循环" class="headerlink" title="5.4 跳出循环"></a>5.4 跳出循环</h3><blockquote>
 <p>💡  break和continue是循环中满足一定条件退出循环的两种不同方式。</p>
 </blockquote>
@@ -794,15 +754,9 @@ while i &lt;&#x3D; 5:
         break
     print(f&#39;吃了第&#123;i&#125;个苹果&#39;)
     i +&#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="6-操作列表（数组）"><a href="#6-操作列表（数组）" class="headerlink" title="6. 操作列表（数组）"></a>6. 操作列表（数组）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"># python中的列表就相当于C语言中的数组
 bicycles &#x3D; [&#39;trek&#39;, &#39;cannon dale&#39;, &#39;redline&#39;, &#39;specialized&#39;]
 print(bicycles[0]) # 输出：trek<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="7-字典（键值对）"><a href="#7-字典（键值对）" class="headerlink" title="7. 字典（键值对）"></a>7. 字典（键值对）</h2><h3 id="7-1-字典的定义及字典元素的输出"><a href="#7-1-字典的定义及字典元素的输出" class="headerlink" title="7.1 字典的定义及字典元素的输出"></a>7.1 字典的定义及字典元素的输出</h3><blockquote>
 <p>💡 <strong>在Python中键和值之间用冒号分隔，而键—值对之间用逗号分隔。</strong></p>
 </blockquote>
@@ -811,7 +765,6 @@ girlfriend &#x3D; &#123;&#39;tall&#39; : 160, &#39;type&#39; : &#39;cute&#39;&#1
 
 print(girlfriend[&#39;tall&#39;]) # 160
 print(girlfriend[&#39;type&#39;]) # cute<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>添加键值对</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">girlfriend &#x3D; &#123;&#39;tall&#39; : 160, &#39;type&#39; : &#39;cute&#39;&#125;
 print(girlfriend[&#39;tall&#39;])
@@ -820,14 +773,12 @@ print(girlfriend[&#39;type&#39;])
 girlfriend[&#39;love&#39;] &#x3D;&#39;DD&#39; # 在字典的尾部添加一个键值对
 girlfriend[&#39;intersted&#39;] &#x3D; &#39;aiai&#39;# 字典的尾部插入一个键值对
 print(girlfriend)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>创建一个新的字典</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 创建一个新的字典
 boyfriend &#x3D; &#123;&#125;
 boyfriend[&#39;name&#39;] &#x3D; &#39;HCD&#39;
 boyfriend[&#39;fun&#39;] &#x3D; &#39;basketball&#39;
 print(boyfriend)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>修改字典中的值</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">boyfriend &#x3D; &#123;&#125;
 boyfriend[&#39;name&#39;] &#x3D; &#39;HCD&#39;
@@ -837,13 +788,11 @@ print(boyfriend) # &#123;&#39;name&#39;: &#39;HCD&#39;, &#39;fun&#39;: &#39;bask
 # 修改字典中的值
 boyfriend[&#39;fun&#39;] &#x3D; &#39;computer&#39;
 print(boyfriend) # &#123;&#39;name&#39;: &#39;HCD&#39;, &#39;fun&#39;: &#39;computer&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>输出键值对（del语句）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 删除键值对
 boyfriend1 &#x3D;&#123;&#39;name&#39; : &#39;HCD&#39;, &#39;fun&#39; : &#39;computer&#39;, &#39;type&#39; : &#39;sun&#39;&#125;
 del boyfriend1[&#39;fun&#39;] # 删除使用 del 语句
 print(boyfriend1) # &#123;&#39;name&#39;: &#39;HCD&#39;, &#39;type&#39;: &#39;sun&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>类似对象组成的字典（方便观看和查找键值对）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 类似对象的键值对
 favorite_languages &#x3D; &#123;
@@ -855,7 +804,6 @@ favorite_languages &#x3D; &#123;
 
 # jen favorite langeuages is Python.
 print(f&#39;jen favorite langeuages is &#39;+ favorite_languages[&#39;jen&#39;].title() + &#39;.&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="7-2-遍历字典"><a href="#7-2-遍历字典" class="headerlink" title="7.2 遍历字典"></a>7.2 遍历字典</h3><p>遍历字典需要使用for循环，需要声明两个变量，可用于作为存储键值对的关键字，for语句的第二部分包含字典名和方法items()，它返回一个键—值对列表。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 遍历字典的for循环方法（需要用到items()方法）
 for 变量1, 变量2 in 字典名称 . items():
@@ -886,7 +834,6 @@ language : ruby
 name : phil
 language : python
 &#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>遍历字典中的所有键（ key()方法 ）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"> # 这里是需要遍历的字典
 favorite_languages &#x3D; &#123;
@@ -907,7 +854,6 @@ Sarah
 Edward
 Phil
 &#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>按顺序遍历字典中的所有键</strong></p>
 <p>要以特定的顺序返回元素，一种办法是在for循环中对返回的键进行排序。为此，可使用函数sorted()来获得按特定顺序排列的键列表的副本。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 这里是需要遍历的字典
@@ -929,7 +875,6 @@ Jen
 Phil
 Sarah
 &#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>遍历字典中的所有值（ values()方法 ）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"> # 这里是需要遍历的字典
 favorite_languages &#x3D; &#123;
@@ -950,7 +895,6 @@ C
 Ruby
 Python
 &#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>💡 <strong>有时候，需要将一系列字典存储在列表中，或将列表作为值存储在字典中，这称为嵌套。</strong></p>
 </blockquote>
@@ -964,7 +908,6 @@ aliens &#x3D; [alien_0, alien_1, alien_2] # 将字典存储到列表中
 
 for alien in aliens: # 输出列表中的所有字典
      print(alien)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>在字典中存储列表</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 在字典中存储列表
 favorite_languages &#x3D; &#123;
@@ -998,8 +941,7 @@ Phil is favorite languages1 are:
 
 进程已结束,退出代码0
 &#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>
                 
             </div>
             <hr/>
@@ -1677,7 +1619,7 @@ Phil is favorite languages1 are:
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

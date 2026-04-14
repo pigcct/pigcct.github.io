@@ -445,27 +445,14 @@
             <div id="articleContent">
                 <h1 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h1><h2 id="1-什么是反射"><a href="#1-什么是反射" class="headerlink" title="1. 什么是反射"></a>1. 什么是反射</h2><p>在Java中，反射是指能够在运行时获取类的信息并操作类或对象的能力。通过反射，可以获取类的名称、属性、方法等信息，也可以动态地创建对象、调用方法等。Java中的反射机制提供了很多灵活性和可扩展性，但也需要注意反射操作可能会影响程序的性能和安全性。</p>
 <img src="/2023/06/04/reflect/1.png" class="">
-
-
-
 <p><strong>通过反射可以获取class(字节码文件)，构造方法，成员变量和成员方法</strong></p>
 <img src="/2023/06/04/reflect/2.png" class="">
-
-
-
-
-
-
-
 <h2 id="2-获取"><a href="#2-获取" class="headerlink" title="2. 获取"></a>2. 获取</h2><h3 id="2-1-获取Class对象"><a href="#2-1-获取Class对象" class="headerlink" title="2.1 获取Class对象"></a>2.1 获取Class对象</h3><ol>
 <li>通过全类名 Class.forName(“全类名”)获取</li>
 <li>通过类名.class获取</li>
 <li>通过对象.getClass() 获取</li>
 </ol>
 <img src="/2023/06/04/reflect/3.png" class="">
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty;
 
 public class MyReflect01 &#123;
@@ -502,11 +489,6 @@ public class MyReflect01 &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="2-2-获取构造方法"><a href="#2-2-获取构造方法" class="headerlink" title="2.2 获取构造方法"></a>2.2 获取构造方法</h3><p><strong>Class中用于获取构造方法的方法</strong></p>
 <ol>
 <li>Constructor&lt;?&gt; [] getConstructors():返回所有公共构造方法对象的数组</li>
@@ -581,9 +563,6 @@ public class MyReflect &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.test02;
 
 public class Student &#123;
@@ -643,9 +622,6 @@ public class Student &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="2-3-获取成员变量"><a href="#2-3-获取成员变量" class="headerlink" title="2.3 获取成员变量"></a>2.3 获取成员变量</h3><p><strong>Class类中用于获取成员变量的方法</strong></p>
 <ol>
 <li>Field[] getFields():返回所有公共成员变量对象的数组</li>
@@ -707,11 +683,6 @@ public class MyReflect &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">	package com.reflect.sty.test03;
 
 public class Student &#123;
@@ -782,11 +753,6 @@ public class Student &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h3 id="2-4-获取成员方法"><a href="#2-4-获取成员方法" class="headerlink" title="2.4 获取成员方法"></a>2.4 获取成员方法</h3><p><strong>Class类中用于获取成员方法的方法</strong></p>
 <ol>
 <li>Method[ ] getMethods():返回所有公共成员方法对象的数组，包括继承的</li>
@@ -863,11 +829,6 @@ public class MyReflect &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.test04;
 
 import java.io.IOException;
@@ -935,15 +896,6 @@ public class Student &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-
-
 <h2 id="3-反射的作用"><a href="#3-反射的作用" class="headerlink" title="3. 反射的作用"></a>3. 反射的作用</h2><ol>
 <li><p>获取一个类里面所有的信息，获取到了之后，再执行其他的业务逻辑。</p>
 </li>
@@ -951,20 +903,13 @@ public class Student &#123;
 </li>
 <li><p>动态地获取类的信息：可以在运行时获取类的名称、属性、方法等信息，而不需要在编译时就确定。</p>
 </li>
-<li><p>动态地创建对象：可以根据类的名称动态地创建对象，而不需要在编译时就确定。</p>
-</li>
-<li><p>动态地调用方法：可以在运行时根据方法名和参数列表动态地调用方法，而不需要在编译时就确定。</p>
-</li>
-<li><p>实现通用框架：通过反射机制，可以编写通用的框架，使得框架可以处理各种类型的对象。</p>
-</li>
-<li><p>实现动态代理：通过反射机制，可以实现动态代理，使得代理对象可以在运行时动态地生成。</p>
-</li>
+<li>动态地创建对象：可以根据类的名称动态地创建对象，而不需要在编译时就确定。</li>
+<li>动态地调用方法：可以在运行时根据方法名和参数列表动态地调用方法，而不需要在编译时就确定。</li>
+<li>实现通用框架：通过反射机制，可以编写通用的框架，使得框架可以处理各种类型的对象。</li>
+<li>实现动态代理：通过反射机制，可以实现动态代理，使得代理对象可以在运行时动态地生成。</li>
 </ol>
 <h2 id="4-练习"><a href="#4-练习" class="headerlink" title="4.练习"></a>4.练习</h2><h3 id="4-1-练习一"><a href="#4-1-练习一" class="headerlink" title="4.1 练习一"></a>4.1 练习一</h3><p><strong>对于任意一个对象，都可以把对象所有的字段名和值，保存到文件中去</strong></p>
 <img src="/2023/06/04/reflect/4.png" class="">
-
-
-
 <h4 id="MyReflect"><a href="#MyReflect" class="headerlink" title="MyReflect"></a>MyReflect</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx01;
 
 import java.io.BufferedWriter;
@@ -1025,9 +970,6 @@ public class MyReflect &#123;
 
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h4 id="Student"><a href="#Student" class="headerlink" title="Student"></a>Student</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx01;
 
 public class Student &#123;
@@ -1134,11 +1076,6 @@ public class Student &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h4 id="Teacher"><a href="#Teacher" class="headerlink" title="Teacher"></a>Teacher</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx01;
 
 public class Teacher &#123;
@@ -1191,13 +1128,6 @@ public class Teacher &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <h3 id="4-2-练习二"><a href="#4-2-练习二" class="headerlink" title="4.2 练习二"></a>4.2 练习二</h3><p><strong>反射可以更配置文件结合的方式，动态的创建对象，并调用方法</strong></p>
 <h4 id="MyReflect-1"><a href="#MyReflect-1" class="headerlink" title="MyReflect"></a>MyReflect</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx02;
 
@@ -1247,11 +1177,6 @@ public class MyReflect &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h4 id="Student-1"><a href="#Student-1" class="headerlink" title="Student"></a>Student</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx02;
 
 public class Student &#123;
@@ -1308,9 +1233,6 @@ public class Student &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h4 id="Teacher-1"><a href="#Teacher-1" class="headerlink" title="Teacher"></a>Teacher</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.reflect.sty.zlx02;
 
 public class Teacher &#123;
@@ -1367,16 +1289,8 @@ public class Teacher &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">classname=com.reflect.sty.zlx02.Teacher
 method=teach<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="5-动态代理"><a href="#5-动态代理" class="headerlink" title="5. 动态代理"></a>5. 动态代理</h2>
                 
             </div>
@@ -2055,7 +1969,7 @@ method=teach<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

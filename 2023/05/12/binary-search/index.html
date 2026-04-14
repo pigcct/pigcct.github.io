@@ -417,7 +417,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    715
+                    710
                 </div>
                 
 
@@ -452,7 +452,7 @@
 </blockquote>
 <h3 id="a-快速排序算法实现方式"><a href="#a-快速排序算法实现方式" class="headerlink" title="(a)快速排序算法实现方式:"></a>(a)快速排序算法实现方式:</h3><p><strong>有单调性一定可以二分，可以二分不一定有单调性</strong></p>
 <p>二分查找是通过将一个有序序列划分为两个区间，通过不断的缩小区间的大小在不同的区间寻找答案的一种方式，相比与顺序查找效率高了很多，缺点是二分之前要对数据进行排序，耗时。</p>
-<p>二分查找要求：<strong>线性表是有序表</strong>，即表中<strong>结点按关键字有序，并且要用向量作为表的存储结构</strong> 。<em><strong>二分我们需要确定一个区间，使得目标在一定的区间中。</strong></em></p>
+<p>二分查找要求：<strong>线性表是有序表</strong>，即表中<strong>结点按关键字有序，并且要用向量作为表的存储结构</strong> 。<strong><em>二分我们需要确定一个区间，使得目标在一定的区间中。</em></strong></p>
 <p><strong>二分满足的性质：</strong></p>
 <ul>
 <li>具有二段性（一段满足，另一段不满足）</li>
@@ -460,24 +460,18 @@
 </ul>
 <p><strong>整数二分分为两种情况：</strong></p>
 <img src="/2023/05/12/binary-search/1.png" class="">
-
 <img src="/2023/05/12/binary-search/2.png" class="">
-
 <h3 id="b-算法描述"><a href="#b-算法描述" class="headerlink" title="(b)算法描述:"></a>(b)算法描述:</h3><ul>
-<li><p>首先确定该区间的中点位置</p>
-</li>
-<li><p>将待查的X值与q[mid]比较：若相等，则查找成功并返回此位置，否则须确定新的查找区间，继续二分查找</p>
-</li>
+<li>首先确定该区间的中点位置</li>
+<li>将待查的X值与q[mid]比较：若相等，则查找成功并返回此位置，否则须确定新的查找区间，继续二分查找</li>
 <li><p>① 若q[mid] &gt; X，将查找区间变为[ L ,  mid - 1 ]</p>
 <p>②若q[mid] &lt; X，将查找区间变为[ mid + 1 , R ]</p>
 </li>
-<li><p>假设目标值在 [ L ，R ]中，每次查找区间将缩小一半，当 L &#x3D; R 时，我们就找到了目标。</p>
+<li><p>假设目标值在 [ L ，R ]中，每次查找区间将缩小一半，当 L = R 时，我们就找到了目标。</p>
 </li>
 </ul>
 
-
-<h3 id="c-整数二分查找代码模板："><a href="#c-整数二分查找代码模板：" class="headerlink" title="(c)整数二分查找代码模板："></a>(c)整数二分查找代码模板：</h3><p><strong>版本一：</strong><br>当我们将区间[l, r]划分为[l, mid]和[mid + 1, r]时，其更新操作是r &#x3D; mid 或 l &#x3D; mid + 1,计算mid时不需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool check( int x) &#123;&#x2F;* ... *&#x2F;&#125; &#x2F;&#x2F; 检查x是否满足某种性质
+<h3 id="c-整数二分查找代码模板："><a href="#c-整数二分查找代码模板：" class="headerlink" title="(c)整数二分查找代码模板："></a>(c)整数二分查找代码模板：</h3><p><strong>版本一：</strong><br>当我们将区间[l, r]划分为[l, mid]和[mid + 1, r]时，其更新操作是r = mid 或 l = mid + 1,计算mid时不需要加1。<br><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool check( int x) &#123;&#x2F;* ... *&#x2F;&#125; &#x2F;&#x2F; 检查x是否满足某种性质
 
 &#x2F;&#x2F; 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：
 int bsearch_1(int l, int r)
@@ -489,10 +483,8 @@ if (check(mid)) r &#x3D; mid;    &#x2F;&#x2F; check()判断mid是否满足性质
 else l &#x3D; mid + 1;
 &#125;
 return l;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>版本二：</strong><br>当我们将区间[l, r]划分为[l, mid - 1]和[mid, r]时，其更新操作是l &#x3D; mid - 1或 l &#x3D; mid,计算mid时需要加1。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool check( int x) &#123;&#x2F;* ... *&#x2F;&#125; &#x2F;&#x2F; 检查x是否满足某种性质
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p><strong>版本二：</strong><br>当我们将区间[l, r]划分为[l, mid - 1]和[mid, r]时，其更新操作是l = mid - 1或 l = mid,计算mid时需要加1。<br><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool check( int x) &#123;&#x2F;* ... *&#x2F;&#125; &#x2F;&#x2F; 检查x是否满足某种性质
 
 &#x2F;&#x2F; 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：
 int bsearch_1(int l, int r)
@@ -504,8 +496,7 @@ if (check(mid)) r &#x3D; mid;    &#x2F;&#x2F; check()判断mid是否满足性质
 else l &#x3D; mid + 1;
 &#125;
 return l;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h2 id="2-浮点数二分"><a href="#2-浮点数二分" class="headerlink" title="2. 浮点数二分"></a>2. 浮点数二分</h2><h3 id="a-浮点数二分查找代码模板："><a href="#a-浮点数二分查找代码模板：" class="headerlink" title="(a)浮点数二分查找代码模板："></a>(a)浮点数二分查找代码模板：</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool check(double x) &#123;&#x2F;* ... *&#x2F;&#125; &#x2F;&#x2F; 检查x是否满足某种性质
 
 double bsearch_3(double l, double r)
@@ -1196,7 +1187,7 @@ return l;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2026</span>
             
             <a href="/about" target="_blank">苦逼小码农</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
